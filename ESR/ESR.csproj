@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B838B475-A278-41B0-8E64-ED8B3778AB0F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESR</RootNamespace>
+    <AssemblyName>ESR</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Debug</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>images\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Debug</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\ESR.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\ESR.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.50731.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="FUA, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AIT\AIT\bin\FUA.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.IdentityModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.SharePoint.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="administracion.aspx" />
+    <Content Include="administradorDeAfinidades.aspx" />
+    <Content Include="administradorDeCuestionarios.aspx" />
+    <Content Include="administradorDeEmpresas.aspx" />
+    <Content Include="administradorDeIndicadores.aspx" />
+    <Content Include="administradorDePrincipiosRSE.aspx" />
+    <Content Include="administradorDeTemasSubtemas.aspx" />
+    <Content Include="administradorDeUsuarios.aspx" />
+    <Content Include="avanceDeDiagnostico.ascx" />
+    <Content Include="ayuda.aspx" />
+    <Content Include="blog.aspx" />
+    <Content Include="BuscadorDeEmpresas.aspx" />
+    <Content Include="calificacionTema.aspx" />
+    <Content Include="capturaDelEvaluador.ascx" />
+    <Content Include="consultaIndicadores.ascx" />
+    <Content Include="content.aspx" />
+    <Content Include="calificacionGR.aspx" />
+    <Content Include="css\esr.css" />
+    <Content Include="css\esr_anterior.css" />
+    <Content Include="css\esr_login.css" />
+    <Content Include="descripcionPractica.ascx" />
+    <Content Include="despliegaCuestionario.aspx" />
+    <Content Include="despliegaIndicador.ascx" />
+    <Content Include="diagnostico.aspx" />
+    <Content Include="documentLibrary.aspx" />
+    <Content Include="Download.aspx" />
+    <Content Include="empresa.ascx" />
+    <Content Include="estructuraCuestionario.aspx" />
+    <Content Include="evaluacion.ascx" />
+    <Content Include="fileAttach.aspx" />
+    <Content Include="fileUpload.aspx" />
+    <Content Include="formaDeInscripcion.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="guia.aspx" />
+    <Content Include="Home.ascx" />
+    <Content Include="Home_top.aspx" />
+    <Content Include="images\AliaRSE ovala2.jpg" />
+    <Content Include="images\aliarse_mexico_menu.jpg" />
+    <Content Include="images\arrow-down.jpg" />
+    <Content Include="images\arrow-right.jpg" />
+    <Content Include="images\arrow_down.gif" />
+    <Content Include="images\arrow_up.GIF" />
+    <Content Include="images\banner_cemefi.gif" />
+    <Content Include="images\blank.gif" />
+    <Content Include="images\calidad.jpg" />
+    <Content Include="images\calidad2.jpg" />
+    <Content Include="images\cemefitop.gif" />
+    <Content Include="images\cemefitop_01.gif" />
+    <Content Include="images\cemefitop_01.jpg" />
+    <Content Include="images\cemefitop_112x70.gif" />
+    <Content Include="images\cemefitop_header.gif" />
+    <Content Include="images\cemefi_jpg.jpg" />
+    <Content Include="images\chat.jpg" />
+    <Content Include="images\chat.png" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRareaTwitter.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRbarraLOGIN.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRbarraLogos.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRbotonEntrarLOGIN.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRbotonMenuInterior.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRbotonSkype.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRfondo.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRfondoHome.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRfondoHomeElipse.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRfondoInterior.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRfondoInteriorbarra.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRlogoITikons.jpg" />
+    <Content Include="images\checa lo que hay aqui adentro\ESRlogoTwitter1.jpg" />
+    <Content Include="images\clear.gif" />
+    <Content Include="images\close.gif" />
+    <Content Include="images\comunic.jpg" />
+    <Content Include="images\comunic2.jpg" />
+    <Content Include="images\DELETE.GIF" />
+    <Content Include="images\droparrow.jpg" />
+    <Content Include="images\empresa_login.gif" />
+    <Content Include="images\empresa_menugif.gif" />
+    <Content Include="images\espacio_transparente.gif" />
+    <Content Include="images\ESR.bmp" />
+    <Content Include="images\ESR.gif" />
+    <Content Include="images\ESRareaTwitter.jpg" />
+    <Content Include="images\ESRbarraLOGIN.jpg" />
+    <Content Include="images\ESRbarraLogos.jpg" />
+    <Content Include="images\ESRbotonEntrarLOGIN.jpg" />
+    <Content Include="images\ESRbotonMenuInterior.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver_Administracion.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver_Blog.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver_Contacto.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver_Diagnostico.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver_Dx360.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver_Registro.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver_Reportes.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver_Sitio.jpg" />
+    <Content Include="images\ESRbotonMenuInteriorOver_Tutorial.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Administracion.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Blog.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Contacto.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Diagnostico.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Dx360.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Registro.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Reportes.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Sitio.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Tutorial.jpg" />
+    <Content Include="images\ESRbotonMenuInterior_Videos.jpg" />
+    <Content Include="images\ESRbotonSkype.jpg" />
+    <Content Include="images\ESRfondo.jpg" />
+    <Content Include="images\ESRfondoHome.jpg" />
+    <Content Include="images\ESRfondoHomeElipse.jpg" />
+    <Content Include="images\ESRfondoHomeElipse_2.jpg" />
+    <Content Include="images\ESRfondoHomeElipse_3.jpg" />
+    <Content Include="images\ESRfondoHomeElipse_4.jpg" />
+    <Content Include="images\ESRfondoInterior.jpg" />
+    <Content Include="images\ESRfondoInteriorbarra.jpg" />
+    <Content Include="images\ESRlogo.jpg" />
+    <Content Include="images\ESRlogoCH.jpg" />
+    <Content Include="images\ESRlogoITikons.jpg" />
+    <Content Include="images\ESRlogoTwitter1.jpg" />
+    <Content Include="images\ESR_10.jpg" />
+    <Content Include="images\ESR_header.gif" />
+    <Content Include="images\ESR_logo.gif" />
+    <Content Include="images\estamos-trabajando.gif" />
+    <Content Include="images\etica.jpg" />
+    <Content Include="images\etica2.jpg" />
+    <Content Include="images\facebook.jpg" />
+    <Content Include="images\failed.gif" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\gridActulizar.gif" />
+    <Content Include="images\gridEditar.gif" />
+    <Content Include="images\hDown.jpg" />
+    <Content Include="images\hDownP.jpg" />
+    <Content Include="images\header.png" />
+    <Content Include="images\header_interno.gif" />
+    <Content Include="images\help.gif" />
+    <Content Include="images\hUp.jpg" />
+    <Content Include="images\hUpP.jpg" />
+    <Content Include="images\login01.jpg" />
+    <Content Include="images\login02.gif" />
+    <Content Include="images\login03.gif" />
+    <Content Include="images\Logo Forum Empresa.GIF" />
+    <Content Include="images\logoempresas.jpg" />
+    <Content Include="images\logo_login.gif" />
+    <Content Include="images\logo_login.jpg" />
+    <Content Include="images\logo_peru.jpg" />
+    <Content Include="images\logo_twitter.png" />
+    <Content Include="images\lupa.jpg" />
+    <Content Include="images\medio.jpg" />
+    <Content Include="images\medio2.jpg" />
+    <Content Include="images\nophoto3_48x48.gif" />
+    <Content Include="images\progress_bar.gif" />
+    <Content Include="images\progress_bar_2_1.gif" />
+    <Content Include="images\rse-en-twitter.png" />
+    <Content Include="images\Salir.png" />
+    <Content Include="images\soporte.jpg" />
+    <Content Include="images\spinner.gif" />
+    <Content Include="images\usuario.gif" />
+    <Content Include="images\video10anos.png" />
+    <Content Include="images\vinculacion.jpg" />
+    <Content Include="images\vinculacion2.jpg" />
+    <Content Include="indicador.ascx" />
+    <Content Include="legales.aspx" />
+    <Content Include="liberarRespuestas.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="main.aspx" />
+    <Content Include="menu.aspx" />
+    <Content Include="menuBasico.xml" />
+    <Content Include="menu_operaciones.aspx" />
+    <Content Include="misCuestionarios.aspx" />
+    <Content Include="misEmpresas.aspx" />
+    <Content Include="modificarIndicador.ascx" />
+    <Content Include="postulante.ascx" />
+    <Content Include="practica.ascx" />
+    <Content Include="presentacion.aspx" />
+    <Content Include="presentacionNarrativa.ascx" />
+    <Content Include="propiedadesDeEmpresa.aspx" />
+    <Content Include="registroDePractica.aspx" />
+    <Content Include="reportes.aspx" />
+    <Content Include="ReportV.aspx" />
+    <Content Include="rep_individual.ascx" />
+    <Content Include="rep_ranking.ascx" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.7.js" />
+    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="tools\changePass.aspx" />
+    <Content Include="tools\error.aspx" />
+    <Content Include="tools\getPass.aspx" />
+    <Content Include="tools\imgLogo.aspx" />
+    <Content Include="tools\mensaje.aspx" />
+    <Content Include="tools\registro.aspx" />
+    <Content Include="tools\regPass.aspx" />
+    <Content Include="tools\usuario.ascx" />
+    <Content Include="tools\_reg_usr.aspx" />
+    <Content Include="under_construction.htm" />
+    <Content Include="videos.aspx" />
+    <Content Include="vincularEmpresa.aspx" />
+    <Content Include="vincularRegistro.aspx" />
+    <Content Include="visorDelCuestionario.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="administracion.aspx.cs">
+      <DependentUpon>administracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administracion.aspx.designer.cs">
+      <DependentUpon>administracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administradorDeAfinidades.aspx.cs">
+      <DependentUpon>administradorDeAfinidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administradorDeAfinidades.aspx.designer.cs">
+      <DependentUpon>administradorDeAfinidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administradorDeCuestionarios.aspx.cs">
+      <DependentUpon>administradorDeCuestionarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administradorDeCuestionarios.aspx.designer.cs">
+      <DependentUpon>administradorDeCuestionarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administradorDeEmpresas.aspx.cs">
+      <DependentUpon>administradorDeEmpresas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administradorDeEmpresas.aspx.designer.cs">
+      <DependentUpon>administradorDeEmpresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administradorDeIndicadores.aspx.cs">
+      <DependentUpon>administradorDeIndicadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administradorDeIndicadores.aspx.designer.cs">
+      <DependentUpon>administradorDeIndicadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administradorDePrincipiosRSE.aspx.cs">
+      <DependentUpon>administradorDePrincipiosRSE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administradorDePrincipiosRSE.aspx.designer.cs">
+      <DependentUpon>administradorDePrincipiosRSE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administradorDeTemasSubtemas.aspx.cs">
+      <DependentUpon>administradorDeTemasSubtemas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administradorDeTemasSubtemas.aspx.designer.cs">
+      <DependentUpon>administradorDeTemasSubtemas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administradorDeUsuarios.aspx.cs">
+      <DependentUpon>administradorDeUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administradorDeUsuarios.aspx.designer.cs">
+      <DependentUpon>administradorDeUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="avanceDeDiagnostico.ascx.cs">
+      <DependentUpon>avanceDeDiagnostico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="avanceDeDiagnostico.ascx.designer.cs">
+      <DependentUpon>avanceDeDiagnostico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ayuda.aspx.cs">
+      <DependentUpon>ayuda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ayuda.aspx.designer.cs">
+      <DependentUpon>ayuda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog.aspx.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog.aspx.designer.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuscadorDeEmpresas.aspx.cs">
+      <DependentUpon>BuscadorDeEmpresas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuscadorDeEmpresas.aspx.designer.cs">
+      <DependentUpon>BuscadorDeEmpresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="calificacionTema.aspx.cs">
+      <DependentUpon>calificacionTema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="calificacionTema.aspx.designer.cs">
+      <DependentUpon>calificacionTema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="capturaDelEvaluador.ascx.cs">
+      <DependentUpon>capturaDelEvaluador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="capturaDelEvaluador.ascx.designer.cs">
+      <DependentUpon>capturaDelEvaluador.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaIndicadores.ascx.cs">
+      <DependentUpon>consultaIndicadores.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaIndicadores.ascx.designer.cs">
+      <DependentUpon>consultaIndicadores.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="content.aspx.cs">
+      <DependentUpon>content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content.aspx.designer.cs">
+      <DependentUpon>content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="calificacionGR.aspx.cs">
+      <DependentUpon>calificacionGR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="calificacionGR.aspx.designer.cs">
+      <DependentUpon>calificacionGR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="descripcionPractica.ascx.cs">
+      <DependentUpon>descripcionPractica.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="despliegaCuestionario.aspx.cs">
+      <DependentUpon>despliegaCuestionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="despliegaCuestionario.aspx.designer.cs">
+      <DependentUpon>despliegaCuestionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="despliegaIndicador.ascx.cs">
+      <DependentUpon>despliegaIndicador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="despliegaIndicador.ascx.designer.cs">
+      <DependentUpon>despliegaIndicador.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="diagnostico.aspx.cs">
+      <DependentUpon>diagnostico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="diagnostico.aspx.designer.cs">
+      <DependentUpon>diagnostico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="documentLibrary.aspx.cs">
+      <DependentUpon>documentLibrary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="documentLibrary.aspx.designer.cs">
+      <DependentUpon>documentLibrary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="empresa.ascx.cs">
+      <DependentUpon>empresa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empresa.ascx.designer.cs">
+      <DependentUpon>empresa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="default.master.cs">
+      <DependentUpon>default.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.master.designer.cs">
+      <DependentUpon>default.master</DependentUpon>
+    </Compile>
+    <Compile Include="estructuraCuestionario.aspx.cs">
+      <DependentUpon>estructuraCuestionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estructuraCuestionario.aspx.designer.cs">
+      <DependentUpon>estructuraCuestionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="evaluacion.ascx.cs">
+      <DependentUpon>evaluacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="evaluacion.ascx.designer.cs">
+      <DependentUpon>evaluacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="fileAttach.aspx.cs">
+      <DependentUpon>fileAttach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fileAttach.aspx.designer.cs">
+      <DependentUpon>fileAttach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fileUpload.aspx.cs">
+      <DependentUpon>fileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fileUpload.aspx.designer.cs">
+      <DependentUpon>fileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formaDeInscripcion.aspx.cs">
+      <DependentUpon>formaDeInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formaDeInscripcion.aspx.designer.cs">
+      <DependentUpon>formaDeInscripcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="guia.aspx.cs">
+      <DependentUpon>guia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guia.aspx.designer.cs">
+      <DependentUpon>guia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.ascx.cs">
+      <DependentUpon>Home.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.ascx.designer.cs">
+      <DependentUpon>Home.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Home_top.aspx.cs">
+      <DependentUpon>Home_top.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home_top.aspx.designer.cs">
+      <DependentUpon>Home_top.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indicador.ascx.cs">
+      <DependentUpon>indicador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indicador.ascx.designer.cs">
+      <DependentUpon>indicador.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="legales.aspx.cs">
+      <DependentUpon>legales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="legales.aspx.designer.cs">
+      <DependentUpon>legales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="liberarRespuestas.aspx.cs">
+      <DependentUpon>liberarRespuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="liberarRespuestas.aspx.designer.cs">
+      <DependentUpon>liberarRespuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu_operaciones.aspx.cs">
+      <DependentUpon>menu_operaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu_operaciones.aspx.designer.cs">
+      <DependentUpon>menu_operaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="misCuestionarios.aspx.cs">
+      <DependentUpon>misCuestionarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="misCuestionarios.aspx.designer.cs">
+      <DependentUpon>misCuestionarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="misEmpresas.aspx.cs">
+      <DependentUpon>misEmpresas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="misEmpresas.aspx.designer.cs">
+      <DependentUpon>misEmpresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modificarIndicador.ascx.cs">
+      <DependentUpon>modificarIndicador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modificarIndicador.ascx.designer.cs">
+      <DependentUpon>modificarIndicador.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="postulante.ascx.cs">
+      <DependentUpon>postulante.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="postulante.ascx.designer.cs">
+      <DependentUpon>postulante.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="practica.ascx.cs">
+      <DependentUpon>practica.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="practica.ascx.designer.cs">
+      <DependentUpon>practica.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion.aspx.cs">
+      <DependentUpon>presentacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="presentacion.aspx.designer.cs">
+      <DependentUpon>presentacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="presentacionNarrativa.ascx.cs">
+      <DependentUpon>presentacionNarrativa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="presentacionNarrativa.ascx.designer.cs">
+      <DependentUpon>presentacionNarrativa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="propiedadesDeEmpresa.aspx.cs">
+      <DependentUpon>propiedadesDeEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="propiedadesDeEmpresa.aspx.designer.cs">
+      <DependentUpon>propiedadesDeEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registroDePractica.aspx.cs">
+      <DependentUpon>registroDePractica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registroDePractica.aspx.designer.cs">
+      <DependentUpon>registroDePractica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reportes.aspx.cs">
+      <DependentUpon>reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportes.aspx.designer.cs">
+      <DependentUpon>reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportV.aspx.cs">
+      <DependentUpon>ReportV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportV.aspx.designer.cs">
+      <DependentUpon>ReportV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_individual.ascx.cs">
+      <DependentUpon>rep_individual.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rep_individual.ascx.designer.cs">
+      <DependentUpon>rep_individual.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_ranking.ascx.cs">
+      <DependentUpon>rep_ranking.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rep_ranking.ascx.designer.cs">
+      <DependentUpon>rep_ranking.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\changePass.aspx.cs">
+      <DependentUpon>changePass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\changePass.aspx.designer.cs">
+      <DependentUpon>changePass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\getPass.aspx.cs">
+      <DependentUpon>getPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\getPass.aspx.designer.cs">
+      <DependentUpon>getPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\imgLogo.aspx.cs">
+      <DependentUpon>imgLogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\imgLogo.aspx.designer.cs">
+      <DependentUpon>imgLogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\mensaje.aspx.cs">
+      <DependentUpon>mensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\mensaje.aspx.designer.cs">
+      <DependentUpon>mensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\registro.aspx.cs">
+      <DependentUpon>registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\registro.aspx.designer.cs">
+      <DependentUpon>registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\regPass.aspx.cs">
+      <DependentUpon>regPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\regPass.aspx.designer.cs">
+      <DependentUpon>regPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\usuario.ascx.cs">
+      <DependentUpon>usuario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\usuario.ascx.designer.cs">
+      <DependentUpon>usuario.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\_reg_usr.aspx.cs">
+      <DependentUpon>_reg_usr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\_reg_usr.aspx.designer.cs">
+      <DependentUpon>_reg_usr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="videos.aspx.cs">
+      <DependentUpon>videos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="videos.aspx.designer.cs">
+      <DependentUpon>videos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vincularEmpresa.aspx.cs">
+      <DependentUpon>vincularEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vincularEmpresa.aspx.designer.cs">
+      <DependentUpon>vincularEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vincularRegistro.aspx.cs">
+      <DependentUpon>vincularRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vincularRegistro.aspx.designer.cs">
+      <DependentUpon>vincularRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visorDelCuestionario.ascx.cs">
+      <DependentUpon>visorDelCuestionario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visorDelCuestionario.ascx.designer.cs">
+      <DependentUpon>visorDelCuestionario.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tools\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="default.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ESR.Business\ESR.Business.csproj">
+      <Project>{cc5365b5-facb-49f8-9a4c-71d0c09faf8a}</Project>
+      <Name>ESR.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60364</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

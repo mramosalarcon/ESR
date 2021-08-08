@@ -1,0 +1,492 @@
+﻿body 
+{
+    font-family: Verdana;
+    margin: 0px;
+    font-size: 8px;
+    color: White;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+h1, h2 
+{
+    margin: 0px;
+}
+
+.ValidationExt
+{
+	color: White;
+}
+
+#divMensaje
+{
+	color: White;
+	font-size: large;
+	text-decoration: blink;
+	text-align: left;
+}
+#menu 
+{
+	width: auto;
+	height: 20px
+}
+
+#topContent 
+{
+    text-align: right;
+    color: White;
+    font-size: medium;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    height: 137px;
+}
+
+#topContent a 
+{
+    text-decoration: none;
+    color: White;
+}
+
+#twitterBar
+{
+	width: 170px;
+	height: 485px;
+}
+
+#twitterBar h3 
+{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    border-top: dotted 1px #660;
+    border-bottom: dotted 1px #660;
+}
+
+#PlaceHolderMain 
+{
+    text-align: left;
+    width: 100%;
+	height: 490px;
+}
+
+#footerContent 
+{
+	font-family: Verdana;
+	font-size: x-small;
+	color: White;
+    text-align: center;
+}
+#topMessage
+{
+	font-size: medium; 
+	color: #FFFFFF; 
+	text-decoration: blink;
+}
+
+TABLE
+{
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	border-collapse: collapse;
+}
+TABLE.
+{
+	padding: 0px;
+	height: 3px;
+	margin-left: 0px;
+}
+
+TH
+{
+	font-weight: bold;
+	font-size: 10px;
+	font-style: normal;
+	font-family: Verdana;
+	vertical-align: top;
+	width: 225px;
+}
+TD
+{
+	font-family: Verdana; 
+	font-size: 10px; 
+	font-style: normal;
+	vertical-align: top;
+}
+
+INPUT, BUTTON, SELECT, TEXTAREA
+{
+	font-family: Verdana; 
+	font-size: 10px; 
+}
+
+A
+{
+	text-decoration: none;
+	color: #CC3300;
+}
+
+TABLE.MainMenu
+{
+	width: 100%;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-top: 0px;
+}
+
+TABLE.MainMenu A
+{
+	padding-right: 2px;
+	padding-left: 2px;
+	font-weight: bold;
+	padding-bottom: 2px;
+	width: 100%;
+	color: #333333;
+	padding-top: 2px;
+	border-bottom: #d8d1ca 1px solid;
+	font-family: verdana;
+	height: 100%;
+	cursor: pointer;
+}
+
+TABLE.MainMenu A:Hover
+{
+	background-color: #B4A08E;
+	color: #ffffff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+TABLE.Menu
+{
+	width: 100%;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-top: 0px;
+	cursor: pointer;
+}
+TABLE.Menu A
+{
+	padding-right: 2px;
+	padding-left: 20px;
+	font-weight: bold;
+	padding-bottom: 2px;
+	width: 100%;
+	color: #836955;
+	padding-top: 2px;
+	border-bottom: #e0dad5 1px solid;
+	height: 100%;
+	cursor: pointer;
+}
+TABLE.Menu A:Hover
+{
+	color: #836955;
+	background-color: #f0edea;
+	text-decoration: none;
+	cursor: pointer;
+}
+.grid, .grid TD
+{
+	border-right: #d8d0c8 1px solid;
+	border-top: #d8d0c8 1px solid;
+	border-left: #d8d0c8 1px solid;
+	color: #333333;
+	border-bottom: #d8d0c8 1px solid;
+}
+
+.gridSelectedItem, .gridSelectedItem TD
+{
+	background-color: #fce57e;
+}
+
+.gridItem, .gridItem TD
+{
+	background-color: #FFFFFF;
+}
+
+.gridAlternatingItem, .gridAlternatingItem TD
+{
+	background-color: #F8F8E8;
+}
+
+.gridHeader, .gridHeader TD
+{
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #B4A08E;
+}
+
+.gridHeader A
+{
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #B4A08E;
+}
+
+.gridFooter
+{
+	font-weight: bold;
+	color: #836955;
+	background-color: #F0EDEA;
+}
+
+.gridPager, .gridPager TD
+{
+	color: #836955;
+	background-color: #F0EDEA;
+}
+
+.gridDownload 
+{
+	text-align: right;
+}
+
+.gridPager A, .gridPage A:visited
+{
+	color: #836955;
+	padding-right: 3px;
+}
+
+.gridPager span
+{
+ 	padding-right: 3px;
+ 	font-weight: bold;
+ 	font-size: 13pt;
+}
+
+.letter
+{
+	padding-right: 2px;
+	padding-left: 2px;
+	font-size: 13pt;
+	color: #333333;
+}
+
+a.letter:hover   
+{
+	background-color:#E0E0E0;
+}
+
+.selectedLetter
+{
+	padding-right: 2px;
+	padding-left: 2px;
+	font-weight: bold;
+	font-size: 13pt;
+	color: #333333;
+	background-color:#E0E0E0;
+}
+
+.validator
+{
+	font-weight: bold;
+	padding-bottom: 3px;
+	line-height: 20px;
+	padding-top: 3px;
+	background-color: #fce57e;
+	border-bottom: #F8D000 2px solid;
+	border-right: #F8D000 2px solid;
+}
+.errorMsg
+{
+	font-weight: bold;
+	color: #CC3300;
+	background-color: #fce57e;
+	border-bottom: #F8D000 2px solid;
+	border-right: #F8D000 2px solid;
+	}
+#tooltip
+{
+	position: absolute;
+	width: 300px;/*border: 1px solid black;*/
+	border: 2px outset;
+	padding: 2px;
+	color: #333333;
+	background-color: #F8F0B8;
+	visibility: hidden;
+	z-index: 100;/*Remove below line to remove shadow. Below line should always appear last within this CSS*//*filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);*/
+	}
+/* Tooltip Style */div.tTip 
+{
+	border: 2px outset;
+	background-color: #F8F0B8;
+	}
+/*div.tTip .caption {font-family: Verdana;font-size: 9pt;_font-size: 9pt;font-weight: bold;font-style: normal;padding: 1px 2px;color: White;background-color: #8c715a;cursor: hand;}
+*/div.tTip .contents 
+{
+	color: #333333;
+	font-size: 13px;
+	_font-size: 12px;
+	font-family: Verdana;
+	padding: 1px 2px;
+	_padding-bottom: 0;
+	}
+.popup
+{
+	border: 3px outset;
+	display: none;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-color: #ffffff;
+	}
+/* Popup Window Style */div.popupW 
+{
+	border: 3px outset;
+	background-color: #ffffff;
+	}
+div.popupW .caption 
+{
+	font-family: Verdana;
+	font-size: 9pt;
+	font-weight: bold;
+	font-style: normal;
+	padding: 1px 2px;
+	color: White;
+	background-color: #8c715a;
+	cursor: hand;
+	}
+div.popupW .contents 
+{
+	color: InfoText;
+	font-size: 13px;
+	font-family: Verdana;
+	padding: 1px 2px;
+	}
+.popupTitle
+{
+	font-weight: bold;
+	color: White;
+	background-color: #8c715a;
+	cursor: hand;
+	}
+.transparent
+{
+	width:100%;	  /* required for IE to show transparency within a DIV*/
+	height:100%;  /* required for IE to show transparency within a DIV*/
+}
+DIV.frame
+{
+	padding-right: 3px;
+	padding-left: 3px;padding-bottom: 3px;border: #e0dad5 1px solid;padding-top: 3px;background-color: #f0edea;}
+.frameTitle
+{
+	font-weight: bold;
+	font-size: 13pt;
+	font-variant: small-caps;
+	}
+.wizard
+{
+	padding: 5px;
+	font-size: 12pt;
+	width: 100%;
+	color: #333333;
+	background-color: #F8E880;
+	border-bottom: #F8D840 2px solid;
+	border-right: #F8D840 2px solid;
+	}
+.note
+{
+	display: block;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #E87850;
+	border-bottom: #E44c16 2px solid;
+	border-right: #E44c16 2px solid;
+	width: 100%;
+	padding: 4px;
+	}
+.sectionTitle
+{
+	font-weight: bold;
+	text-decoration: underline;
+	}
+.VIP
+{
+	background-color: #fce57e;
+	}
+.workingDiv
+{
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: bold;
+	z-index: 9999;
+	right: 2px;
+	top: 2px;
+	_top:expression(eval(document.body.scrollTop));
+	padding-bottom: 5px;
+	color: white;
+	padding-top: 5px;
+	position:fixed;
+	_position:absolute;
+	background-color: #007fa1;
+	bottom:0;
+	height:20px;}
+.TicketHeader
+{
+	font-family: Verdana; 
+	font-size: large;
+	color: #333333;
+	background-color: #ec8026;
+	font-style: normal ;
+	text-align: center ;
+	vertical-align: top;    
+	font-weight:bold ;	
+	TEXT-ALIGN: center;
+	}
+.ddlTooltip
+{
+	border: 1px #000000 solid;
+	position: absolute;
+	font-size: 10px; 
+	background-color: #ffffff;
+	}
+.required
+{
+	margin-top: 5px;
+	font-weight: bold;
+	font-size: 12pt;
+	color: red;
+}
+.AspNet-Menu:hover 
+{
+	cursor: hand; 
+}
+.Titulos 
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+}
+.txt_smal 
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #333333;
+}
+.login 
+{
+	font-family: Verdana;
+	font-size: 8px;
+	color: White;
+}
+.Titulos 
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666666;
+	font-weight: bold;
+}
+.borde_menu 
+{
+	background-image: url(/images/header_interno.gif);
+	background-repeat: repeat-x;
+}

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="CEMEFI.CESR.BI.Indicador">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Indicador.cs</FileName>
+      <HashCode>QCASEgwA4YQEEAEEKIcgAKhAAEIGRJBArEIEhIBA8TI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Respuesta">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Respuesta.cs</FileName>
+      <HashCode>AAACEgAAAQAAAAEEIAAIAAAAAAACQAIAAAAAgAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Cuestionario">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Cuestionario.cs</FileName>
+      <HashCode>QCADEgwAAQAEkACFKAMABAAAAAACQABCBIwAgoCgACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Usuario">
+    <Position X="5.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Usuario.cs</FileName>
+      <HashCode>AAQAAQiAAQQEAACIIIADAQAgAAQCSgBAAAAAAgEgACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Empresa">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Empresa.cs</FileName>
+      <HashCode>YsEAgxxRiGYcAkCEWIAAP0igBIjOQUCBBlxElgAMeHg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Contacto">
+    <Position X="9.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Contacto.cs</FileName>
+      <HashCode>gAAAASaAASAAgBSMYABAEQAABIACQQBQFNAARgGgACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Menu">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Menu.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAQAgAAAAAAAAAAAAAAAAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Certificacion">
+    <Position X="2.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Certificacion.cs</FileName>
+      <HashCode>AAAAAQAAAAQAIAAAIAEAQAAAAgACQABIIAAABAAgAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Perfil">
+    <Position X="2.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Perfil.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAQAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Inciso">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Inciso.cs</FileName>
+      <HashCode>QAASEgkAxSQEAIQAIAUAAIhAAAACQBAAJEAEgIAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Ranking">
+    <Position X="2.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Ranking.cs</FileName>
+      <HashCode>AABAAggAA0AEAACAIAAAAAAAAAAiQABAAAAEgCAQACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Afinidad">
+    <Position X="0.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Afinidad.cs</FileName>
+      <HashCode>ACAAAAgAAAAEkBAAAAEAAAAAAAAAAAAABBAAAICAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.Tema">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Tema.cs</FileName>
+      <HashCode>ACAAAgAQEQACkAAAIAEAAAAAgAAAAABIAACQhICAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.PreguntaAdicional">
+    <Position X="5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PreguntaAdicional.cs</FileName>
+      <HashCode>AAACEAgAIQQEAAAQIAAAAAAABAAGQAAAASAABAAAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEMEFI.CESR.BI.GrupoRelacion">
+    <Position X="2.5" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GrupoRelacion.cs</FileName>
+      <HashCode>AAAGEggAAQQEAAAAIAAAAAAAAAACQAAAAAAAhAAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

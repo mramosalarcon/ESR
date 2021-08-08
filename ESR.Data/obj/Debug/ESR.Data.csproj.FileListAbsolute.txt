@@ -1,0 +1,26 @@
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\ESR.Data.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\ESR.Data.pdb
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.pdb
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.csprojResolveAssemblyReference.cache
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\ESR.Data.dll
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\ESR.Data.pdb
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.csprojResolveAssemblyReference.cache
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.dll
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.pdb
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\ESR.Data.dll
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\ESR.Data.pdb
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.csprojResolveAssemblyReference.cache
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.dll
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.pdb

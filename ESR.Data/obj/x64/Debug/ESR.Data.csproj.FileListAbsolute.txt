@@ -1,0 +1,10 @@
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\x64\Debug\ESR.Data.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\x64\Debug\ESR.Data.pdb
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\x64\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\x64\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\x64\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\x64\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\x64\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\x64\Debug\ESR.Data.csprojResolveAssemblyReference.cache
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\x64\Debug\ESR.Data.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\x64\Debug\ESR.Data.pdb

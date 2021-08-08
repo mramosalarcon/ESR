@@ -1,0 +1,35 @@
+﻿
+#Login1
+{
+	font-family: Verdana;
+	color: White;
+	font-size: x-small;
+}
+#divMensaje 
+{
+	font-family: Verdana;
+	color: White;
+	font-size: large;
+}
+#footerContent
+{
+	font-family: Verdana;
+	color: White;
+	font-size: x-small;
+	margin-bottom: 0px;
+}
+#frmLogin
+{
+    font: 100% Verdana;
+    color: #FFFFFF;
+}
+.login
+{
+    font-family: Verdana;
+    color: #FFFFFF;
+}
+
+.ValidationExt
+{
+	color: Black;
+}

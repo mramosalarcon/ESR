@@ -1,0 +1,43 @@
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Business.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Business.pdb
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Data.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.ObjectBuilder.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Data.pdb
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Release\ESR.Business.dll
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Release\ESR.Business.pdb
+D:\Users\Miguel Ramos Alarcón\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Release\ESR.Business.csprojResolveAssemblyReference.cache
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Business.dll
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Business.pdb
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Data.dll
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Data.pdb
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Release\ESR.Business.csprojResolveAssemblyReference.cache
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Release\ESR.Business.dll
+C:\Users\NOEL\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Release\ESR.Business.pdb
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Business.dll
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Business.pdb
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Data.dll
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Web.Administration.dll
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Release\ESR.Data.pdb
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Release\ESR.Business.csprojResolveAssemblyReference.cache
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Release\ESR.Business.dll
+C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Release\ESR.Business.pdb
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\bin\Release\ESR.Business.dll
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\bin\Release\ESR.Business.pdb
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\bin\Release\ESR.Data.dll
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\bin\Release\Microsoft.Web.Administration.dll
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\bin\Release\ESR.Data.pdb
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\obj\Release\ESR.Business.csprojAssemblyReference.cache
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\obj\Release\ESR.Business.csproj.CoreCompileInputs.cache
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\obj\Release\ESR.Business.csproj.CopyComplete
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\obj\Release\ESR.Business.dll
+d:\Users\migue\Documents\Projects\ESR\ESR.Business\obj\Release\ESR.Business.pdb

@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="default.master.cs" Inherits="ESR.ESRMaster" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Empresa Socialmente Responsable</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="css/esr_anterior.css" type="text/css" />
+    <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <form id="principal" runat="server">
+<table width="960px" align="center">
+        <tr height="85px">         
+            <a href="main.aspx"><td width="350px">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+            </td></a>
+            <td width="40%" align="left">
+            <div id="topMessage"></div>
+            
+            </td>
+                <td align="left">
+                <asp:Image ID="imgLogoTop" ImageUrl="~/tools/imgLogo.aspx" Width="40%" runat="server" />
+            </td>
+                <td align="center"><a href="Logout.aspx">
+                    Salir ></a></td>
+            </tr>
+            <tr>
+            <td>
+                <a href="#" id="docs">Documentos</a></td>
+            <td valign="bottom">
+            <br />
+            <br />
+            <asp:Label ID="lblUsuario" runat="server" Text="Bienvenid@, "></asp:Label>
+            </td>
+            <td align="right" colspan="2">
+            <asp:DropDownList ID="ddlEmpresas" runat="server" AutoPostBack="True" 
+                    onselectedindexchanged="ddlEmpresas_SelectedIndexChanged">
+            </asp:DropDownList><br />
+                <a href="formaDeInscripcion.aspx?Content=empresa" border="0">
+                <asp:Label ID="lblSector" runat="server" Text="Sector: "></asp:Label></a><br />
+                <a href="formaDeInscripcion.aspx?Content=empresa" border="0">
+                <asp:Label ID="lblSubsector" runat="server" Text="SubSector: "></asp:Label></a>  
+            </td>
+            </tr>
+        <tr>         
+            <td align="left" colspan="4">
+            <table cellspacing="0" cellpadding="0">               
+     <tr>
+                <td>
+                    <asp:ImageButton ID="imbRegistro" runat="server" 
+                        ImageUrl="~/images/ESRbotonMenuInterior_Registro.jpg" 
+                        PostBackUrl="~/formaDeInscripcion.aspx" onmouseover="this.src='images/ESRbotonMenuInteriorOver_Registro.jpg'" 
+                        onmouseout="this.src='images/ESRbotonMenuInterior_Registro.jpg'"  />
+                </td>
+                <td>
+                    <asp:ImageButton ID="imbSitio" ImageUrl="~/images/ESRbotonMenuInterior_Sitio.jpg" 
+                    onmouseover="this.src='images/ESRbotonMenuInteriorOver_Sitio.jpg'" 
+                    onmouseout="this.src='images/ESRbotonMenuInterior_Sitio.jpg'" 
+                    runat="server" onclick="imbSitio_Click" Visible=false></asp:ImageButton>
+                </td>
+                <td><asp:ImageButton ID="imbDiagnostico" runat="server" 
+                        ImageUrl="~/images/ESRbotonMenuInterior_Diagnostico.jpg" 
+                        PostBackUrl="~/misCuestionarios.aspx" onmouseover="this.src='images/ESRbotonMenuInteriorOver_Diagnostico.jpg'" 
+                        onmouseout="this.src='images/ESRbotonMenuInterior_Diagnostico.jpg'"  />
+                </td>
+                 <td><asp:ImageButton ID="imbReportes" runat="server" 
+                        ImageUrl="~/images/ESRbotonMenuInterior_Reportes.jpg" 
+                        PostBackUrl="~/reportes.aspx" onmouseover="this.src='images/ESRbotonMenuInteriorOver_Reportes.jpg'" 
+                        onmouseout="this.src='images/ESRbotonMenuInterior_Reportes.jpg'"  />
+                </td>
+                <td>
+                <asp:ImageButton ID="imbBlog" runat="server" 
+                        ImageUrl="~/images/ESRbotonMenuInterior_Blog.jpg" 
+                        PostBackUrl="~/blog.aspx" onmouseover="this.src='images/ESRbotonMenuInteriorOver_Blog.jpg'" 
+                        onmouseout="this.src='images/ESRbotonMenuInterior_Blog.jpg'"  />
+                </td>
+                <td><asp:ImageButton ID="imb360" runat="server" 
+                        ImageUrl="~/images/ESRbotonMenuInterior_Dx360.jpg" 
+                        PostBackUrl="" onmouseover="this.src='images/ESRbotonMenuInteriorOver_Dx360.jpg'" 
+                        onmouseout="this.src='images/ESRbotonMenuInterior_Dx360.jpg'" 
+                        Visible="False"  />
+                </td>
+                <td><asp:ImageButton ID="imbTutorial" runat="server" 
+                        ImageUrl="~/images/ESRbotonMenuInterior_Tutorial.jpg" 
+                        PostBackUrl="" onmouseover="this.src='images/ESRbotonMenuInteriorOver_Tutorial.jpg'" 
+                        onmouseout="this.src='images/ESRbotonMenuInterior_Tutorial.jpg'" 
+                        Visible="False"  />
+                </td>                     
+                <td><asp:ImageButton ID="imbContacto" runat="server" 
+                        ImageUrl="~/images/ESRbotonMenuInterior_Contacto.jpg" 
+                        PostBackUrl="~/ayuda.aspx" onmouseover="this.src='images/ESRbotonMenuInteriorOver_Contacto.jpg'" 
+                        onmouseout="this.src='images/ESRbotonMenuInterior_Contacto.jpg'"  />
+                </td>
+                <td>
+                <asp:ImageButton ID="imbAdministracion" runat="server" 
+                        ImageUrl="~/images/ESRbotonMenuInterior_Administracion.jpg" 
+                        PostBackUrl="~/administracion.aspx" onmouseover="this.src='images/ESRbotonMenuInteriorOver_Administracion.jpg'" 
+                        onmouseout="this.src='images/ESRbotonMenuInterior_Administracion.jpg'"  />
+                </td>
+            </tr>
+            <tr>
+            <td colspan="9">
+            <asp:Menu ID="tvwMenu" runat="server" BackColor="#F7F6F3" 
+            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="X-Small" 
+            ForeColor="#7C6F57" StaticSubMenuIndent="10px">
+                <StaticSelectedStyle BackColor="#5D7B9D" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                <DynamicMenuStyle BackColor="#F7F6F3" />
+                <DynamicSelectedStyle BackColor="#5D7B9D" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            </asp:Menu>
+            </td>
+            </tr>
+        </table> 
+    <div id="mainContent">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="PlaceHolderPageTitleInTitleArea" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="PlaceHolderAdditionalPageHead" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="PlaceHolderPageTitle" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="PlaceHolderSiteName" runat="server">
+            </asp:ContentPlaceHolder>
+
+    </div>            
+            </td>
+            </tr>
+            <tr>
+            <td colspan="4">
+                &nbsp;</td>
+            </tr>
+            <tr align="right">
+            <td colspan="4">
+            </td>
+            </tr>            
+        </table>           
+    </form>
+</body>
+</html>
