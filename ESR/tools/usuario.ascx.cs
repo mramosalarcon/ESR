@@ -4,7 +4,7 @@ using ESR.Business;
 
 namespace ESR.tools
 {
-    public partial class tools_usuario : System.Web.UI.UserControl
+    public partial class usuario : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

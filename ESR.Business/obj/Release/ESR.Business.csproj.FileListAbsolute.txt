@@ -41,3 +41,15 @@ d:\Users\migue\Documents\Projects\ESR\ESR.Business\obj\Release\ESR.Business.cspr
 d:\Users\migue\Documents\Projects\ESR\ESR.Business\obj\Release\ESR.Business.csproj.CopyComplete
 d:\Users\migue\Documents\Projects\ESR\ESR.Business\obj\Release\ESR.Business.dll
 d:\Users\migue\Documents\Projects\ESR\ESR.Business\obj\Release\ESR.Business.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Release\ESR.Business.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Release\ESR.Business.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Release\ESR.Data.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Release\Microsoft.Web.Administration.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Release\ESR.Data.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Release\ESR.Business.csprojAssemblyReference.cache
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Release\ESR.Business.csproj.CoreCompileInputs.cache
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Release\ESR.Business.csproj.CopyComplete
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Release\ESR.Business.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Release\ESR.Business.pdb

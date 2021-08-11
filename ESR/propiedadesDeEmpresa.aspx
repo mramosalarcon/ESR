@@ -5,8 +5,6 @@
     <table border="0" width="100%">
 	<tr>
 		<td colspan="2" align="center" style="height: 23px">
-            <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-            </asp:ToolkitScriptManager>
             <asp:TextBox ID="txtBuscarEmpresa" runat="server" Width="300px" MaxLength="48"></asp:TextBox><br />
             <asp:Button ID="btnBuscarEmpresa" runat="server" Text="Buscar empresa" OnClick="btnBuscarEmpresa_Click" /></td>
 	</tr>

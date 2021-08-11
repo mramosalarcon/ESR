@@ -1,5 +1,16 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="empresa" Codebehind="empresa.ascx.cs" %>
 <%@ Register Assembly="FUA" Namespace="Subgurim.Controles" TagPrefix="cc1" %>
+<style type="text/css">
+    .validator {     
+        color: #FF0000;
+	forecolor: Red; 
+    } 
+    .required {
+	color: Red;
+        forecolor: Red; 
+    }
+</style>  
+
 <div id="infgeneral" visible="true" runat="server">
     <table border="0" width="100%" id="table1" style="background-color: transparent">
 
@@ -49,19 +60,19 @@
             Razón social</td>
         <td>
             <asp:TextBox ID="txtRazonSocial" runat="server" MaxLength="100" Width="300px"></asp:TextBox>&nbsp;<asp:RequiredFieldValidator
-            ID="rfvRazonSocial" runat="server" ControlToValidate="txtRazonSocial" ErrorMessage="Razón social requerida">*</asp:RequiredFieldValidator>
+            ID="rfvRazonSocial" runat="server" ControlToValidate="txtRazonSocial" ErrorMessage="Razón social requerida" CssClass="required">*</asp:RequiredFieldValidator>
             </td>
         <td>
             Nombre corto:</td>
         <td>
-            <asp:TextBox ID="txtNombreCorto" runat="server" MaxLength="50" Width="200px"></asp:TextBox><asp:RequiredFieldValidator ID="rfvNombreCorto" runat="server" ControlToValidate="txtNombreCorto" ErrorMessage="Nombre Corto requerido">*</asp:RequiredFieldValidator></td>
+            <asp:TextBox ID="txtNombreCorto" runat="server" MaxLength="50" Width="200px"></asp:TextBox><asp:RequiredFieldValidator ID="rfvNombreCorto" runat="server" ControlToValidate="txtNombreCorto" ErrorMessage="Nombre Corto requerido" CssClass="required">*</asp:RequiredFieldValidator></td>
     </tr>
 	<tr>
 		<td>Nombre de la empresa como desea que aparezca en la placa del distintivo ESR®</td>
 		<td>
             <asp:TextBox ID="txtNombreEmpresa" runat="server" MaxLength="100" Width="300px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombreEmpresa"
-                ErrorMessage="Nombre de empresa requerido">*</asp:RequiredFieldValidator>    
+                ErrorMessage="Nombre de empresa requerido" CssClass="required">*</asp:RequiredFieldValidator>    
 		</td>
 		<td>Siglas o acrónimo</td>
 		<td>
@@ -69,11 +80,11 @@
 	</tr>
 	    <tr>
 		<td>
-            RFC</td>
+            RFC(Mexico) / RUC(Ecuador)</td>
 		<td>
             <asp:TextBox ID="txtRFC" runat="server" MaxLength="20"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvRFC" runat="server" ControlToValidate="txtRFC"
-                ErrorMessage="RFC Requerido">*</asp:RequiredFieldValidator></td>
+                ErrorMessage="RFC Requerido" CssClass="required">*</asp:RequiredFieldValidator></td>
 		<td></td>
 		<td></td>
 	    </tr>
@@ -82,7 +93,7 @@
             Calle y número</td>
 		<td>
             <asp:TextBox ID="txtDomicilio" runat="server" MaxLength="50" Width="300px"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDomicilio" ErrorMessage="Calle y número requerido">*</asp:RequiredFieldValidator></td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDomicilio" ErrorMessage="Calle y número requerido" CssClass="required">*</asp:RequiredFieldValidator></td>
 		<td>
             Teléfono(s)
         </td>
@@ -95,7 +106,7 @@
             Colonia</td>
         <td>
             <asp:TextBox ID="txtColonia" runat="server" MaxLength="50" Width="300px"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtColonia" ErrorMessage="Colonia requerida">*</asp:RequiredFieldValidator></td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtColonia" ErrorMessage="Colonia requerida" CssClass="required">*</asp:RequiredFieldValidator></td>
         <td>
             Fax</td>
         <td>
@@ -107,7 +118,7 @@
             País</td>
         <td>
             <asp:DropDownList ID="ddlPais" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPais_SelectedIndexChanged">
-            </asp:DropDownList><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddlPais" ErrorMessage="País requerido">*</asp:RequiredFieldValidator></td>
+            </asp:DropDownList><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddlPais" ErrorMessage="País requerido" CssClass="required">*</asp:RequiredFieldValidator></td>
         <td>
             Correo electrónico de información 
             general:</td>
@@ -143,7 +154,7 @@
         <td>
             <asp:UpdatePanel ID="UpdatePanel7" runat="server">
                 <ContentTemplate>
-            <asp:TextBox ID="txtCiudad" runat="server" MaxLength="50"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtCiudad" ErrorMessage="Ciudad requerida">*</asp:RequiredFieldValidator>
+            <asp:TextBox ID="txtCiudad" runat="server" MaxLength="50"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtCiudad" ErrorMessage="Ciudad requerida" CssClass="required">*</asp:RequiredFieldValidator>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </td>
@@ -157,7 +168,7 @@
             Código Postal</td>
         <td>
             <asp:TextBox ID="txtCP" runat="server" MaxLength="5"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCP" ErrorMessage="Código Postal requerido">*</asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCP" ErrorMessage="Código Postal requerido" CssClass="required">*</asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revCP" runat="server" ControlToValidate="txtCP"
                 ErrorMessage="Introduzca un CP válido" ValidationExpression="\d{5}|\d{2}"></asp:RegularExpressionValidator>
         </td>
@@ -180,7 +191,7 @@
         <tr>
             <td>
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-                    ForeColor="White" />
+                    ForeColor="Red" />
             </td>
             <td>
             </td>
@@ -208,7 +219,7 @@
 		<td>
             <asp:TextBox ID="txtDirector" runat="server" MaxLength="50" Width="250px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDirector"
-                ErrorMessage="Nombre del presidente requerido">*</asp:RequiredFieldValidator></td>
+                ErrorMessage="Nombre del presidente requerido" CssClass="required">*</asp:RequiredFieldValidator></td>
 		<td></td>
 		<td></td>
 	</tr>
@@ -216,7 +227,7 @@
 		<td>Presidente del consejo de administración</td>
 		<td>
             <asp:TextBox ID="txtPresidente" runat="server" MaxLength="50" Width="250px"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPresidente" ErrorMessage="Nombre del presidente del consejo de administración requerido">*</asp:RequiredFieldValidator></td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPresidente" ErrorMessage="Nombre del presidente del consejo de administración requerido" CssClass="required">*</asp:RequiredFieldValidator></td>
 		<td></td>
 		<td></td>
 	</tr>
@@ -276,7 +287,7 @@
             <asp:TextBox ID="txtNoEmpleados" runat="server" MaxLength="12"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvNoEmpleados" runat="server" 
                 ControlToValidate="txtNoEmpleados" 
-                ErrorMessage="Ingrese el número de empleados de su organización">*</asp:RequiredFieldValidator>
+                ErrorMessage="Ingrese el número de empleados de su organización" CssClass="required">*</asp:RequiredFieldValidator>
         </td>
 		<td>
             &nbsp;</td>
@@ -286,9 +297,9 @@
 		<td>Año en que inició operaciones</td>
 		<td>
             <asp:TextBox ID="txtAnoInicio" runat="server" MaxLength="4"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtAnoInicio" ErrorMessage="Año en que inició operaciones requerido">*</asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtAnoInicio" ErrorMessage="Año en que inició operaciones requerido" CssClass="required">*</asp:RequiredFieldValidator>
             <asp:RangeValidator ID="rvAnio" runat="server" ControlToValidate="txtAnoInicio" ErrorMessage="RangeValidator"
-                MaximumValue="2017" MinimumValue="1800" SetFocusOnError="True" 
+                MaximumValue="2099" MinimumValue="1800" SetFocusOnError="True" 
                 Type="Integer">Ingrese un valor válido para el año</asp:RangeValidator></td>
 		<td>
             &nbsp;</td>
@@ -304,7 +315,7 @@
                 <asp:ListItem Value="Mixto">Mixto</asp:ListItem>
                 <asp:ListItem Value="Otro">Otro (especifique)</asp:ListItem>
             </asp:DropDownList>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="ddlCapital" ErrorMessage="Composición de capital requerido">*</asp:RequiredFieldValidator></td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="ddlCapital" ErrorMessage="Composición de capital requerido" CssClass="required">*</asp:RequiredFieldValidator></td>
 		<td>
             <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                 <ContentTemplate>
@@ -323,13 +334,13 @@
         <td>
             <asp:DropDownList ID="ddlPostulante" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPostulante_SelectedIndexChanged" Width="150px">
             </asp:DropDownList>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="ddlPostulante" ErrorMessage="Organismo de referencia requerido">*</asp:RequiredFieldValidator></td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="ddlPostulante" ErrorMessage="Organismo de referencia requerido" CssClass="required">*</asp:RequiredFieldValidator></td>
         <td>
             <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                 <ContentTemplate>
                     <asp:TextBox ID="txtPostulanteOtro" runat="server" Visible="False"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvOtroPostulante" runat="server" ControlToValidate="txtPostulanteOtro"
-                        ErrorMessage="Otro organismo de referencia requerido">*</asp:RequiredFieldValidator>
+                        ErrorMessage="Otro organismo de referencia requerido" CssClass="required">*</asp:RequiredFieldValidator>
                 </ContentTemplate>
                 <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="ddlPostulante" EventName="SelectedIndexChanged" />
@@ -365,7 +376,7 @@
 		empresa?<br />
 		<asp:TextBox ID="txtRSE" runat="server" TextMode="MultiLine" Width="600px" 
                 MaxLength="900" Height="80px"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtRSE" ErrorMessage="RSE requerida">*</asp:RequiredFieldValidator></td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtRSE" ErrorMessage="RSE requerida" CssClass="required">*</asp:RequiredFieldValidator></td>
 	</tr>
 	<tr>
 		<td>Nombre de la fundación empresarial (si 
@@ -385,7 +396,7 @@
     <tr>
         <td>
             <asp:ValidationSummary ID="ValidationSummary2" runat="server" 
-                ForeColor="White" />
+                ForeColor="Red" />
         </td>
         <td>
         </td>

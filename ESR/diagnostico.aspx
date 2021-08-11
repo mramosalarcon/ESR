@@ -2,17 +2,31 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" Runat="Server">
-    <link rel="stylesheet" href="css/esr_anterior.css" type="text/css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120281557-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120281557-1');
+</script>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderPageTitle" Runat="Server">
+Diagnóstico ESR®
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
+<p>&nbsp</p>
     <table width="100%"  border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td align="left" valign="top"  class="borde_menu">
           <div> <img src="/images/espacio_transparente.gif" width="40" height="13" alt="" /><br />
-              <asp:Label ID="lblIdCuestionario" runat="server" Font-Size="14pt" Text="Contestando el cuestionario: "
-            Visible="False"></asp:Label>
+              <h2><asp:Label ID="lblIdCuestionario" runat="server" Font-Size="14pt" Text="Proceso: "
+            Visible="false"></asp:Label></h2>
               <br />
+<h2><asp:Label ID="lblIdEmpresa" runat="server" Font-Size="14pt" Text="Empresa: "
+            Visible="false"></asp:Label></h2>
               <asp:Panel ID="pMenu" runat="server">
               
               </asp:Panel>
@@ -49,4 +63,12 @@
         <br />        
         <br />
         <br />
+</asp:Content>
+
+<asp:Content ID="Content2" 
+ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
+ESR:&nbsp<asp:Label ID="lblEmpresa" runat="server" Text=""></asp:Label><br/>
+<asp:Label ID="lblProceso" runat="server" Text=""></asp:Label>
+<br/>
+
 </asp:Content>

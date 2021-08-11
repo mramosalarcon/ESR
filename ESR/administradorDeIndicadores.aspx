@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="css/esr_anterior.css" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-    </asp:ToolkitScriptManager>
     <div>
         <br />
         <asp:PlaceHolder ID="indicador" runat="server"></asp:PlaceHolder>

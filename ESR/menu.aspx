@@ -5,7 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server"><title>Menu Principal Cemefi</title>
 <link href="css/esr_anterior.css" rel="stylesheet" type="text/css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120281557-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-120281557-1');
+</script>
 </head>
 <body>
     <form id="form1" runat="server">

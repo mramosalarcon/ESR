@@ -43,3 +43,21 @@ C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR\bin\Microsoft.Practic
 C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR\obj\Debug\ESR.csprojResolveAssemblyReference.cache
 C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR\obj\Debug\ESR.dll
 C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR\obj\Debug\ESR.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR\obj\Debug\ESR.csprojAssemblyReference.cache
+D:\Users\migue\Documents\GitHub\ESR\ESR\obj\Debug\ESR.csproj.CoreCompileInputs.cache
+D:\Users\migue\Documents\GitHub\ESR\ESR\obj\Debug\ESR.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR\obj\Debug\ESR.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.dll.config
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.Business.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.Data.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Web.Administration.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Practices.ObjectBuilder.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.Business.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.Data.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Users\migue\Documents\GitHub\ESR\ESR\obj\Debug\ESR.csproj.CopyComplete

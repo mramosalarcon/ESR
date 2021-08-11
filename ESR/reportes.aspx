@@ -10,6 +10,10 @@
     Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
 
 
+<asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderPageTitle" Runat="Server">
+Reportes ESR®
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
 <asp:Panel ID="panMenu" runat="server">        
 </asp:Panel>   
@@ -19,5 +23,7 @@
 </asp:Content>
  <asp:Content ID="Content2" 
 ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
-Reportes del Proceso Empresa Socialmente Responsable
+Reportes del Distintivo ESR®<br/>
+<asp:Label ID="lblEmpresa" runat="server" Text=""></asp:Label>
+
 </asp:Content>

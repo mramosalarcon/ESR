@@ -5,6 +5,8 @@ using ESR.Business;
 using System.IO;
 using System.Configuration;
 using Microsoft.SharePoint;
+using Microsoft.SharePoint.WebControls;
+using System.Web;
 
 public partial class propiedadesDeEmpresa : System.Web.UI.Page
 {
@@ -150,30 +152,35 @@ public partial class propiedadesDeEmpresa : System.Web.UI.Page
         base.OnPreInit(e);
 #if !Debug
         SPWeb Web = SPContext.Current.Web;
-        string strUrl = web.get_ServerRelativeUrl() + "/_catalogs/masterpage/seattle.master";;
-        switch (Session["idPais"].ToString())
+        string strUrl = Web.ServerRelativeUrl + "/_catalogs/masterpage/seattle.master";
+        if (Session["idPais"] != null)
         {
-            case "1":
-                strUrl = Web.ServerRelativeUrl + "/_catalogs/masterpage/seattle.master";
-                break;
-            case "168":
-                strUrl = Web.ServerRelativeUrl + "/_catalogs/masterpage/default.peru.master";
-                break;
+            switch (Session["idPais"].ToString())
+            {
+                case "1":
+                    strUrl = Web.ServerRelativeUrl + "/_catalogs/masterpage/seattle.master";
+                    break;
+                case "168":
+                    strUrl = Web.ServerRelativeUrl + "/_catalogs/masterpage/default.peru.master";
+                    break;
+            }
+            this.MasterPageFile = strUrl;
         }
-        this.MasterPageFile = strUrl;
 #endif
     }
+
     private bool LoadSession()
 	{
 		bool result = false;
 		try
 		{
-			SPWeb contextWeb = SPControl.GetContextWeb((HttpContext)(object)Context);
-			SPUser currentUser = contextWeb.get_CurrentUser();
-			string[] array = ((SPPrincipal)currentUser).get_LoginName().Split('|');
-			Usuario usuario = new Usuario();
-			usuario.idUsuario = array[2].ToString();
-			if (usuario.CargaUsuario())
+            SPWeb theSite = SPControl.GetContextWeb(Context);
+            SPUser theUser = theSite.CurrentUser;
+            string[] usrid = theUser.LoginName.Split('|');
+
+           	Usuario usuario = new Usuario();
+			usuario.idUsuario = usrid[2].ToString();
+            if (usuario.CargaUsuario())
 			{
 				Session["idEmpresa"] = usuario.idEmpresa;
 				Session["perfil"] = usuario.perfiles;

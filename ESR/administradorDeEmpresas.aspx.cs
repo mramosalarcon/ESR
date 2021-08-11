@@ -28,7 +28,7 @@ public partial class administradorDeEmpresas : System.Web.UI.Page
                 {
                     empresas.idCuestionario = Convert.ToInt32(ddlCuestionarios.SelectedValue[ddlCuestionarios.SelectedIndex].ToString());
                 }
-                DataSet dsEmpresas = empresas.Buscar(txtBuscar.Text.Trim());
+                DataSet dsEmpresas = empresas.Buscar(txtBuscar.Text.Trim(), Session["idPais"].ToString());
                 if (dsEmpresas.Tables["Empresa"].Rows.Count > 0)
                 {
                     grdEmpresas.DataSource = dsEmpresas;

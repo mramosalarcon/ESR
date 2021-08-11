@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" Inherits="tools_usuario" Codebehind="usuario.ascx.cs" %>
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="ESR.tools.usuario" MasterPageFile="~/oslo.Master" Codebehind="usuario.ascx.cs" %>
 <link href="/Style/StyleSheet.css" rel="stylesheet" type="text/css" />
 <table border="0" width="100%" id="table3" style="background-color: transparent">
 <tr>

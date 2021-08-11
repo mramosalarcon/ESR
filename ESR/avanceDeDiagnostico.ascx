@@ -3,7 +3,7 @@
 <style type="text/css">
 <!--
 .style1 {
-	font-size: 12px;
+	font-size: 24px;
 	font-weight: bold;
 }
 -->
@@ -18,23 +18,34 @@
             <asp:Label ID="lblIdCuestionario" runat="server"></asp:Label></td>
     </tr>
     <tr>
+        <td align="center">
+            <span class="style1"><!--<p>Reporte de avance</p>-->
+	        </span>
+	    </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><span class="style1">
+	    <p><asp:Label ID="lblTitulo" runat="server"></asp:Label></p>
+	    <p><asp:Label ID="lblNombreDeCuestionario" runat="server"></asp:Label></p>
+	</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
         <td>
-            </td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td style="height: 1px" align="center" ><span class="style1"><p>
-         REPORTE DE AVANCE</p>
-        </span>
+
+		
         <td style="height: 1px"></td>
         <td style="height: 1px"></td>
         <td style="height: 1px"></td>
     </tr>
     <tr>
-        <td style="height: 1px"> <h5><asp:Label ID="lblTitulo" runat="server"></asp:Label><p>
-            <asp:Label ID="lblNombreDeCuestionario" runat="server"></asp:Label></p></h5></td>
+        <td style="height: 1px">
+	</td>
         <td style="height: 1px">
         </td>
         <td style="height: 1px">

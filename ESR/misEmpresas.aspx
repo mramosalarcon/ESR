@@ -1,5 +1,10 @@
 <%@ Page Language="C#" MasterPageFile="~/default.master" AutoEventWireup="true" Inherits="misEmpresas" Codebehind="misEmpresas.aspx.cs" %>
 
+
+<asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderPageTitle" Runat="Server">
+Mis Empresas ESR®
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
     <div>
 <table border="0" width="100%" id="table1">
@@ -32,5 +37,5 @@
 
  <asp:Content ID="Content2" 
 ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
-Empresas Socialmente Responsables
+Mis Empresas Socialmente Responsables
 </asp:Content>

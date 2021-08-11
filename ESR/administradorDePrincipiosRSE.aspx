@@ -11,8 +11,6 @@
     Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-    </asp:ToolkitScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 &nbsp;<table border="0" width="100%" id="table1">

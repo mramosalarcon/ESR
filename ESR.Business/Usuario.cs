@@ -621,7 +621,7 @@ namespace ESR.Business
         }
         public bool unsuscribe()
         {
-            Usuario usuario = new Usuario();
+            ESR.Data.Usuario usuario = new ESR.Data.Usuario();
             return usuario.unsuscribe(idUsuario);
         }
         public bool Guarda()

@@ -24,3 +24,13 @@ C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\bin\Debug\Micros
 C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.csprojResolveAssemblyReference.cache
 C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.dll
 C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Data\obj\Debug\ESR.Data.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\bin\Debug\ESR.Data.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\bin\Debug\ESR.Data.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Debug\ESR.Data.csprojAssemblyReference.cache
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Debug\ESR.Data.csproj.CoreCompileInputs.cache
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Debug\ESR.Data.csproj.CopyComplete
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Debug\ESR.Data.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Debug\ESR.Data.pdb

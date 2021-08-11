@@ -822,10 +822,10 @@ namespace ESR.Business
 			return empresa.Buscar2(criterioDeBusqueda);
 		}
 
-		public DataSet Buscar(string criterioDeBusqueda)
+		public DataSet Buscar(string criterioDeBusqueda, string sidPais)
 		{
 			ESR.Data.Empresa empresa = new ESR.Data.Empresa();
-			return empresa.Buscar(criterioDeBusqueda, liberado, idCuestionario);
+			return empresa.Buscar(criterioDeBusqueda, liberado, idCuestionario, Convert.ToInt32(sidPais));
 		}
 
 		public Image CargaLogo()
