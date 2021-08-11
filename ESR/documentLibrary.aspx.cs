@@ -69,7 +69,7 @@ namespace ESR
             
             using (SPSite oSite = new SPSite("http://esr.cemefi.org/"))
             {
-                using (SPWeb oWeb = oSite.OpenWeb(Session["idEmpresa"].ToString()))
+                using (SPWeb oWeb = oSite.OpenWeb(GetIdEmpresa().ToString()))
                 {
                     myLibrary = oWeb.GetFolder("Documentos compartidos");
                     SPFolderCollection myFolders = myLibrary.SubFolders;
@@ -81,8 +81,7 @@ namespace ESR
                 {
                     if (spfFolder.Name != "Forms")
                     {
-                        TreeNode NewNode = new
-                            TreeNode(spfFolder.Name,
+                        TreeNode NewNode = new TreeNode(spfFolder.Name,
                             spfFolder.Name);
                         NewNode.PopulateOnDemand = true;
                         NewNode.SelectAction = TreeNodeSelectAction.Expand;
@@ -91,6 +90,15 @@ namespace ESR
                     }
                 }
             }
+            else
+            {
+                TreeNode treeNode2 = new TreeNode("\\", "\\");
+                treeNode2.PopulateOnDemand = true;
+                treeNode2.SelectAction = TreeNodeSelectAction.Expand;
+                treeNode2.Expanded = false;
+                node.ChildNodes.Add(treeNode2);
+            }
+            
         }
 
         void PopulateEvidences(TreeNode node)
@@ -100,7 +108,7 @@ namespace ESR
 
             using (SPSite oSite = new SPSite("http://esr.cemefi.org/"))
             {
-                using (SPWeb oWeb = oSite.OpenWeb(Session["idEmpresa"].ToString()))
+                using (SPWeb oWeb = oSite.OpenWeb(GetIdEmpresa().ToString()))
                 {
                     //Checar si el folder ya existe,
                     SPFolderCollection myFolders = oWeb.Folders;
@@ -114,8 +122,7 @@ namespace ESR
                     spFiles.Sort(delegate(SPFile p1, SPFile p2) { return p1.Name.CompareTo(p2.Name); });
                     foreach (SPFile spfFile in spFiles)
                     {
-                        TreeNode NewNode = new
-                            TreeNode(spfFile.Name, spfFile.Url);
+                        TreeNode NewNode = new TreeNode(spfFile.Name, spfFile.Url);
                         NewNode.PopulateOnDemand = false;
                         NewNode.SelectAction = TreeNodeSelectAction.None;
                         NewNode.ShowCheckBox = true;

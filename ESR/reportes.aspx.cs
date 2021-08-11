@@ -71,7 +71,13 @@ public partial class reportes : System.Web.UI.Page
                 //sw.WriteLine("temas: " + Session["temas"].ToString());
                 Session["idPais"] = usr.pais;
                 //sw.WriteLine("idPais: " + Session["idPais"].ToString());
-                result = true;
+                Empresa empresa2 = new Empresa();
+				empresa2.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+				if (empresa2.cargaNombre())
+				{
+					Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+					result = true;
+				}
             }
             else
             {
@@ -137,12 +143,12 @@ public partial class reportes : System.Web.UI.Page
             catch
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "App Error",
-                    "alert('Hubo un error al cargar la página, por favor inicie sesión nuevamente.');", true);
+                    "alert('Hubo un error al cargar la pÃ¡gina, por favor inicie sesiÃ³n nuevamente.');", true);
             }
         }
         else
         {
-            string sMensaje = "Para acceder a sus reportes, primero debe iniciar sesión";
+            string sMensaje = "Para acceder a sus reportes, primero debe iniciar sesiÃ³n";
             ClientScript.RegisterStartupScript(this.GetType(), "LoginError",
                 String.Format("alert('{0}');", sMensaje.Replace("'", "\'")), true);
             Response.Redirect("login.aspx");
@@ -151,7 +157,7 @@ public partial class reportes : System.Web.UI.Page
 
     private void PopulateMenu()
     {
-        // Código temporal para cambiar la imagen del botón del master page
+        // Cï¿½digo temporal para cambiar la imagen del botï¿½n del master page
         //
         //((ImageButton)this.Master.FindControl("imbReportes")).ImageUrl = "images/ESRbotonMenuInteriorOver_Reportes.jpg";
         //((ImageButton)this.Master.FindControl("imbReportes")).Attributes["onmouseout"] = "'images/ESRbotonMenuInteriorOver_Reportes.jpg'";

@@ -28,21 +28,53 @@ public partial class propiedadesDeEmpresa : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            lblEmpresa.Text = this.GetNombreEmpresa();
-            if (lblEmpresa.Text != string.Empty)
+            if (base.User.Identity.IsAuthenticated)
             {
-                Empresa empresaCuestionario = new Empresa();
-                empresaCuestionario.idEmpresa = this.GetIdEmpresa();
+                try
+                {
+                    if (Session["idEmpresa"] == null || Session["idEmpresa"].ToString() == "")
+                    {
+                        if (!LoadSession())
+                        {
+                            base.Response.Redirect("~/login.aspx", endResponse: false);
+                        }
+                        return;
+                    }
+                    lblEmpresa.Text = this.GetNombreEmpresa();
+                    if (lblEmpresa.Text != string.Empty)
+                    {
+                        Empresa empresaCuestionario = new Empresa();
+                        empresaCuestionario.idEmpresa = this.GetIdEmpresa();
 
-                DataSet dsCuestionarios = empresaCuestionario.CargaCuestionarios();
-                ddlCuestionarios.DataValueField = "idCuestionario";
-                ddlCuestionarios.DataTextField = "nombre";
-                ddlCuestionarios.DataSource = dsCuestionarios.Tables["Cuestionario"];
-                ddlCuestionarios.DataBind();
+                        DataSet dsCuestionarios = empresaCuestionario.CargaCuestionarios();
+                        ddlCuestionarios.DataValueField = "idCuestionario";
+                        ddlCuestionarios.DataTextField = "nombre";
+                        ddlCuestionarios.DataSource = dsCuestionarios.Tables["Cuestionario"];
+                        ddlCuestionarios.DataBind();
 
-                ListItem item = new ListItem("Seleccione...", "0", true);
-                ddlCuestionarios.Items.Insert(0, item);
-            }
+                        ListItem item = new ListItem("Seleccione...", "0", true);
+                        ddlCuestionarios.Items.Insert(0, item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    using (StreamWriter streamWriter = File.AppendText(ConfigurationManager.AppSettings["logFile"].ToString()))
+                    {
+                        streamWriter.AutoFlush = true;
+                        streamWriter.WriteLine("Fecha: " + DateTime.Now.ToString());
+                        streamWriter.WriteLine("Error en administradorDeEmpresas.Page_Load(): " + ex.Message);
+                        streamWriter.WriteLine("Stacktrace: " + ex.StackTrace);
+                        streamWriter.Close();
+                    }
+                    base.ClientScript.RegisterStartupScript(GetType(), "App Error", "alert('Hubo un error al cargar la p谩gina, por favor inicie sesi贸n nuevamente.');", addScriptTags: true);
+                }
+		    }
+            else
+            {
+                string text = "Para acceder a la herramienta de administraci贸n, primero debe iniciar sesi贸n";
+                base.ClientScript.RegisterStartupScript(GetType(), "LoginError", string.Format("alert('{0}');", text.Replace("'", "'")), addScriptTags: true);
+                base.Response.Redirect("login.aspx", endResponse: false);
+            }   
         }
     }
 
@@ -70,14 +102,14 @@ public partial class propiedadesDeEmpresa : System.Web.UI.Page
             {
                 grdEmpresas.DataSource = null;
                 grdEmpresas.DataBind();
-                lblMensaje.Text = "El criterio de b鷖queda no arrojo ning鷑 resultado, intente de nuevo.";
+                lblMensaje.Text = "El criterio de b煤squeda no encopntr贸 ning煤n resultado, intente de nuevo.";
             }
         }
         else
         {
             grdEmpresas.DataSource = null;
             grdEmpresas.DataBind();
-            lblMensaje.Text = "Ingrese un criterio de b鷖queda m醩 espec韋ico.";
+            lblMensaje.Text = "Ingrese un criterio de b煤squeda m谩s espec铆fico.";
         }
     }
 
@@ -118,7 +150,7 @@ public partial class propiedadesDeEmpresa : System.Web.UI.Page
         base.OnPreInit(e);
 #if !Debug
         SPWeb Web = SPContext.Current.Web;
-        string strUrl = "";
+        string strUrl = web.get_ServerRelativeUrl() + "/_catalogs/masterpage/seattle.master";;
         switch (Session["idPais"].ToString())
         {
             case "1":
@@ -131,4 +163,36 @@ public partial class propiedadesDeEmpresa : System.Web.UI.Page
         this.MasterPageFile = strUrl;
 #endif
     }
+    private bool LoadSession()
+	{
+		bool result = false;
+		try
+		{
+			SPWeb contextWeb = SPControl.GetContextWeb((HttpContext)(object)Context);
+			SPUser currentUser = contextWeb.get_CurrentUser();
+			string[] array = ((SPPrincipal)currentUser).get_LoginName().Split('|');
+			Usuario usuario = new Usuario();
+			usuario.idUsuario = array[2].ToString();
+			if (usuario.CargaUsuario())
+			{
+				Session["idEmpresa"] = usuario.idEmpresa;
+				Session["perfil"] = usuario.perfiles;
+				Session["idUsuario"] = usuario.idUsuario;
+				Session["temas"] = usuario.temas;
+				Session["idPais"] = usuario.pais;
+				Empresa empresa2 = new Empresa();
+				empresa2.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+				if (empresa2.cargaNombre())
+				{
+					Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+					result = true;
+				}
+			}
+			return result;
+		}
+		catch
+		{
+			return result;
+		}
+	}
 }

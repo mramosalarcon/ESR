@@ -23,8 +23,7 @@ namespace ESR
                 ReportViewer1.AsyncRendering = true;
 
                 // Set report server and report path
-                ReportViewer1.ServerReport.ReportServerUrl = new
-                   Uri("http://esr.cemefi.org/_layouts/15/ReportServer");
+                ReportViewer1.ServerReport.ReportServerUrl = new Uri("http://esr.cemefi.org/_layouts/15/ReportServer");
 
                 ReportViewer1.ServerReport.ReportPath =
                    "/reportesESR/" + Request.QueryString["report"].ToString() + ".rdl";

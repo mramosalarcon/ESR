@@ -8,8 +8,8 @@ using Microsoft.SharePoint;
 public partial class buscadorDeEmpresas : System.Web.UI.Page
 {
     /// <summary>
-    /// Si viene como parámetro el idEmpresa se muestra la información de la empresa
-    /// si no, solo se muestra la información de la empresa que esta logeada.
+    /// Si viene como parï¿½metro el idEmpresa se muestra la informaciï¿½n de la empresa
+    /// si no, solo se muestra la informaciï¿½n de la empresa que esta logeada.
     /// </summary>
     /// <returns></returns>
     protected int GetIdEmpresa()
@@ -35,7 +35,7 @@ public partial class buscadorDeEmpresas : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            // Primero pregunta si trae el parámetro idEmpresa
+            // Primero pregunta si trae el parï¿½metro idEmpresa
             if (this.GetIdEmpresa() != 0)
             {
                 // Si lo trae entonces hay que vincular al usuario con la empresa
@@ -44,8 +44,8 @@ public partial class buscadorDeEmpresas : System.Web.UI.Page
                 empresa.idUsuario = this.GetIdUsuario();
                 empresa.VincularUsuario();
 
-                string sMensaje = "Su solicitud ha sido enviada, recibirá un correo cuando sea autorizada.";
-                ClientScript.RegisterStartupScript(this.GetType(), "Mensaje de Vinculación",
+                string sMensaje = "Su solicitud ha sido enviada, recibirÃ¡ un correo cuando sea autorizada.";
+                ClientScript.RegisterStartupScript(this.GetType(), "Mensaje de VinculaciÃ³n",
                 String.Format("alert('{0}');", sMensaje.Replace("'", "\'")), true);
 
                 Response.Redirect("default.aspx", false);
@@ -78,7 +78,7 @@ public partial class buscadorDeEmpresas : System.Web.UI.Page
             //// Process and render the report
             //ReportViewer1.ServerReport.Refresh();
 
-            lblMensaje.Text = "De click en el logotipo de la empresa para enviarle la solicitud de vinculación al responsable  de dicho registro";
+            lblMensaje.Text = "De click en el logotipo de la empresa para enviarle la solicitud de vinculaciï¿½n al responsable  de dicho registro";
 
         }
     }

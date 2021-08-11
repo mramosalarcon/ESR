@@ -147,7 +147,13 @@ namespace ESR
                     //sw.WriteLine("temas: " + Session["temas"].ToString());
                     Session["idPais"] = usr.pais;
                     //sw.WriteLine("idPais: " + Session["idPais"].ToString());
-                    result = true;
+                    Empresa empresa = new Empresa();
+                    empresa.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+                    if (empresa.cargaNombre())
+                    {
+                        Session["empresa"] = empresa.nombre + " - " + empresa.nombreCorto;
+                        result = true;
+                    }
                 }
                 else
                 {

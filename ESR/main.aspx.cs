@@ -46,7 +46,13 @@ namespace ESR
                     //sw.WriteLine("temas: " + Session["temas"].ToString());
                     Session["idPais"] = usr.pais;
                     //sw.WriteLine("idPais: " + Session["idPais"].ToString());
-                    result = true;
+                    Empresa empresa = new Empresa();
+                    empresa.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+                    if (empresa.cargaNombre())
+                    {
+                        Session["empresa"] = empresa.nombre + " - " + empresa.nombreCorto;
+                        result = true;
+                    }
                 }
                 else
                 {
@@ -80,7 +86,7 @@ namespace ESR
             {
                 try
                 {
-                    if (Session["idEmpresa"] == null || Session["idEmpresa"].ToString() == "")
+                    if (Session["idEmpresa"] == null || Session["idEmpresa"].ToString() == "") 
                     {
                         if (LoadSession())
                         {
@@ -140,6 +146,14 @@ namespace ESR
                         {
                             Response.Redirect("~/login.aspx");
                         }
+                    }
+                    if (Session["empresa"] != null && Session["empresa"].ToString() != "")
+                    {
+                        lblEmpresa.Text = Session["empresa"].ToString();
+                    }
+                    else
+                    {
+                        lblEmpresa.Visible = false;
                     }
                     if (Request.Params["idUsuario"] != null)
                     {

@@ -20,7 +20,7 @@ public partial class login : System.Web.UI.Page // Microsoft.SharePoint.Identity
     //            Session["perfil"] = ConfigurationManager.AppSettings["idPerfil_Owner"];
     //            Session["idUsuario"] = ConfigurationManager.AppSettings["idUsuario_Owner"];
     //            //Session["temas"] = usr.temas;
-    //            FormsAuthentication.RedirectFromLoginPage("Dueño del sistema", false);
+    //            FormsAuthentication.RedirectFromLoginPage("Dueï¿½o del sistema", false);
 
     //        }
     //    }
@@ -62,7 +62,7 @@ public partial class login : System.Web.UI.Page // Microsoft.SharePoint.Identity
     //                }
     //                break;
     //            case 1:
-    //                sMensaje = "La contraseña no es válida, verifique su información.";
+    //                sMensaje = "La contraseï¿½a no es vï¿½lida, verifique su informaciï¿½n.";
     //                LoginError(this, e);
     //                break;
     //            case 2:
@@ -70,7 +70,7 @@ public partial class login : System.Web.UI.Page // Microsoft.SharePoint.Identity
     //                LoginError(this, e);
     //                break;
     //            case 3:
-    //                sMensaje = "Los cuestionarios ESR están en proceso de evaluación, no se puede otorgar el acceso.";
+    //                sMensaje = "Los cuestionarios ESR estï¿½n en proceso de evaluaciï¿½n, no se puede otorgar el acceso.";
     //                LoginError(this, e);
     //                break;
 
@@ -204,7 +204,13 @@ public partial class login : System.Web.UI.Page // Microsoft.SharePoint.Identity
                             }
 
                             //swsec.WriteLine("Cargo bitacora");
-
+                            Empresa empresa2 = new Empresa();
+                            empresa2.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+                            if (empresa2.cargaNombre())
+                            {
+                                Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+                            }
+                            
                             Application.Lock();
                             Application["TotalDeUsuarios"] = Convert.ToInt32(Application["TotalDeUsuarios"]) + 1;
                             Application.UnLock();
@@ -258,7 +264,7 @@ public partial class login : System.Web.UI.Page // Microsoft.SharePoint.Identity
                     }
                     break;
                 case 1:
-                    sMensaje = "La contraseña no es válida, verifique su información.";
+                    sMensaje = "La contraseï¿½a no es vï¿½lida, verifique su informaciÃ³n.";
                     LoginError(this, e);
                     break;
                 case 2:
@@ -267,7 +273,7 @@ public partial class login : System.Web.UI.Page // Microsoft.SharePoint.Identity
                     break;
                 case 3:
                     //default:
-                    sMensaje = "Los cuestionarios ESR están en proceso de evaluación, no se puede otorgar el acceso." + resultado.ToString();
+                    sMensaje = "Los cuestionarios ESR se encuentran en proceso de evaluaciÃ³n, no se puede otorgar el acceso." + resultado.ToString();
                     LoginError(this, e);
                     break;
             }

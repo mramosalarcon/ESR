@@ -34,7 +34,13 @@ public partial class misEmpresas : System.Web.UI.Page
                 //sw.WriteLine("temas: " + Session["temas"].ToString());
                 Session["idPais"] = usr.pais;
                 //sw.WriteLine("idPais: " + Session["idPais"].ToString());
-                result = true;
+                Empresa empresa2 = new Empresa();
+				empresa2.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+				if (empresa2.cargaNombre())
+				{
+					Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+					result = true;
+				}
             }
             else
             {
@@ -98,12 +104,12 @@ public partial class misEmpresas : System.Web.UI.Page
             catch
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "App Error",
-                    "alert('Hubo un error al cargar la página, por favor inicie sesión nuevamente.');", true);
+                    "alert('Hubo un error al cargar la pÃ¡gina, por favor inicie sesiÃ³n nuevamente.');", true);
             }
         }
         else
         {
-            string sMensaje = "Para acceder a sus empresas, primero debe iniciar sesión";
+            string sMensaje = "Para acceder a sus empresas, primero debe iniciar sesiÃ³n";
             ClientScript.RegisterStartupScript(this.GetType(), "LoginError",
                 String.Format("alert('{0}');", sMensaje.Replace("'", "\'")), true);
             Response.Redirect("login.aspx", false);
@@ -112,6 +118,12 @@ public partial class misEmpresas : System.Web.UI.Page
     protected void btnAceptar_Click(object sender, EventArgs e)
     {
         Session["idEmpresa"] = ddlEmpresas.SelectedValue;
+        Empresa empresa2 = new Empresa();
+		empresa2.idEmpresa = Convert.ToInt32(ddlEmpresas.SelectedValue);
+		if (empresa2.cargaNombre())
+		{
+			Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+		}
         SPSecurity.RunWithElevatedPrivileges(delegate()
         {
             //swsec.WriteLine("Sitio: " + SPContext.Current.Web.Url + "/" + usr.idEmpresa.ToString());
@@ -150,7 +162,7 @@ public partial class misEmpresas : System.Web.UI.Page
             }
         });
         Response.Redirect("default.aspx", false);
-        //lblEmpresa.Text = "La empresa fue cambiada exitósamente a: " + ddlEmpresas.SelectedItem.ToString();
+        //lblEmpresa.Text = "La empresa fue cambiada exitï¿½samente a: " + ddlEmpresas.SelectedItem.ToString();
     }
 
     protected override void OnPreInit(EventArgs e)

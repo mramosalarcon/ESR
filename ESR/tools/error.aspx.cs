@@ -33,7 +33,7 @@ public partial class error : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string message = this.GetMessage();
-        SetTitle("Mensaje de la aplicaci�n");
+        SetTitle("Mensaje de la aplicación Distintivo ESR®");
         lblErrorMessage.Text = message;
     }
 }

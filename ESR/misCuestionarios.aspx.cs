@@ -46,7 +46,13 @@ public partial class misCuestionarios : System.Web.UI.Page
                 //sw.WriteLine("temas: " + Session["temas"].ToString());
                 Session["idPais"] = usr.pais;
                 //sw.WriteLine("idPais: " + Session["idPais"].ToString());
-                result = true;
+                Empresa empresa2 = new Empresa();
+				empresa2.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+				if (empresa2.cargaNombre())
+				{
+					Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+					result = true;
+				}
             }
             else
             {
@@ -166,7 +172,7 @@ public partial class misCuestionarios : System.Web.UI.Page
                             }
                             else
                             {
-                                lblEmpresa.Text = "Su empresa no tiene cuestionario disponible. Solicite acceso al cuestionario al área de RSE del Cemefi - tel. (55) 10541479.";
+                                lblEmpresa.Text = "Su empresa no tiene cuestionario disponible. Solicite acceso al cuestionario al ï¿½rea de RSE del Cemefi - tel. (55) 10541479.";
                                 ddlCuestionarios.Visible = false;
                                 btnIniciarCuestionario.Visible = false;
                                 lblCuestionarios.Visible = false;
@@ -191,7 +197,7 @@ public partial class misCuestionarios : System.Web.UI.Page
                             }
                             else
                             {
-                                lblEmpresa.Text = "Esta empresa no cuenta con acceso a los cuestionarios de Evaluación ESR.";
+                                lblEmpresa.Text = "Esta empresa no cuenta con acceso a los cuestionarios de AutodiagnÃ³stico ESRÂ®.";
                                 ddlCuestionarios.Visible = false;
                                 btnIniciarCuestionario.Visible = false;
                                 lblCuestionarios.Visible = false;
@@ -216,11 +222,11 @@ public partial class misCuestionarios : System.Web.UI.Page
                 }
                 catch
                 {
-                    base.ClientScript.RegisterStartupScript(GetType(), "App Error", "alert('Hubo un error al cargar la página, por favor inicie sesión nuevamente.');", addScriptTags: true);
+                    base.ClientScript.RegisterStartupScript(GetType(), "App Error", "alert('Hubo un error al cargar la pÃ¡gina, por favor inicie sesiÃ³n nuevamente.');", addScriptTags: true);
                 }
                 return;
             }
-            string text3 = "Para acceder al autodiagnóstico, primero debe iniciar sesión";
+            string text3 = "Para acceder al autodiagnÃ³stico, primero debe iniciar sesiÃ³n";
             base.ClientScript.RegisterStartupScript(GetType(), "LoginError", string.Format("alert('{0}');", text3.Replace("'", "'")), addScriptTags: true);
             btnIniciarCuestionario.Visible = false;
             base.Response.Redirect("login.aspx");
@@ -239,6 +245,41 @@ public partial class misCuestionarios : System.Web.UI.Page
 
         switch (nombreReporte)
         {
+            case "avance":
+                if (base.Request.Params["evidencias"] == null)
+                {
+                    Response.Redirect("diagnostico.aspx?Content=avanceDeDiagnostico&idCuestionario=" + ddlCuestionarios.SelectedValue);
+                }
+                else if (Request.Params["evaluacion"] == null)
+                {
+                    if (Request.Params["idEmpresa"] == null)
+                    {
+                        Response.Redirect("diagnostico.aspx?Content=avanceDeDiagnostico&idCuestionario=" + ddlCuestionarios.SelectedValue + "&evidencias=true");
+                    }
+                    else
+                    {
+                        Response.Redirect("diagnostico.aspx?Content=avanceDeDiagnostico&idCuestionario=" + ddlCuestionarios.SelectedValue + "&evidencias=true&idEmpresa=" + base.Request.Params["idEmpresa"].ToString());
+                    }
+                }
+                else if (Request.Params["idEmpresa"] == null)
+                {
+                    base.Response.Redirect("diagnostico.aspx?Content=avanceDeDiagnostico&idCuestionario=" + ddlCuestionarios.SelectedValue + "&evidencias=true&evaluacion=true");
+                }
+                else
+                {
+                    base.Response.Redirect("diagnostico.aspx?Content=avanceDeDiagnostico&idCuestionario=" + ddlCuestionarios.SelectedValue + "&evidencias=true&evaluacion=true&idEmpresa=" + base.Request.Params["idEmpresa"].ToString());
+                }
+                break;
+            case "individual":
+                if (base.Request.Params["idEmpresa"] == null)
+                {
+                    base.Response.Redirect("reportes.aspx?content=rep_individual&idCuestionario=" + ddlCuestionarios.SelectedValue);
+                }
+                else
+                {
+                    base.Response.Redirect("reportes.aspx?content=rep_individual&idEmpresa=" + base.Request.Params["idEmpresa"].ToString() + "&idCuestionario=" + ddlCuestionarios.SelectedValue);
+                }
+                break;
             case "temas":
                 //                Response.Redirect("ReportV.aspx?report=rpt_Evaluacion_Tema&idCuestionario=" + ddlCuestionarios.SelectedValue);
                 Response.Redirect("/_layouts/15/ReportServer/RSViewerPage.aspx?rv:RelativeReportUrl=/reportesESR/rpt_Evaluacion_Tema.rdl&rp:idCuestionario=" + ddlCuestionarios.SelectedValue);
@@ -257,7 +298,7 @@ public partial class misCuestionarios : System.Web.UI.Page
                 break;
             case "retroalimentacion":
 
-                if (ddlCuestionarios.SelectedItem.Text.ToUpper().Contains("PERÚ"))
+                if (ddlCuestionarios.SelectedItem.Text.ToUpper().Contains("PERÃš"))
                 {
                     if (ddlCuestionarios.SelectedItem.Text.ToUpper().Contains("ESR"))
                     {
@@ -296,7 +337,7 @@ public partial class misCuestionarios : System.Web.UI.Page
                     {
                         if (ddlCuestionarios.SelectedItem.Text.Contains("ESR"))
                         {
-                            if (ddlCuestionarios.SelectedItem.Text.Contains("11+ años"))
+                            if (ddlCuestionarios.SelectedItem.Text.Contains("11+ aÃ±os"))
                             {
                                 if (!ddlCuestionarios.SelectedItem.Text.Contains("2014"))
                                 {
@@ -455,7 +496,7 @@ public partial class misCuestionarios : System.Web.UI.Page
     {
         try
         {
-            // Código temporal para cambiar la imagen del botón del master page
+            // Cï¿½digo temporal para cambiar la imagen del botï¿½n del master page
             //
             //((ImageButton)this.Master.FindControl("imbDiagnostico")).ImageUrl = "images/ESRbotonMenuInteriorOver_Diagnostico.jpg";
             //((ImageButton)this.Master.FindControl("imbDiagnostico")).Attributes["onmouseout"] = "'images/ESRbotonMenuInteriorOver_Diagnostico.jpg'";

@@ -80,7 +80,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
                     tblCellTituloEvaluacion.HorizontalAlign = HorizontalAlign.Center;
                     tblCellTituloEvaluacion.BackColor = System.Drawing.Color.Teal;
                     tblCellTituloEvaluacion.ForeColor = System.Drawing.Color.White;
-                    tblCellTituloEvaluacion.Text = "Evaluación";
+                    tblCellTituloEvaluacion.Text = "Evaluaciï¿½n";
                     tblRow.Cells.Add(tblCellTituloEvaluacion);
                 }
             }
@@ -91,7 +91,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
             //tblCellTituloEvidencias.HorizontalAlign = HorizontalAlign.Center;
             //tblCellTituloEvidencias.BackColor = System.Drawing.Color.Teal;
             //tblCellTituloEvidencias.ForeColor = System.Drawing.Color.White;
-            //tblCellTituloEvidencias.Text = "Evidencias del ámbito: " + respuestas.Tables["Evidencia_Indicador"].Select("idTema = " + drTema["idTema"].ToString()).Length.ToString();
+            //tblCellTituloEvidencias.Text = "Evidencias del ï¿½mbito: " + respuestas.Tables["Evidencia_Indicador"].Select("idTema = " + drTema["idTema"].ToString()).Length.ToString();
             //tblRow.Cells.Add(tblCellTituloEvidencias);
 
             tblAvance.Rows.Add(tblRow);
@@ -132,10 +132,11 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
                     tblCellIndicadorCalificacion.BackColor = System.Drawing.Color.Beige;
                     tblCellIndicadorCalificacion.VerticalAlign = VerticalAlign.Middle;
 
-                    //Si viene el parametro del id de Empresa se muestra el de la empresa que viene como parámetro
+                    //Si viene el parametro del id de Empresa se muestra el de la empresa que viene como parï¿½metro
                     if (Request.Params["idEmpresa"] == null)
                         tblCellIndicador.Text = "<a href=\"diagnostico.aspx?Content=visorDelCuestionario&idTema=" + drTema["idTema"].ToString() + "&idSubtema=" + drSubtema["idSubtema"].ToString() + "&idIndicador="
                             + rowIndi["idIndicador"].ToString() + "&idCuestionario=" + lblIdCuestionario.Text + "&cuestionario=" + lblNombreDeCuestionario.Text + "&Ordinal=" + rowIndi["ordinal"].ToString() + "\">" + rowIndi["ordinal"].ToString() + ". " + rowIndi["Indicador"].ToString() + "</a>";
+                    					
                     else
                         tblCellIndicador.Text = "<a href=\"diagnostico.aspx?Content=visorDelCuestionario&idTema=" + drTema["idTema"].ToString() + "&idSubtema=" + drSubtema["idSubtema"].ToString() + "&idIndicador="
                             + rowIndi["idIndicador"].ToString() + "&idCuestionario=" + lblIdCuestionario.Text + "&idEmpresa=" + Request.Params["idEmpresa"].ToString() + "&cuestionario=" + lblNombreDeCuestionario.Text + "&Ordinal=" + rowIndi["ordinal"].ToString() + "&bloqueado=true\">" + rowIndi["ordinal"].ToString() + ". " + rowIndi["Indicador"].ToString() + "</a>";
@@ -156,7 +157,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
                         //    TableCell tblCellIndicadorIncisoCalificacion = new TableCell();
 
                         //    // Tiene incisos
-                        //    // ¿Fue respondido ese inciso?
+                        //    // ï¿½Fue respondido ese inciso?
                         //    DataRow[] rowRespInciso = respuestas.Tables["Respuesta_Inciso"].Select("idTema = " + drTema["idTema"].ToString() + " and idIndicador = " + rowIndi["idIndicador"].ToString() + " and idInciso = '" + rowInciso["idInciso"].ToString() + "'");
                         //    if (rowRespInciso.GetLength(0) > 0)
                         //    {
@@ -175,7 +176,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
                         //    {
                         //        if (Convert.ToInt32(rowResp[0]["idTipoRespuesta"]) > 2)
                         //        {
-                        //            /// MRA: Checar esta condición
+                        //            /// MRA: Checar esta condiciï¿½n
                         //            /// 13/11/2011 21:53
                         //            tblCellIndicadorIncisoCalificacion.Text = "Sin respuesta";
                         //            tblCellIndicadorIncisoCalificacion.ForeColor = System.Drawing.Color.Red;
@@ -266,7 +267,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
                     }
                     else
                     {
-                        /// MRA: Checar esta condición
+                        /// MRA: Checar esta condiciï¿½n
                         /// 13/11/2011 21:54
                         tblCellIndicadorCalificacion.Text = "Sin Respuesta";
                         tblCellIndicadorCalificacion.ForeColor = System.Drawing.Color.Red;
@@ -298,7 +299,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
                             tblCellTipoEvidencia.BackColor = System.Drawing.Color.Beige;
 
                             bool tieneArchivo = false;
-
+							
                             // Hay que buscar que en el indicador
                             foreach (DataRow drEvidencia in respuestas.Tables["Evidencia_Indicador"].Select("idTema = " + drTema["idTema"].ToString() + " and idIndicador = " + rowIndi["idIndicador"].ToString()))
                             {
@@ -449,8 +450,8 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
                     tblCellTituloPrecalificacion.ForeColor = System.Drawing.Color.White;
                     tblCellEvaluador.ForeColor = System.Drawing.Color.White;
                     tblCellFactorAnt.ForeColor = System.Drawing.Color.White;
-                    tblCellTituloPrecalificacion.Text = "Precalificación";
-                    tblCellEvaluador.Text = "Evaluación";
+                    tblCellTituloPrecalificacion.Text = "Precalificaciï¿½n";
+                    tblCellEvaluador.Text = "Evaluaciï¿½n";
                     tblCellFactorAnt.Text = "Total";
 
                     tblRowSubtema.Cells.Add(tblCellTituloPrecalificacion);
@@ -471,7 +472,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
         Panel1.Controls.Add(tblAvance);
         if (flgLiberaCuestionario && iContadorIndicadores > 0)
         {
-            chkConfirmaLiberacion.Text = "Estoy de acuerdo y autorizo la evaluación de todo lo expresado en este cuestionario.<br>Una vez liberado ya no tendré acceso al cuestionario.<br>";
+            chkConfirmaLiberacion.Text = "Estoy de acuerdo y autorizo la evaluaciÃ³n de todo lo expresado en este cuestionario.<br>Una vez liberado ya no tendrÃ© acceso al cuestionario.<br>";
             chkConfirmaLiberacion.Checked = false;
             chkConfirmaLiberacion.AutoPostBack = false;
 
@@ -481,7 +482,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
             btnLiberarCuestionario.Text = "Liberar cuestionario";
             btnLiberarCuestionario.Click += new System.EventHandler(this.btnLiberarCuestionario_Click);
             btnLiberarCuestionario.Attributes.Add("onclick",
-           "javascript:alert('¿Está seguro de querer liberar el cuestionario para evaluación?')");
+           "javascript:alert('ï¿½Estï¿½ seguro de querer liberar el cuestionario para evaluaciÃ³n?')");
 //            var answer = confirm ("Are you having fun?")
 //if (answer)
 //alert ("Woo Hoo! So am I.")
@@ -495,9 +496,9 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Método para liberar el cuestionario
-    /// Tiene que validar que esté completo al 100%
-    /// Que estén seleccionadas todas las evidencias electrónicas.
+    /// Mï¿½todo para liberar el cuestionario
+    /// Tiene que validar que estï¿½ completo al 100%
+    /// Que estï¿½n seleccionadas todas las evidencias electrï¿½nicas.
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -512,15 +513,15 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
             cuestionario.idUsuario = Session["idUsuario"].ToString();
             cuestionario.idPais = Convert.ToInt32(Session["idPais"].ToString());
 
-            //Falta mandar mensaje de confirmación
+            //Falta mandar mensaje de confirmaciï¿½n
             if (cuestionario.LiberaCuestionario())
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Liberación de cuestionario", "alert('Su cuestionario fue liberado con éxito. ¡Felicidades!');", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "LiberaciÃ³n de cuestionario", "alert('Su cuestionario fue liberado con Ã©xito. Â¡Felicidades!');", true);
                 Response.Redirect("main.aspx", false);
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Liberación de cuestionario", "alert('Hubo un error al liberar su cuestionario, intente salir, entrar a la aplicación y liberar cuestionario nuevamente.');", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Liberaciï¿½n de cuestionario", "alert('Hubo un error al liberar su cuestionario, intente salir, entrar a la aplicaciÃ³n y liberar cuestionario nuevamente.');", true);
                 
             }
            
@@ -593,7 +594,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
 
         //if (fResultado <= 3)
         //{
-        //    // Aqui guardar el valor de la precalificacion y la evaluación del revisor
+        //    // Aqui guardar el valor de la precalificacion y la evaluaciï¿½n del revisor
         //    //Indicador indi = new Indicador();
         //    //indi.idIndicador = Convert.ToInt32(lblidIndicador.Text);
         //    //indi.idTema = Convert.ToInt32(lblidTema.Text); ;
@@ -621,7 +622,7 @@ public partial class avanceDeDiagnostico : System.Web.UI.UserControl
         //}
         //else
         //{
-        //    lblError.Text = "El valor ingresado en la evaluación supera los 3 puntos destinados para este indicador, por favor ingrese otro valor.";
+        //    lblError.Text = "El valor ingresado en la evaluaciï¿½n supera los 3 puntos destinados para este indicador, por favor ingrese otro valor.";
         //}
 
     }

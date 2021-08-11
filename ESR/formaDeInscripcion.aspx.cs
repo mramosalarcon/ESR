@@ -67,7 +67,13 @@ public partial class formaDeInscripcion : System.Web.UI.Page
                 //sw.WriteLine("temas: " + Session["temas"].ToString());
                 Session["idPais"] = usr.pais;
                 //sw.WriteLine("idPais: " + Session["idPais"].ToString());
-                result = true;
+                Empresa empresa2 = new Empresa();
+				empresa2.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+				if (empresa2.cargaNombre())
+				{
+					Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+					result = true;
+				}
             }
             else
             {
@@ -120,6 +126,14 @@ public partial class formaDeInscripcion : System.Web.UI.Page
                         Response.Redirect("~/login.aspx");
                     }
                 }
+                if (Session["empresa"] != null && Session["empresa"].ToString() != "")
+				{
+					lblEmpresa.Text = Session["empresa"].ToString();
+				}
+				else
+				{
+					lblEmpresa.Visible = false;
+				}
                 PopulateMenu();
                 string content = this.GetContent();
                 if (content != string.Empty)
@@ -136,13 +150,13 @@ public partial class formaDeInscripcion : System.Web.UI.Page
             catch
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "App Error",
-                    "alert('Hubo un error al cargar la página, por favor inicie sesión nuevamente.');", true);
+                    "alert('Hubo un error al cargar la pÃ¡gina, por favor inicie sesiÃ³n nuevamente.');", true);
             }
         }
         else
         {
             ClientScript.RegisterStartupScript(this.GetType(), "Login Error",
-                "alert('Para acceder al registro, primero debe iniciar sesión');", true);
+                "alert('Para acceder al registro, primero debe iniciar sesiÃ³n');", true);
             Response.Redirect("login.aspx");
         }
     }
@@ -150,7 +164,7 @@ public partial class formaDeInscripcion : System.Web.UI.Page
     private void PopulateMenu()
     {
 
-        // Código temporal para cambiar la imagen del botón del master page
+        // Cï¿½digo temporal para cambiar la imagen del botï¿½n del master page
         //
         //((ImageButton)this.Master.FindControl("imbRegistro")).ImageUrl = "images/ESRbotonMenuInteriorOver_Registro.jpg";
         //((ImageButton)this.Master.FindControl("imbRegistro")).Attributes["onmouseout"] = "'images/ESRbotonMenuInteriorOver_Registro.jpg'";
@@ -210,7 +224,7 @@ public partial class formaDeInscripcion : System.Web.UI.Page
         else
         {
             ClientScript.RegisterStartupScript(this.GetType(), "Login Error", 
-                "alert('Para acceder al registro, primero debe iniciar sesión');", true);
+                "alert('Para acceder al registro, primero debe iniciar sesiÃ³n');", true);
         }
     }
     protected override void OnPreInit(EventArgs e)

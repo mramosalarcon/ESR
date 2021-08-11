@@ -35,6 +35,13 @@ public partial class ayuda : System.Web.UI.Page
                 //sw.WriteLine("temas: " + Session["temas"].ToString());
                 Session["idPais"] = usr.pais;
                 //sw.WriteLine("idPais: " + Session["idPais"].ToString());
+                Empresa empresa2 = new Empresa();
+				empresa2.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+				if (empresa2.cargaNombre())
+				{
+					Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+					result = true;
+				}
                 result = true;
             }
             else
@@ -86,10 +93,10 @@ public partial class ayuda : System.Web.UI.Page
             catch
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "App Error",
-                    "alert('Hubo un error al cargar la página, por favor inicie sesión nuevamente.');", true);
+                    "alert('Hubo un error al cargar la pÃ¡gina, por favor inicie sesiÃ³n nuevamente.');", true);
             }
         }
-        // Código temporal para cambiar la imagen del botón del master page
+        // Cï¿½digo temporal para cambiar la imagen del botï¿½n del master page
         //
         //((ImageButton)this.Master.FindControl("imbContacto")).ImageUrl = "images/ESRbotonMenuInteriorOver_Contacto.jpg";
         //((ImageButton)this.Master.FindControl("imbContacto")).Attributes["onmouseout"] = "'images/ESRbotonMenuInteriorOver_Contacto.jpg'";

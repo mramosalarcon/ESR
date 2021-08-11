@@ -38,14 +38,14 @@ public partial class administradorDeEmpresas : System.Web.UI.Page
                 {
                     grdEmpresas.DataSource = null;
                     grdEmpresas.DataBind();
-                    lblMensaje.Text = "El criterio de búsqueda no arrojo ningún resultado, intente de nuevo.";
+                    lblMensaje.Text = "El criterio de bÃºsqueda no arrojÃ³ ningÃºn resultado, intente de nuevo.";
                 }
             }
             else
             {
                 grdEmpresas.DataSource = null;
                 grdEmpresas.DataBind();
-                lblMensaje.Text = "Ingrese un criterio de búsqueda más específico.";
+                lblMensaje.Text = "Ingrese un criterio de bÃºsqueda mÃ¡s especÃ­fico.";
             }
         }
         else
@@ -72,7 +72,7 @@ public partial class administradorDeEmpresas : System.Web.UI.Page
             {
                 grdEmpresas.DataSource = null;
                 grdEmpresas.DataBind();
-                lblMensaje.Text = "El criterio de búsqueda no arrojo ningún resultado, intente de nuevo.";
+                lblMensaje.Text = "El criterio de bÃºsqueda no arrojo ningÃºn resultado, intente de nuevo.";
             }
 
         }
@@ -88,20 +88,20 @@ public partial class administradorDeEmpresas : System.Web.UI.Page
         // get the GridViewRow where the command is raised
         GridViewRow selectedRow = ((GridView)e.CommandSource).Rows[index];
         if (e.CommandName == "evidencias")
-        {
-            Response.Redirect("misCuestionarios.aspx?nombreReporte=EvidenciasPorCuestionario&idEmpresa=" + selectedRow.Cells[0].Text, false);
+        {		
+            Response.Redirect("misCuestionarios.aspx?nombreReporte=EvidenciasPorCuestionario&idEmpresa=" + selectedRow.Cells[0].Text + "&idCuestionario=" + selectedRow.Cells[5].Text, false);
         }
         if (e.CommandName == "avance")
         {
-            Response.Redirect("misCuestionarios.aspx?avance=true&evidencias=true&evaluacion=true&idEmpresa=" + selectedRow.Cells[0].Text, false);
+            Response.Redirect("misCuestionarios.aspx?avance=true&evidencias=true&evaluacion=true&idEmpresa=" + selectedRow.Cells[0].Text + "&idCuestionario=" + selectedRow.Cells[5].Text, false);
         }
         else if (e.CommandName=="individual")
         {
-            Response.Redirect("misCuestionarios.aspx?individual=true&idEmpresa=" + selectedRow.Cells[0].Text, false);
+            Response.Redirect("misCuestionarios.aspx?individual=true&idEmpresa=" + selectedRow.Cells[0].Text + "&idCuestionario=" + selectedRow.Cells[5].Text, false);
         }
         else if (e.CommandName == "retro")
         {
-            Response.Redirect("misCuestionarios.aspx?nombreReporte=retroalimentacion&idEmpresa=" + selectedRow.Cells[0].Text, false);
+            Response.Redirect("misCuestionarios.aspx?nombreReporte=retroalimentacion&idEmpresa=" + selectedRow.Cells[0].Text + "&idCuestionario=" + selectedRow.Cells[5].Text, false);
         }
         else if (e.CommandName == "eliminar")
         {
@@ -145,6 +145,13 @@ public partial class administradorDeEmpresas : System.Web.UI.Page
                 sw.WriteLine("temas: " + Session["temas"].ToString());
                 Session["idPais"] = usr.pais;
                 sw.WriteLine("idPais: " + Session["idPais"].ToString());
+                Empresa empresa2 = new Empresa();
+				empresa2.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+				if (empresa2.cargaNombre())
+				{
+					Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+					result = true;
+				}
                 result = true;
             }
             else
@@ -217,13 +224,13 @@ public partial class administradorDeEmpresas : System.Web.UI.Page
                     }
 
                     ClientScript.RegisterStartupScript(this.GetType(), "App Error",
-                        "alert('Hubo un error al cargar la página, por favor inicie sesión nuevamente.');", true);
+                        "alert('Hubo un error al cargar la pÃ¡gina, por favor inicie sesiÃ³n nuevamente.');", true);
 
                 }
             }
             else
             {
-                string sMensaje = "Para acceder a la herramienta de administración, primero debe iniciar sesión";
+                string sMensaje = "Para acceder a la herramienta de administraciÃ³n, primero debe iniciar sesiÃ³n";
                 ClientScript.RegisterStartupScript(this.GetType(), "LoginError",
                     String.Format("alert('{0}');", sMensaje.Replace("'", "\'")), true);
                 Response.Redirect("login.aspx", false);

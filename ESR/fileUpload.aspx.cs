@@ -35,7 +35,7 @@ public partial class fileUpload : System.Web.UI.Page
                     
                     // MRA 27/10/2010
                     // Esta linea esta rara
-                    // ¿Que pasa si sube un documento una empresa que no es la que se esta consultando?
+                    // ï¿½Que pasa si sube un documento una empresa que no es la que se esta consultando?
                     
                     respuestaIndicador.idEmpresa = Convert.ToInt32(Session["idEmpresa"].ToString());
                     respuestaIndicador.idCuestionario = Convert.ToInt32(Request.QueryString["idCuestionario"]);
@@ -54,12 +54,12 @@ public partial class fileUpload : System.Web.UI.Page
                     }
                     else
                     {
-                        throw new Exception("El tamaño máximo permitido para subir archivos fue excedido");
+                        throw new Exception("El tamaÃ±o mÃ¡ximo permitido para subir archivos fue excedido");
                     }
 
                     if (respuestaIndicador.GuardarEvidencia())
                     {
-                        lblMensaje.Text = "El archivo fue enviado con éxito <input type=\"button\" onclick=\"opener.location.reload(true);self.close();\" value=\"Cerrar\" name=\"btnCerrar\">";
+                        lblMensaje.Text = "El archivo fue enviado con Ã©xito <input type=\"button\" onclick=\"opener.location.reload(true);self.close();\" value=\"Cerrar\" name=\"btnCerrar\">";
                         //imgWait.Visible = false;
                     }
                     else
@@ -95,12 +95,12 @@ public partial class fileUpload : System.Web.UI.Page
                     }
                     else
                     {
-                        throw new Exception("El tamaño máximo permitido para subir archivos fue excedido");
+                        throw new Exception("El tamaÃ±o mÃ¡ximo permitido para subir archivos fue excedido");
                     }
 
                     if (respuestaInciso.GuardarEvidencia())
                     {
-                        lblMensaje.Text = "El archivo fue enviado con éxito <input type=\"button\" onclick=\"opener.location.reload(true);self.close();\" value=\"Cerrar\" name=\"btnCerrar\">";
+                        lblMensaje.Text = "El archivo fue enviado con Ã©xito <input type=\"button\" onclick=\"opener.location.reload(true);self.close();\" value=\"Cerrar\" name=\"btnCerrar\">";
                         //imgWait.Visible = false;
                     }
                     else

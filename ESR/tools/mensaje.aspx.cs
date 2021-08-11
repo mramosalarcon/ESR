@@ -1,9 +1,12 @@
 using System;
 
-public partial class mensaje : System.Web.UI.Page
+namespace ESR.tools
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class mensaje : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

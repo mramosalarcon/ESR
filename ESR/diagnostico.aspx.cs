@@ -69,6 +69,18 @@ public partial class diagnostico : System.Web.UI.Page
                 //sw.WriteLine("temas: " + Session["temas"].ToString());
                 Session["idPais"] = usr.pais;
                 //sw.WriteLine("idPais: " + Session["idPais"].ToString());
+                Empresa empresa2 = new Empresa();
+				empresa2.idEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+				if (empresa2.cargaNombre())
+				{
+					Session["empresa"] = empresa2.nombre + " - " + empresa2.nombreCorto;
+					result = true;
+				}
+				if (base.Request.Params["idCuestionario"] != null)
+				{
+					empresa2.idCuestionario = Convert.ToInt32(base.Request.Params["idCuestionario"]);
+					Session["cuestionario"] = empresa2.CargaCuestionario();
+				}
                 result = true;
             }
             else
@@ -111,9 +123,27 @@ public partial class diagnostico : System.Web.UI.Page
                         Response.Redirect("~/login.aspx", false);
                     }
                 }
+                if (Session["empresa"] != null && Session["empresa"].ToString() != "")
+				{
+					lblEmpresa.Text = Session["empresa"].ToString();
+				}
+				else
+				{
+					lblEmpresa.Visible = false;
+				}
+				if (Session["cuestionario"] != null && Session["cuestionario"].ToString() != "")
+				{
+					lblProceso.Text = Session["cuestionario"].ToString();
+					lblProceso.Visible = true;
+				}
+				else
+				{
+					lblProceso.Text = "AtenciÃ³n: No hay cuestionario disponible. Favor de cerrar sesiÃ³n.";
+					lblProceso.Visible = false;
+				}
                 string content = GetContent();
                 // Hay que analizar el querystring porque aqui podemos poner solo el menu del tema
-                // que se está contestando y no todo el menu
+                // que se estï¿½ contestando y no todo el menu
 
                 if (content != null && content != string.Empty)
                 {
@@ -140,7 +170,7 @@ public partial class diagnostico : System.Web.UI.Page
                     contentControl.Controls[3].Visible = false;
 
 
-                    // Cuando se ejecuta esta condición?
+                    // Cuando se ejecuta esta condiciï¿½n?
                     if (Request.Params["idIndicador"] != null)
                     {
                         ((Label)contentControl.Controls[5]).Text = Request.Params["idIndicador"];
@@ -196,7 +226,7 @@ public partial class diagnostico : System.Web.UI.Page
         }
         else
         {
-            string sMensaje = "Para acceder a la herramienta de administración, primero debe iniciar sesión";
+            string sMensaje = "Para acceder a la herramienta de administraciÃ³n, primero debe iniciar sesiÃ³n";
             ClientScript.RegisterStartupScript(this.GetType(), "LoginError",
                 String.Format("alert('{0}');", sMensaje.Replace("'", "\'")), true);
             Response.Redirect("login.aspx", false);
@@ -221,10 +251,12 @@ public partial class diagnostico : System.Web.UI.Page
         if (dtCuestionario.Rows.Count > 0)
         {
             lblIdCuestionario.Text += dtCuestionario.Rows[0]["nombre"].ToString();
-            lblIdCuestionario.Visible = true;
+            lblIdCuestionario.Visible = false;
+			Session["cuestionario"] = dataTable.Rows[0]["nombre"].ToString();
+			lblProceso.Text = Session["cuestionario"].ToString();
         }
 
-        // Lo que está en la variable de sesión son los temas a los que tiene permiso el usuario
+        // Lo que estï¿½ en la variable de sesiï¿½n son los temas a los que tiene permiso el usuario
         // esa tabla se llena en el login por eso es necesario salir y entrar al hacer cambio de permisos
         DataTable dtTemas = (DataTable)Session["temas"];
         if (dtTemas.Rows.Count == 0 && Request.Params["ReadOnly"] != null)
@@ -243,40 +275,41 @@ public partial class diagnostico : System.Web.UI.Page
             {
                 // Preguntar si el tema en turno se encuentra en dtTemas que son los permisos del usuario
                 DataRow[] arrTema = dtTemas.Select("idTema = " + drTema["idTema"].ToString());
-                if (arrTema.GetLength(0) > 0 || Session["idUsuario"].ToString() == "owner@cemefi.org" || Request.Params["ReadOnly"] != null)
+                if (arrTema.GetLength(0) <= 0 && Session["idUsuario"].ToString() == "owner@cemefi.org" && Request.Params["ReadOnly"] == null)                
                 {
-                    // El usuario tiene permiso para contestar el área del cuestionario
-                    //foreach (DataRow temaPermiso in dtTemas.Rows)
-                    //{
-                    TableCell tclTema = new TableCell();
-
-                    //System.Web.UI.WebControls.Menu menuArea = new System.Web.UI.WebControls.Menu();
-                    //menuArea.MenuItemClick += new MenuEventHandler(menuArea_MenuItemClick);
-
-                    MenuItem tema = new MenuItem("", drTema["idTema"].ToString());
-                    //MenuItem tema = new MenuItem();
-                    if (drTema["imageUrl"].ToString() != string.Empty)
-                    {
-                        tema.ImageUrl = drTema["imageUrl"].ToString();
-                    }
-
-                    tema.Selectable = false;
-                    menuArea.Items.Add(tema);
-
-                    foreach (DataRow drSubtema in drTema.GetChildRows("subtema"))
-                    {
-                        MenuItem subtema = new MenuItem(drSubtema["descripcion"].ToString(), drSubtema["idSubtema"].ToString());
-                        subtema.Selectable = false;
-                        tema.ChildItems.Add(subtema);
-                        foreach (DataRow drIndicador in drSubtema.GetChildRows("indicador"))
-                        {
-                            MenuItem indicador = new MenuItem(drIndicador["ordinal"].ToString() + ". " + drIndicador["corto"].ToString(), drIndicador["idIndicador"].ToString());
-                            subtema.ChildItems.Add(indicador);
-                        }
-                    }
-                    tclTema.Controls.Add(menuArea);
-                    trwTemas.Cells.Add(tclTema);
+                    continue;
                 }
+                // El usuario tiene permiso para contestar el ï¿½rea del cuestionario
+                //foreach (DataRow temaPermiso in dtTemas.Rows)
+                //{
+                TableCell tclTema = new TableCell();
+
+                //System.Web.UI.WebControls.Menu menuArea = new System.Web.UI.WebControls.Menu();
+                //menuArea.MenuItemClick += new MenuEventHandler(menuArea_MenuItemClick);
+
+                MenuItem tema = new MenuItem("", drTema["idTema"].ToString());
+                //MenuItem tema = new MenuItem();
+                if (drTema["imageUrl"].ToString() != string.Empty)
+                {
+                    tema.ImageUrl = drTema["imageUrl"].ToString();
+                }
+
+                tema.Selectable = false;
+                menuArea.Items.Add(tema);
+
+                foreach (DataRow drSubtema in drTema.GetChildRows("subtema"))
+                {
+                    MenuItem subtema = new MenuItem(drSubtema["descripcion"].ToString(), drSubtema["idSubtema"].ToString());
+                    subtema.Selectable = false;
+                    tema.ChildItems.Add(subtema);
+                    foreach (DataRow drIndicador in drSubtema.GetChildRows("indicador"))
+                    {
+                        MenuItem indicador = new MenuItem(drIndicador["ordinal"].ToString() + ". " + drIndicador["corto"].ToString(), drIndicador["idIndicador"].ToString());
+                        subtema.ChildItems.Add(indicador);
+                    }
+                }
+                tclTema.Controls.Add(menuArea);
+                trwTemas.Cells.Add(tclTema);
             }
             tblTemas.Rows.Add(trwTemas);
             pMenu.Controls.Add(tblTemas);
@@ -285,7 +318,7 @@ public partial class diagnostico : System.Web.UI.Page
         {
             // Mensaje de error
             //Response.Write("<span style=\"color: white\">Su cuenta de usuario no cuenta con permisos para contestar este cuestionario, contacte al responsable de ESR en su empresa.</span>");
-            lblIdCuestionario.Text = "<span style=\"color: red\">Este usuario no cuenta con permisos para contestar el cuestionario, contacte al Responsable RSE en SU empresa para que le asigne areas del cuestionario o vaya a Administración de usuarios y seleccione las areas.</span>";
+            lblIdCuestionario.Text = "<span style=\"color: red\">Este usuario no cuenta con permisos para contestar el cuestionario, contacte al Responsable RSE en SU empresa para que le asigne areas del cuestionario o vaya a AdministraciÃ³n de usuarios y seleccione las areas.</span>";
             btnAnterior.Visible = false;
             btnSiguiente.Visible = false;
             btnImprimir.Visible = false;
@@ -344,7 +377,7 @@ public partial class diagnostico : System.Web.UI.Page
     }
 
     /// <summary>
-    /// Manda llamar un método para obtener el idIndicador en base al Ordinal que sigue
+    /// Manda llamar un mï¿½todo para obtener el idIndicador en base al Ordinal que sigue
     /// </summary>
     /// <param name="idCuestionario"></param>
     /// <param name="idTema"></param>
@@ -406,7 +439,7 @@ public partial class diagnostico : System.Web.UI.Page
             }
             else
             {
-                Response.Write("<b>Los indicadores para este tema se han terminado, por favor seleccione un tema distinto del menú.</b>");
+                Response.Write("<b>Los indicadores para este tema se han terminado, por favor seleccione un tema distinto del menÃº.</b>");
             }
         }
         

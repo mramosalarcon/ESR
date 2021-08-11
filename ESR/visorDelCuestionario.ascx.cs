@@ -13,8 +13,8 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
     private TextBox txtCalificacionRevisor = new TextBox();
     private int id = 0;
     /// <summary>
-    /// Si viene como parámetro el idEmpresa se muestra la información de la empresa
-    /// si no, solo se muestra la información de la empresa que esta logeada.
+    /// Si viene como parï¿½metro el idEmpresa se muestra la informaciï¿½n de la empresa
+    /// si no, solo se muestra la informaciï¿½n de la empresa que esta logeada.
     /// </summary>
     /// <returns></returns>
     protected int GetIdEmpresa()
@@ -53,8 +53,8 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Página que muestra el indicador seleccionado del menu. 
-    /// Es el método mas importante de la aplicación
+    /// Pï¿½gina que muestra el indicador seleccionado del menu. 
+    /// Es el mï¿½todo mas importante de la aplicaciï¿½n
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -108,12 +108,12 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                 // Para despues desplegar las respuestas
 
                 // Inserta Indicadores
-
+            
                 foreach (DataRow drIndicador in dsIndicadores.Tables["Indicador"].Rows)
                 {
                     //Muestra el tema -> subtema
                     Label lblUbicacion = new Label();
-                    lblUbicacion.Text = "<p>Tema: <b>" + drIndicador["Tema"].ToString() + "</b>, Subtema: <b>" + drIndicador["Subtema"].ToString() + "</b>, Fase de Implementación: <b>" + drIndicador["faseImplementacion"].ToString() + "</b>.</p>";
+                    lblUbicacion.Text = "<p>Tema: <b>" + drIndicador["Tema"].ToString() + "</b>, Subtema: <b>" + drIndicador["Subtema"].ToString() + "</b>, Fase de ImplementaciÃ³n: <b>" + drIndicador["faseImplementacion"].ToString() + "</b>.</p>";
                     if (respuestasEmpresa.idCuestionario == 10 && respuestasEmpresa.idTema == 3)
                     {
                         lblUbicacion.Text += "<p class=\"style1\">&nbsp;&nbsp;<b>Los indicadores del tema de Consumo Responsable son opcionales para este cuestionario.</b></p>";
@@ -150,7 +150,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //Aqui meter la etiqueta y el texto para el revisor
                     Label lblMensajeCalificacion = new Label();
                     lblMensajeCalificacion.ForeColor = System.Drawing.Color.Red;
-                    lblMensajeCalificacion.Text = "Precalificación: ";
+                    lblMensajeCalificacion.Text = "Precalificaciï¿½n: ";
                     lblMensajeCalificacion.Visible = false;
 
                     lblCalificacion.ForeColor = System.Drawing.Color.Red;
@@ -172,7 +172,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     lblMensajeCalificacion.Visible = true;
                     Label lblCalifRevisor = new Label();
                     lblCalifRevisor.ForeColor = System.Drawing.Color.Red;
-                    lblCalifRevisor.Text = "Calificación del evaluador: ";
+                    lblCalifRevisor.Text = "CalificaciÃ³n del evaluador: ";
 
                     CheckBox chkRevisado = new CheckBox();
                     chkRevisado.Text = "Indicador revisado";
@@ -187,7 +187,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     txtCalificacionRevisor.Width = 30;
 
                     Button btnActualizarEvaluacion = new Button();
-                    btnActualizarEvaluacion.Text = "Guardar Evaluación";
+                    btnActualizarEvaluacion.Text = "Guardar Evaluaciï¿½n";
                     btnActualizarEvaluacion.Click += new System.EventHandler(this.btnActualizarEvaluacion_Click);
 
                     TableRow tblRowCal2 = new TableRow();
@@ -230,14 +230,14 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //    UpdatePanel panTiposDeRespuestaInciso = new UpdatePanel();
                     //    panTiposDeRespuestaInciso.ID = "panTiposdeRespuestaInciso" + "_" + drIndicador["idIndicador"].ToString();
                     //    bool rbFlag = false;
-                    //    if (lblReadOnly.Text == "") // ¿Para que sirve esta condición? MRA: 09/11/09 
+                    //    if (lblReadOnly.Text == "") // ï¿½Para que sirve esta condiciï¿½n? MRA: 09/11/09 
                     //        //R. Para no mostrar los indicadores en modo de solo lectura. MRA: 16/06/2010
                     //    {
-                    //        // Inserta el catálogo del tipo de respuesta
+                    //        // Inserta el catï¿½logo del tipo de respuesta
                     //        foreach (DataRow drTipoRespuestaInciso in dsIndicadores.Tables["Tipo_Respuesta"].Rows)
                     //        {
                     //            RadioButton rb = new RadioButton();
-                    //            // 1_No, 1_No aplica, 1_Compromiso Público, 1_Si, 1_Mejor práctica
+                    //            // 1_No, 1_No aplica, 1_Compromiso Pï¿½blico, 1_Si, 1_Mejor prï¿½ctica
                     //            rb.ID = drIndicador["idIndicador"].ToString() + "_" + drTipoRespuestaInciso["idTipoRespuesta"].ToString();
                     //            rb.Text = drTipoRespuestaInciso["descripcion"].ToString() + "<br />";
                     //            rb.GroupName = "tipoRespuestaInciso" + drIndicador["idIndicador"].ToString();
@@ -271,7 +271,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //                panTiposDeEvidencia.ID = "panTiposDeEvidencia" + "_" + drIndicador["idIndicador"].ToString() + "_" + drTipoRespuestaInciso["descripcion"].ToString();
 
                     //                // Para cada registro en la tabla Tipos_Evidencia
-                    //                // crea un check box y añade los controles para subir las evidencias.
+                    //                // crea un check box y aï¿½ade los controles para subir las evidencias.
                     //                Table tblArchivos = new Table();
                     //                tblArchivos.BorderWidth = 0;
 
@@ -292,7 +292,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //                    CheckBox chkB = new CheckBox();
                     //                    // Asigna el ID al checkbox, ejemplo: tipoEvidencia_1_1, tipoEvidencia_1_2
                     //                    chkB.ID = "tipoEvidencia_" + drIndicador["idIndicador"].ToString() + "_" + drTipoRespuestaInciso["idTipoRespuesta"].ToString() + "_" + evi["idTipoEvidencia"].ToString();
-                    //                    // Añade la descripción de la evidencia y agrega el control al UpdatePanel
+                    //                    // Aï¿½ade la descripciï¿½n de la evidencia y agrega el control al UpdatePanel
                     //                    chkB.Text = evi["descripcion"].ToString();
                     //                    chkB.AutoPostBack = true;
                     //                    chkB.CheckedChanged += new System.EventHandler(this.chkB_CheckedChange);
@@ -353,7 +353,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //                            }
                     //                        }
                     //                    }
-                    //                    //Botón "Adjuntar archivo"
+                    //                    //Botï¿½n "Adjuntar archivo"
                     //                    Button btnOtro = new Button();
                     //                    btnOtro.Enabled = chkB.Checked;
                     //                    btnOtro.ID = "btnOtro" + "_" + drIndicador["idIndicador"].ToString() + "_" + drTipoRespuestaInciso["idTipoRespuesta"].ToString() + "_" + evi["idTipoEvidencia"].ToString();
@@ -431,7 +431,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //            foreach (DataRow drTiposDeRepuestaInciso in dsIndicadores.Tables["Tipo_Respuesta"].Rows)
                     //            {
                     //                RadioButton rbTiposDeRepuestaInciso = new RadioButton();
-                    //                // 1_a_No, 1_a_No aplica, 1_a_Compromiso Público, 1_a_Si, 1_a_Mejor práctica
+                    //                // 1_a_No, 1_a_No aplica, 1_a_Compromiso Pï¿½blico, 1_a_Si, 1_a_Mejor prï¿½ctica
                     //                rbTiposDeRepuestaInciso.ID = drIndicador["idIndicador"].ToString() + "_" + drInciso["idInciso"] + "_" + drTiposDeRepuestaInciso["idTipoRespuesta"].ToString();
                     //                rbTiposDeRepuestaInciso.Text = drTiposDeRepuestaInciso["descripcion"].ToString() + "<br>";
                     //                rbTiposDeRepuestaInciso.GroupName = "tipoRespuestaInciso" + "_" + drIndicador["idIndicador"].ToString() + "_" + drInciso["idInciso"].ToString();
@@ -500,7 +500,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
 
                     //                                foreach (DataRow drEvidencia in rowEvidenciaInciso)
                     //                                {
-                    //                                    // En este if se realiza el cálculo del valor de las evidencias
+                    //                                    // En este if se realiza el cï¿½lculo del valor de las evidencias
                     //                                    if (drEvidencia["descripcion"].ToString().ToUpper() != evi["descripcion"].ToString().ToUpper())
                     //                                    {
                     //                                        TableRow tblRowEvi = new TableRow();
@@ -582,7 +582,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //            panRespuestasInciso.Visible = true;
                     //            panIncisos.ContentTemplateContainer.Controls.Add(panRespuestasInciso);
                     //        }
-                    //    } //Fin del for de inserción de incisos
+                    //    } //Fin del for de inserciï¿½n de incisos
 
                     //    if (lblCalificacion.Text != "")
                     //    {
@@ -605,7 +605,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //        panIncisos.Visible = true;
                     //    }
 
-                    //    // Agrega preguntas adicionales y grupos de relación
+                    //    // Agrega preguntas adicionales y grupos de relaciï¿½n
                     //    panIncisos.ContentTemplateContainer.Controls.Add(CargaGruposDeRelacion(dsIndicadores.Tables["Grupos_Relacion"], dsRespuestas.Tables["Respuesta_Grupo"]));
                     //    panIncisos.ContentTemplateContainer.Controls.Add(CargaPreguntasAdicionales(dsIndicadores.Tables["Pregunta_Adicional"], dsRespuestas.Tables["Respuesta_Pregunta_Adicional"]));
 
@@ -618,7 +618,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     #endregion Manejo de Incisos
 
 
-                    ///Por aqui hay que poner el codigo para presentar la evaluacion de la fase y si no alcanza la calificación, entonces no puede avanzar
+                    ///Por aqui hay que poner el codigo para presentar la evaluacion de la fase y si no alcanza la calificaciï¿½n, entonces no puede avanzar
                     if (drIndicador["faseImplementacion"].ToString() != "I")
                     {
                         //lblReadOnly.Text = "ReadOnly";
@@ -637,12 +637,12 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                             // Crea un nuevo RadioButton para cada respuesta, le pone el id del indicador y 
                             // la descripcion del tipo de respuesta, ejemplo: 1_No
                             RadioButton rbTiposDeRespuesta = new RadioButton();
-                            // 1_No, 1_No aplica, 1_Compromiso Público, 1_Si, 1_Mejor práctica
+                            // 1_No, 1_No aplica, 1_Compromiso Pï¿½blico, 1_Si, 1_Mejor prï¿½ctica
                             // 1022_1, 1022_2, 1022_3, 1022_4, 1022_5
                             rbTiposDeRespuesta.ID = drIndicador["idIndicador"].ToString() + "_" + drTipoRespuesta["idTipoRespuesta"].ToString();
                             rbTiposDeRespuesta.Text = drTipoRespuesta["descripcion"].ToString() + "<br>";
 
-                            // Los agrupa por indicador, ejemplo: respuesta_1, y asigna el método del evento
+                            // Los agrupa por indicador, ejemplo: respuesta_1, y asigna el mï¿½todo del evento
                             rbTiposDeRespuesta.GroupName = "tipoRespuesta" + "_" + drIndicador["idIndicador"].ToString();
                             rbTiposDeRespuesta.AutoPostBack = true;
 
@@ -659,7 +659,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                                 }
                             }
                             rbTiposDeRespuesta.CheckedChanged += new System.EventHandler(rbInciso_CheckedChanged);
-                            // Añade el control al panel
+                            // Aï¿½ade el control al panel
 
                             panTiposDeRespuesta.ContentTemplateContainer.Controls.Add(rbTiposDeRespuesta);
 
@@ -672,7 +672,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                                 panTiposDeEvidencia.ID = "panTiposDeEvidencia" + "_" + drIndicador["idIndicador"].ToString() + "_" + drTipoRespuesta["descripcion"].ToString();
 
                                 // Para cada registro en la tabla Tipos_Evidencia
-                                // crea un check box y añade los controles para subir las evidencias.
+                                // crea un check box y aï¿½ade los controles para subir las evidencias.
                                 Table tblArchivos = new Table();
                                 tblArchivos.BorderWidth = 0;
 
@@ -696,7 +696,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                                     CheckBox chkB = new CheckBox();
                                     // Asigna el ID al checkbox, ejemplo: tipoEvidencia_1_1, tipoEvidencia_1_2
                                     chkB.ID = "tipoEvidencia_" + drIndicador["idIndicador"].ToString() + "_" + drTipoRespuesta["idTipoRespuesta"].ToString() + "_" + evi["idTipoEvidencia"].ToString();
-                                    // Añade la descripción de la evidencia y agrega el control al UpdatePanel
+                                    // Aï¿½ade la descripciï¿½n de la evidencia y agrega el control al UpdatePanel
                                     chkB.Text = evi["descripcion"].ToString();
                                     chkB.AutoPostBack = true;
                                     chkB.CheckedChanged += new System.EventHandler(this.chkB_CheckedChange);
@@ -850,7 +850,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                         }
 
 
-                        // Agrega preguntas adicionales y grupos de relación
+                        // Agrega preguntas adicionales y grupos de relaciï¿½n
                         UpdatePanel updAfinidades = CargaAfinidades(dsIndicadores.Tables["Afinidad"]);
                         updAfinidades.Visible = flgPAsGR;
                         UpdatePanel updGR = CargaGruposDeRelacion(dsIndicadores.Tables["Grupos_Relacion"], dsRespuestas.Tables["Respuesta_Grupo"]);
@@ -931,7 +931,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Método para instanciar preguntas adicionales y ponerlas en pantalla
+    /// Mï¿½todo para instanciar preguntas adicionales y ponerlas en pantalla
     /// 
     /// </summary>
     /// <returns></returns>
@@ -945,9 +945,9 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
         if (dtPreguntasAdicionales.Rows.Count > 0)
         {
             Label lblTituloPA = new Label();
-            lblTituloPA.Text = "<hr /><p>&nbsp;&nbsp;&nbsp;<b>Para medir su desempeño, sugerimos considerar los siguientes indicadores (con fines de referencia, no de evaluación):</b>";
+            lblTituloPA.Text = "<hr /><p>&nbsp;&nbsp;&nbsp;<b>Para medir su desempeï¿½o, sugerimos considerar los siguientes indicadores (con fines de referencia, no de evaluaciï¿½n):</b>";
             //if (dtPreguntasAdicionales.Rows[0]["idTema"].ToString() == "5")
-            //    lblTituloPA.Text += "<p>&nbsp;&nbsp;&nbsp;<b><a href=\"/archivos/Calculo de Emisiones.xls\">De clic aquí para bajar la fórmula de apoyo, para realizar el cálculo de emisiones (si le son solicitadas).</a></b></p>";
+            //    lblTituloPA.Text += "<p>&nbsp;&nbsp;&nbsp;<b><a href=\"/archivos/Calculo de Emisiones.xls\">De clic aquï¿½ para bajar la fï¿½rmula de apoyo, para realizar el cï¿½lculo de emisiones (si le son solicitadas).</a></b></p>";
 
             updPAs.ContentTemplateContainer.Controls.Add(lblTituloPA);
 
@@ -1051,7 +1051,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Método para instanciar grupos de relación y ponerlos en pantalla.
+    /// Mï¿½todo para instanciar grupos de relaciï¿½n y ponerlos en pantalla.
     /// </summary>
     /// <returns></returns>
     protected UpdatePanel CargaGruposDeRelacion(DataTable dtGruposDeRelacion, DataTable dtRespuestas)
@@ -1060,14 +1060,14 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
         UpdatePanel updGruposDeRelacion = new UpdatePanel();
         id++;
         updGruposDeRelacion.ID = "updGruposDeRelacion" + id.ToString(); ;
-        // Si es de solo lectura que no ponga esta sección
+        // Si es de solo lectura que no ponga esta secciï¿½n
         if (lblReadOnly.Text == "")
         {
             if (dtGruposDeRelacion.Rows.Count > 0)
             {
                 // Pone la pregunta
                 Label lblTituloGR = new Label();
-                lblTituloGR.Text = "<hr /><p>&nbsp;&nbsp;&nbsp;<b>Para complementar su respuesta, seleccione los grupos de relación (stakeholders) a los que beneficia con este indicador: </b>";
+                lblTituloGR.Text = "<hr /><p>&nbsp;&nbsp;&nbsp;<b>Para complementar su respuesta, seleccione los grupos de relaciï¿½n (stakeholders) a los que beneficia con este indicador: </b>";
                 updGruposDeRelacion.ContentTemplateContainer.Controls.Add(lblTituloGR);
 
                 Table tblGP = new Table();
@@ -1103,7 +1103,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
         
     }
     /// <summary>
-    /// Método para actualizar la selección de grupos de relación
+    /// Mï¿½todo para actualizar la selecciï¿½n de grupos de relaciï¿½n
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -1126,7 +1126,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Método para eliminar los archivos adjuntos
+    /// Mï¿½todo para eliminar los archivos adjuntos
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -1173,7 +1173,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
         borraEvidenciaInciso.idCuestionario = Convert.ToInt32(lblIdCuestionario.Text);
         borraEvidenciaInciso.fileName = fileName;
        
-        // Implementar la eliminación del archivo
+        // Implementar la eliminaciï¿½n del archivo
         if (borraEvidenciaInciso.EliminarEvidencia())
         {
             if (Request.Params["idEmpresa"] == null)
@@ -1190,7 +1190,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Método para eliminar los archivos adjuntos en los indicadores
+    /// Mï¿½todo para eliminar los archivos adjuntos en los indicadores
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -1249,7 +1249,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
         //borraEvidenciaIndicador.idUsuario = Session["idUsuario"].ToString();
         //borraEvidenciaIndicador.idTipoRespuesta = idTipoRespuesta;
 
-        // Implementar la eliminación del archivo
+        // Implementar la eliminaciï¿½n del archivo
         if (borraEvidenciaIndicador.EliminarEvidencia())
         {
             borraEvidenciaIndicador.fileName = fileName.Replace("%20", " ");
@@ -1273,7 +1273,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Este método se manda llamar en el indicador cuando HAY incisos
+    /// Este mï¿½todo se manda llamar en el indicador cuando HAY incisos
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -1308,7 +1308,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Este método se manda llamar en el indicador cuando no hay incisos 
+    /// Este mï¿½todo se manda llamar en el indicador cuando no hay incisos 
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -1511,7 +1511,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Verifica el tipo de evidencia que se está seleccionando.
+    /// Verifica el tipo de evidencia que se estï¿½ seleccionando.
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -1585,7 +1585,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
         
         if (fResultado <= 3)
         {
-            // Aqui guardar el valor de la precalificacion y la evaluación del revisor
+            // Aqui guardar el valor de la precalificacion y la evaluaciï¿½n del revisor
             Indicador indi = new Indicador();
             indi.idIndicador = Convert.ToInt32(lblidIndicador.Text);
             indi.idTema = Convert.ToInt32(lblidTema.Text); ;
@@ -1613,7 +1613,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
         }
         else
         {
-            lblError.Text = "El valor ingresado en la evaluación supera los 3 puntos destinados para este indicador, por favor ingrese otro valor.";
+            lblError.Text = "El valor ingresado en la evaluacio4n supera los 3 puntos destinados para este indicador, por favor ingrese otro valor.";
         }
     }
 }

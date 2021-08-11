@@ -84,12 +84,12 @@ public partial class rep_individual : System.Web.UI.UserControl
             TableCell lider = new TableCell();
             lider.BackColor = System.Drawing.Color.Teal;
             lider.ForeColor = System.Drawing.Color.White;
-            lider.Text = "Líder";
+            lider.Text = "LÃ­der";
 
             TableCell posicion = new TableCell();
             posicion.BackColor = System.Drawing.Color.Teal;
             posicion.ForeColor = System.Drawing.Color.White;
-            posicion.Text = "Posición";
+            posicion.Text = "PosiciÃ³n";
 
             TableCell menorValorRSE = new TableCell();
             menorValorRSE.BackColor = System.Drawing.Color.Beige;

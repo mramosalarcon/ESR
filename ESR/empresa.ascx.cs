@@ -28,7 +28,7 @@ public partial class empresa : System.Web.UI.UserControl
             {
                 this.infadicional.Visible = false;
 
-                // Carga los sectores del catálogo
+                // Carga los sectores del catï¿½logo
                 Sector sectores = new Sector();
                 DataSet dsSectores = sectores.CargaSectores();
 
@@ -40,7 +40,7 @@ public partial class empresa : System.Web.UI.UserControl
                 ListItem item = new ListItem("Seleccione sector...", "0");
                 ddlSector.Items.Insert(0, item);
 
-                // Carga el catálogo de las empresas postulantes
+                // Carga el catï¿½logo de las empresas postulantes
                 Postulante postulante = new Postulante();
                 DataSet dsPostulantes = postulante.CargaPostulantes();
 
@@ -52,7 +52,7 @@ public partial class empresa : System.Web.UI.UserControl
                 ListItem itemN = new ListItem("Ninguno", "Ninguno");
                 ddlPostulante.Items.Insert(0, itemN);
 
-                // Carga el catálogo de países
+                // Carga el catï¿½logo de paï¿½ses
                 Catalogo paises = new Catalogo();
                 DataSet dsPaises = paises.Carga("PAIS");
                 ddlPais.DataSource = dsPaises.Tables[0].DefaultView;
@@ -63,7 +63,7 @@ public partial class empresa : System.Web.UI.UserControl
                 item = new ListItem("Seleccione pais...", "0");
                 ddlPais.Items.Insert(0, item);
 
-                // Carga el catálogo de estados
+                // Carga el catï¿½logo de estados
                 Catalogo estados = new Catalogo();
                 DataSet dsEstados = estados.Carga("ESTADO");
                 ddlEstado.DataSource = dsEstados.Tables[0].DefaultView;
@@ -74,7 +74,7 @@ public partial class empresa : System.Web.UI.UserControl
                 item = new ListItem("Seleccione estado...", "0");
                 ddlEstado.Items.Insert(0, item);
 
-                // Falta cargar el catálogo de empresas grandes para seleccionarlas como Cadena de Valor
+                // Falta cargar el catï¿½logo de empresas grandes para seleccionarlas como Cadena de Valor
                 Empresa cadenaDeValor = new Empresa();
                 DataSet dsCadenaDeValor = cadenaDeValor.CargaEmpresasGrandes();
                 ddlEmpresaReferencia.DataSource = dsCadenaDeValor.Tables[0].DefaultView;
@@ -85,11 +85,11 @@ public partial class empresa : System.Web.UI.UserControl
                 item = new ListItem("Ninguna", "0");
                 ddlEmpresaReferencia.Items.Insert(0, item);
 
-                // Obtiene el idEmpresa desde la variable de sesión si no viene en el querystring 
+                // Obtiene el idEmpresa desde la variable de sesiï¿½n si no viene en el querystring 
                 int idEmpresa = this.GetEmpresa();
                 if (idEmpresa != 0)
                 {
-                    // Encontró el idEmpresa
+                    // Encontrï¿½ el idEmpresa
                     Empresa emp = new Empresa();
                     emp.idEmpresa = idEmpresa;
                     if (emp.Cargar())
@@ -221,7 +221,7 @@ public partial class empresa : System.Web.UI.UserControl
                             }
                         }
 
-                        //Aqui recuperar la información de las certificaciones y ponerlas en el GRID
+                        //Aqui recuperar la informaciï¿½n de las certificaciones y ponerlas en el GRID
 
                         Certificacion certificaciones = new Certificacion();
                         certificaciones.idEmpresa = idEmpresa;
@@ -237,7 +237,7 @@ public partial class empresa : System.Web.UI.UserControl
                         grdCertificaciones.DataSource = dv;
                         grdCertificaciones.DataBind();
 
-                        // Esto es para poner visible la administración de cuestionarios
+                        // Esto es para poner visible la administraciï¿½n de cuestionarios
                         string _sPerfiles = this.GetProfiles();
                         if (_sPerfiles != "")
                         {
@@ -246,7 +246,7 @@ public partial class empresa : System.Web.UI.UserControl
                             if (users.perfiles.IndexOf("0") > -1 || users.perfiles.IndexOf("1") > -1 ||
                                 users.perfiles.IndexOf("2") > -1 || users.perfiles.IndexOf("9") > -1)
                             {
-                                // Solo esos perfiles permiten asignación de cuestionarios
+                                // Solo esos perfiles permiten asignaciï¿½n de cuestionarios
                                 Cuestionario cuestionarios = new Cuestionario();
                                 // Carga la lista de los cuestionarios disponibles y los pone en la lista de checkboxes
                                 DataSet dsCuestionarios = cuestionarios.CargaTodos();
@@ -266,7 +266,7 @@ public partial class empresa : System.Web.UI.UserControl
                                             for (int i = 0; i < cblCuestionarios.Items.Count; i++)
                                             {
                                                 // MRA 13/07/2010
-                                                // Asignación automática del prediagnóstico
+                                                // Asignaciï¿½n automï¿½tica del prediagnï¿½stico
                                                 if (cblCuestionarios.Items[i].Value == row["idCuestionario"].ToString()) //|| cblCuestionarios.Items[i].Value == "16")
                                                 {
                                                     cblCuestionarios.Items[i].Selected = true;
@@ -328,7 +328,7 @@ public partial class empresa : System.Web.UI.UserControl
                     }
                     else
                     {
-                        lblError.Text = "Existe un error en el registro de la empresa, verifique la información.";
+                        lblError.Text = "Existe un error en el registro de la empresa, verifique la informaciÃ³n.";
                         using (StreamWriter sw = File.AppendText(ConfigurationManager.AppSettings["logFile"].ToString()))
                         {
                             sw.AutoFlush = true;
@@ -414,9 +414,9 @@ public partial class empresa : System.Web.UI.UserControl
                 contacto.idEmpresa = Convert.ToInt32(txtidEmpresa.Text);
                 contacto.Email = Session["idUsuario"].ToString();
                 // MRA 07/07/2010 00:36
-                // Ejecutar un método que cargue los datos del contacto
-                // ¿Para que?
-                // ¿Que pasa cuando es el administrador? o el staff
+                // Ejecutar un mï¿½todo que cargue los datos del contacto
+                // ï¿½Para que?
+                // ï¿½Que pasa cuando es el administrador? o el staff
 
                 // MRA 07/07/2010 00:27
                 // Si ya tiene perfil le deja el mismo idPerfil
@@ -433,11 +433,11 @@ public partial class empresa : System.Web.UI.UserControl
                 }
 
                 // MRA 07/07/2010 01:10
-                // Falta guardar la relación con la empresa y los temas
+                // Falta guardar la relaciï¿½n con la empresa y los temas
                 if (contacto.GuardaEmpresa())
                 {
                     Response.Redirect("~/tools/error.aspx?message=" +
-                            "El registro de la empresa se realizó correctamente, " +
+                            "El registro de la empresa se realizï¿½ correctamente, " +
                             "por favor vuelva a firmarse para actualizar los cambios.");
                 }
             }
@@ -473,7 +473,7 @@ public partial class empresa : System.Web.UI.UserControl
             txtEstado.Text = ddlEstado.SelectedItem.ToString();
             if (txtEstado.Text == "Distrito Federal")
             {
-                txtCiudad.Text = "México";
+                txtCiudad.Text = "MÃ©xico";
                 txtCiudad.Enabled = false;
             }
             else
@@ -557,7 +557,7 @@ public partial class empresa : System.Web.UI.UserControl
             }
             else
             {
-                lblCertificaciones.Text += "<tr><td>Error al salvar la certificacion.</td><td>";
+                lblCertificaciones.Text += "<tr><td>Error al salvar la certificaciÃ³n.</td><td>";
             }
         }
     }
@@ -566,9 +566,9 @@ public partial class empresa : System.Web.UI.UserControl
     {
         Empresa newEmpresa = new Empresa();
         // MRA 06/07/2010 20:19
-        // Esto esta chingon, si el método ya se mandó llamar txtidEmpresa tiene el idEmpresa
-        // Si es la primera vez viene vació e inserta un nuevo registro
-        // Me fumé un churro
+        // Esto esta chingon, si el mï¿½todo ya se mandï¿½ llamar txtidEmpresa tiene el idEmpresa
+        // Si es la primera vez viene vaciï¿½ e inserta un nuevo registro
+        // Me fumï¿½ un churro
         if (txtidEmpresa.Text != "")
         {
             newEmpresa.idEmpresa = Convert.ToInt32(txtidEmpresa.Text);
@@ -621,15 +621,15 @@ public partial class empresa : System.Web.UI.UserControl
             newEmpresa.NoEmpleados = Convert.ToInt32(txtNoEmpleados.Text);
         }
 
-        // Se va a calcular el tamaño de la empresa
-        // Dependiendo del tamaño de la empresa se le asigna el cuestionario correspondiente
+        // Se va a calcular el tamaï¿½o de la empresa
+        // Dependiendo del tamaï¿½o de la empresa se le asigna el cuestionario correspondiente
         if (newEmpresa.Sector != "" && txtNoEmpleados.Text != "")
         {
             int noEmpleados = Convert.ToInt32(txtNoEmpleados.Text);
             switch (newEmpresa.Sector)
             {
                 case "Industria":
-                    if (newEmpresa.Subsector == "Agrícola" || newEmpresa.Subsector == "Ganadería" || newEmpresa.Subsector == "Aprovechamiento forestal" || newEmpresa.Subsector == "Pesca" || newEmpresa.Subsector == "Caza")
+                    if (newEmpresa.Subsector == "Agrï¿½cola" || newEmpresa.Subsector == "Ganaderï¿½a" || newEmpresa.Subsector == "Aprovechamiento forestal" || newEmpresa.Subsector == "Pesca" || newEmpresa.Subsector == "Caza")
                     {
                         if (noEmpleados >= 2 && noEmpleados <= 10)
                         {
@@ -637,7 +637,7 @@ public partial class empresa : System.Web.UI.UserControl
                         }
                         else if (noEmpleados >= 11 && noEmpleados <= 25)
                         {
-                            newEmpresa.Tamano = "Pequeña";
+                            newEmpresa.Tamano = "Pequeï¿½a";
                         }
                         else if (noEmpleados >= 26 && noEmpleados <= 100)
                         {
@@ -656,7 +656,7 @@ public partial class empresa : System.Web.UI.UserControl
                         }
                         else if (noEmpleados >= 1 && noEmpleados <= 50)
                         {
-                            newEmpresa.Tamano = "Pequeña";
+                            newEmpresa.Tamano = "Pequeï¿½a";
                         }
                         else if (noEmpleados >= 51 && noEmpleados <= 250)
                         {
@@ -675,7 +675,7 @@ public partial class empresa : System.Web.UI.UserControl
                     }
                     else if (noEmpleados >= 1 && noEmpleados <= 30)
                     {
-                        newEmpresa.Tamano = "Pequeña";
+                        newEmpresa.Tamano = "Pequeï¿½a";
                     }
                     else if (noEmpleados >= 31 && noEmpleados <= 100)
                     {
@@ -693,7 +693,7 @@ public partial class empresa : System.Web.UI.UserControl
                     }
                     else if (noEmpleados >= 1 && noEmpleados <= 50)
                     {
-                        newEmpresa.Tamano = "Pequeña";
+                        newEmpresa.Tamano = "Pequeï¿½a";
                     }
                     else if (noEmpleados >= 51 && noEmpleados <= 100)
                     {
@@ -731,17 +731,17 @@ public partial class empresa : System.Web.UI.UserControl
         {
             newEmpresa.cadenaDeValor = 0;
         }
-        //Autorizada para contestar cuestionarios, para las nuevas siempre es falso, ademas de que está oculto
+        //Autorizada para contestar cuestionarios, para las nuevas siempre es falso, ademas de que estï¿½ oculto
         newEmpresa.autorizada = rbtAutorizadaSi.Checked;
         // MRA 06/07/2010 23:56
-        // Para la nueva versión siempre será diferente de nulo, pero lo dejamos por si acaso
-        // Se manda el idUsuario solo para efectos de bitácora.
+        // Para la nueva versiï¿½n siempre serï¿½ diferente de nulo, pero lo dejamos por si acaso
+        // Se manda el idUsuario solo para efectos de bitï¿½cora.
         if (Session["idUsuario"] == null)
             newEmpresa.idUsuario = txtEmail.Text;
         else
             newEmpresa.idUsuario = Session["idUsuario"].ToString();
         // Si todo sale bien al guardar, 
-        // se checa si esta visible el updatepanel de administración y se asigna el idEmpresa al txtidEmpresa
+        // se checa si esta visible el updatepanel de administraciï¿½n y se asigna el idEmpresa al txtidEmpresa
         if (newEmpresa.Guardar())
         {
             if (cblCuestionarios.Visible)
@@ -762,19 +762,19 @@ public partial class empresa : System.Web.UI.UserControl
                     }
                 }
             }
-            // Asignación automática de cuestionario
+            // Asignaciï¿½n automï¿½tica de cuestionario
             else //if (Session["perfil"].ToString().IndexOf('2') == -1 && Session["perfil"].ToString().IndexOf('9') == -1) // Si es administrador y si es staff
             {
 
                 // MRA 13/07/2010 10:26 a.m.
-                // Ya quedó lista esta funcionalidad solo hay que tener cuidado si cambian el tamaño les van a quedar
-                // asignados los demas cuestionarios, se tendrán que desasignar.
+                // Ya quedï¿½ lista esta funcionalidad solo hay que tener cuidado si cambian el tamaï¿½o les van a quedar
+                // asignados los demas cuestionarios, se tendrï¿½n que desasignar.
                 //newEmpresa.idCuestionario = Convert.ToInt32(ConfigurationManager.AppSettings["idPrediagnostico"]);
                 //newEmpresa.GuardarCuestionario();
 
 
                 // MRA 22/10/2010 06:18 a.m.
-                // Deshabilitar la asignación automática de cuestionario
+                // Deshabilitar la asignaciï¿½n automï¿½tica de cuestionario
                 //if (newEmpresa.Tamano != "")
                 //{
                 //    switch (newEmpresa.Tamano)
@@ -787,7 +787,7 @@ public partial class empresa : System.Web.UI.UserControl
                 //            newEmpresa.idCuestionario = Convert.ToInt32(ConfigurationManager.AppSettings["idMedianas"]);
                 //            newEmpresa.GuardarCuestionario();
                 //            break;
-                //        case "Pequeña":
+                //        case "Pequeï¿½a":
                 //            newEmpresa.idCuestionario = Convert.ToInt32(ConfigurationManager.AppSettings["idPYME1_5"]);
                 //            newEmpresa.GuardarCuestionario();
                 //            break;
@@ -803,9 +803,9 @@ public partial class empresa : System.Web.UI.UserControl
         else
         {
             Response.Redirect("~/tools/error.aspx?message=" +
-                        "No se realizó el registro de la empresa, " +
+                        "No se realizÃ³ el registro de la empresa, " +
                         "debido a que la empresa ya existe en nuestra base de datos, " +
-                        "por favor verifique su información.", false);
+                        "por favor verifique su informaciÃ³n.", false);
         }
     }
     protected void grdCertificaciones_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -949,13 +949,13 @@ public partial class empresa : System.Web.UI.UserControl
     }
 
     /// <summary>
-    /// Método para buscar la empresa que pertenece a la cadena de valor de la empresa que se está registrando
+    /// Mï¿½todo para buscar la empresa que pertenece a la cadena de valor de la empresa que se estï¿½ registrando
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     protected void btnBuscarCV_Click(object sender, EventArgs e)
     {
-        Empresa cadenaValor = new Empresa();
+        //Empresa cadenaValor = new Empresa();
         //DataSet dsCadenaValor = cadenaValor.Buscar();
     }
 
