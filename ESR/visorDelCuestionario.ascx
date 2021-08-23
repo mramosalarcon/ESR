@@ -16,9 +16,7 @@
 <table id="table1" border="0" width="100%">
     <tr>
         <td colspan="4" align="left" class="style1">
-            Con el objetivo de atender a todos adecuadamente, se incorporarán mas 
-            recursos. A partir de las 18:00 horas del sábado 28 de enero, se dara de baja la aplicación y 
-            permanecerá fuera de línea hasta el domingo 29 de enero a las 09:00 horas. Gracias por su participación.</td>
+            </td>
     </tr>
     <tr>
         <td>

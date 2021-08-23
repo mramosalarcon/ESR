@@ -12,8 +12,6 @@
     Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
-    <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-    </cc1:ToolkitScriptManager>
             <asp:UpdateProgress ID="UpdateProgress1" runat="server">
             <ProgressTemplate>
                 <img src="images/progress_bar_2_1.gif" alt="Espere un momento..."/>

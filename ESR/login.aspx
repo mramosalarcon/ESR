@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" Inherits="login" Codebehind="login.aspx.cs" Debug="true" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="login" Codebehind="login.aspx.cs" Debug="true" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 
 
@@ -14,12 +14,24 @@
 <%@ Assembly Name="Microsoft.Web.CommandUI, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 
 <%@ Register TagPrefix="asp" Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
-    <title>Acceso Autodiagnóstico ESR</title>
+    <title>Acceso ESR®</title>
     <link rel="SHORTCUT ICON" href="images/favicon.ico"  type="image/x-icon" />
     <link rel="stylesheet" href="css/esr_anterior.css" type="text/css" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120281557-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120281557-1');
+</script>
+
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -109,12 +121,14 @@ style="background-repeat: no-repeat; background-position: center top; background
             &nbsp;</td>
     </tr>
     <tr>
-        <td colspan="3" align="center">
+        <td colspan="2" align="center">
             <i>Aviso de Confidencialidad: El CEMEFI asegura absoluta confidencialidad sobre 
             la participación de las compañías en el proceso de llenado de los cuestionarios 
             y sobre la información que incluyan en ellos. El CEMEFI sólo accederá a las 
             respuestas para procesamiento estadístico después que las compañías liberen el 
             cuestionario para revisión.</i></td>
+        <td align="center">
+            &nbsp;</td>
     </tr>
 </table>
          </form>

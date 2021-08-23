@@ -38,6 +38,7 @@ namespace ESR.tools
                 lblMensaje.Text= "La cuenta de correo no existe en nuestro registro, por favor verifique su información.";
             }
         }
+
     }
 
 }

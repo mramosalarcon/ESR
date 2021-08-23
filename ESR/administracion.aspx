@@ -10,6 +10,9 @@
 <%@ Register Tagprefix="asp" Namespace="System.Web.UI" 
     Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
 
+<asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderPageTitle" Runat="Server">
+Configuración ESR®
+</asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
 <asp:Panel ID="panMenu" runat="server">        
@@ -18,5 +21,6 @@
 
  <asp:Content ID="Content2" 
 ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
-Administración Aplicacion Empresa Socialmente Responsable
+Administración Aplicacion Empresa Socialmente Responsable®<br/>
+<asp:Label ID="lblEmpresa" runat="server" Text=""></asp:Label>
 </asp:Content>

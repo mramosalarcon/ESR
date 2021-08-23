@@ -38,3 +38,19 @@ C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\bin\Debug\Mi
 C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Debug\ESR.Business.csprojResolveAssemblyReference.cache
 C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Debug\ESR.Business.dll
 C:\Users\MRA\Documents\Visual Studio 2010\Projects\ESR\ESR.Business\obj\Debug\ESR.Business.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Debug\ESR.Business.csprojAssemblyReference.cache
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Debug\ESR.Business.csproj.CoreCompileInputs.cache
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Debug\ESR.Business.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Debug\ESR.Business.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\ESR.Business.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\ESR.Business.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\ESR.Data.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\Microsoft.SharePoint.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\Microsoft.Web.Administration.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\ESR.Data.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Users\migue\Documents\GitHub\ESR\ESR.Business\obj\Debug\ESR.Business.csproj.CopyComplete

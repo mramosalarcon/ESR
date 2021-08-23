@@ -376,7 +376,7 @@ namespace ESR.Data
 			}
 		}
 
-		public DataSet Buscar(string criterioDeBusqueda, bool liberado, int idCuestionario)
+		public DataSet Buscar(string criterioDeBusqueda, bool liberado, int idCuestionario, int idPais)
 		{
 			try
 			{
@@ -387,6 +387,8 @@ namespace ESR.Data
 				val.AddInParameter(storedProcCommand, "criterio", DbType.String, (object)criterioDeBusqueda);
 				val.AddInParameter(storedProcCommand, "liberado", DbType.Boolean, (object)liberado);
 				val.AddInParameter(storedProcCommand, "idCuestionario", DbType.Int32, (object)idCuestionario);
+				val.AddInParameter(storedProcCommand, "idPais", DbType.Int32, (object)idPais);
+
 				DataSet dataSet = val.ExecuteDataSet(storedProcCommand);
 				dataSet.Tables[0].TableName = "Empresa";
 				return dataSet;

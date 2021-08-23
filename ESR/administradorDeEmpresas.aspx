@@ -90,7 +90,7 @@
             <center>
                 <asp:GridView ID="grdEmpresas" runat="server" CellPadding="4" 
                     ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" 
-                    OnRowCommand="cmdReporteDeAvance" Width="80%" EnableModelValidation="True">
+                    OnRowCommand="cmdReporteDeAvance" Width="100%" EnableModelValidation="True">
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
                     <EditRowStyle BackColor="#999999" />
@@ -112,14 +112,16 @@
                         <asp:BoundField AccessibleHeaderText="C&#243;digo postal" DataField="cp" HeaderText="C&#243;digo postal" />
                         <asp:HyperLinkField AccessibleHeaderText="Contacto" DataNavigateUrlFields="idUsuario"
                             DataNavigateUrlFormatString="mailto:{0}" DataTextField="idUsuario" HeaderText="Email del contacto"
-                            NavigateUrl="mailto:" Text="Contacto" DataTextFormatString="mailto:{0}" />
+                            NavigateUrl="mailto:" Text="Contacto" DataTextFormatString="{0}" />
                         <asp:BoundField AccessibleHeaderText="Fecha de actualizaci&#243;n de registro" DataField="fechaModificacion"
-                            HeaderText="Fecha de actualizaci&#243;n de registro" />
+                            HeaderText="Fecha de actualizaci&#243;n de registro">
+			    <ItemStyle HorizontalAlign="center" />
+			</asp:BoundField>
                         <asp:ButtonField ButtonType="Image"
                             HeaderText="Rep. de Avance" ImageUrl="~/images/lupa.jpg" 
                             DataTextField="idEmpresa" DataTextFormatString="{0}" Text="idEmpresa" 
                             CommandName="avance"  >
-                        <ItemStyle HorizontalAlign="Center" />
+                        <ItemStyle HorizontalAlign="center" />
                         </asp:ButtonField>
                         <asp:ButtonField ButtonType="Image" CommandName="individual" DataTextField="idEmpresa"
                             DataTextFormatString="{0}" HeaderText="Rep. Individual" ImageUrl="~/images/lupa.jpg"

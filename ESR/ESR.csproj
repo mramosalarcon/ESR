@@ -99,7 +99,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Microsoft.ReportViewer.WebForms.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Microsoft.SharePoint.dll</HintPath>
     </Reference>
@@ -317,6 +317,7 @@
     <Content Include="tools\regPass.aspx" />
     <Content Include="tools\usuario.ascx" />
     <Content Include="tools\_reg_usr.aspx" />
+    <Content Include="tools\_unsuscribe.aspx" />
     <Content Include="under_construction.htm" />
     <Content Include="videos.aspx" />
     <Content Include="vincularEmpresa.aspx" />
@@ -771,6 +772,13 @@
     </Compile>
     <Compile Include="tools\_reg_usr.aspx.designer.cs">
       <DependentUpon>_reg_usr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\_unsuscribe.aspx.cs">
+      <DependentUpon>_unsuscribe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\_unsuscribe.aspx.designer.cs">
+      <DependentUpon>_unsuscribe.aspx</DependentUpon>
     </Compile>
     <Compile Include="videos.aspx.cs">
       <DependentUpon>videos.aspx</DependentUpon>

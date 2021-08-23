@@ -1,9 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/default.master" CodeBehind="main.aspx.cs" Inherits="ESR.main" Title="Pagina principal" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
+<asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderPageTitle" Runat="Server">
+Inicio ESR®
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderId="PlaceHolderMain" runat="server">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-    </asp:ToolkitScriptManager>
     <table style="width: 100%;">
         <tr>
             <td align="right">
@@ -31,10 +33,10 @@
         </td>
         </tr>
     </table>
-    <p>Centro de Mensajes</p>
+    <p><h1>Centro de Mensajes</h1></p>
 <asp:UpdatePanel ID="udpVinculos" runat="server">
     <ContentTemplate>
-        <p>Solicitud de vínculos</p>
+        <p><h1>Solicitud de vínculos</h1></p>
         <asp:GridView ID="grvVinculos" runat="server" AutoGenerateColumns="False" 
             onrowcommand="grvVinculos_RowCommand">
             <Columns>
@@ -61,14 +63,14 @@
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="udpCV" runat="server">
     <ContentTemplate>
-        <p>Solicitud de cadena de valor</p>
+        <p><h1>Solicitud de cadena de valor</h1></p>
         <asp:GridView ID="grvCV" runat="server">
         </asp:GridView>
     </ContentTemplate>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="udpMensajes" runat="server">
     <ContentTemplate>
-        <p>Avisos</p>
+        <p><h1>Avisos</h1></p>
         <asp:webpartzone id="MainZone" runat="server" headertext="Main" 
             BorderColor="#CCCCCC" Font-Names="Verdana" Padding="6">
         <zonetemplate>
@@ -102,6 +104,6 @@
 
  <asp:Content ID="Content2" 
 ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
-¡Bienvenido al Autodiagnóstico ESR 2016!
-</asp:Content>
+¡Bienvenido a la aplicación del Distintivo ESR®!<br/>
+     <asp:Label ID="lblEmpresa" runat="server" Text="Label"></asp:Label></asp:Content>
 

@@ -109,6 +109,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
 
                 // Inserta Indicadores
             
+
                 foreach (DataRow drIndicador in dsIndicadores.Tables["Indicador"].Rows)
                 {
                     //Muestra el tema -> subtema
@@ -1613,7 +1614,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
         }
         else
         {
-            lblError.Text = "El valor ingresado en la evaluacio4n supera los 3 puntos destinados para este indicador, por favor ingrese otro valor.";
+            lblError.Text = "El valor ingresado en la evaluación supera los 3 puntos destinados para este indicador, por favor ingrese otro valor.";
         }
     }
 }

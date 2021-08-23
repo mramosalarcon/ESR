@@ -252,7 +252,7 @@ public partial class diagnostico : System.Web.UI.Page
         {
             lblIdCuestionario.Text += dtCuestionario.Rows[0]["nombre"].ToString();
             lblIdCuestionario.Visible = false;
-			Session["cuestionario"] = dataTable.Rows[0]["nombre"].ToString();
+			Session["cuestionario"] = dtCuestionario.Rows[0]["nombre"].ToString();
 			lblProceso.Text = Session["cuestionario"].ToString();
         }
 

@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Configuration;
 using System.Net.Mail;
+using ESR.Data;
 
 namespace ESR.Business
 {
@@ -154,7 +155,7 @@ namespace ESR.Business
 
         public DataSet carga(bool activos)
         {
-            Cuestionario cuestionario = new Cuestionario();
+            ESR.Data.Cuestionario cuestionario = new ESR.Data.Cuestionario();
             if (activos)
             {
                 return cuestionario.cargaActivos();

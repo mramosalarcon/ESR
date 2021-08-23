@@ -11,10 +11,11 @@
     Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderPageTitle" Runat="Server">
-Registro de empresa
+    Registro ESR®
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
+    <p>&nbsp</p>
 
     <asp:Panel ID="panMenu" runat="server">        
     </asp:Panel>      
@@ -25,5 +26,6 @@ Registro de empresa
 
  <asp:Content ID="Content2" 
 ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
-Forma de registro ESR 2015
+     Forma de registro Distintivo ESR® <br />
+     <asp:Label ID="lblEmpresa" runat="server" Text="Label"></asp:Label>
 </asp:Content>

@@ -1,8 +1,12 @@
 <%@ Page Language="C#" MasterPageFile="~/default.master" AutoEventWireup="true" Inherits="misCuestionarios" Codebehind="misCuestionarios.aspx.cs" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
+<asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderPageTitle" Runat="Server">
+Cuestionario ESR®
+</asp:Content>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
+<p>&nbsp</p>
     <asp:Panel ID="panMenu" runat="server">        
     </asp:Panel>
     <div>
@@ -17,23 +21,23 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="lblOpcion" runat="server" Text="Opcion:"></asp:Label></td>
+                <h3><asp:Label ID="lblOpcion" runat="server" Text="Operación:"></asp:Label></h3></td>
             <td>
-                <h4><asp:Label ID="lblOpcionSeleccionada" runat="server" Text="Contestar cuestionario"></asp:Label></h4></td>
+                <h3><asp:Label ID="lblOpcionSeleccionada" runat="server" Text="Contestar cuestionario"></asp:Label></h3></td>
         </tr>
         <tr>
             <td>
-                <asp:Label ID="lblEmpresa" runat="server" Text="Empresa:"></asp:Label></td>
+                <h3><asp:Label ID="lblNomEmpresa" runat="server" Text="Empresa:"></asp:Label></h3></td>
             <td>
-                <h4><asp:Label ID="lblNombreEmpresa" runat="server"></asp:Label></h4></td>
+                <h3><asp:Label ID="lblNombreEmpresa" runat="server"></asp:Label></h3></td>
         </tr>
 	<tr>
-		<td style="height: 22px">
-            <asp:Label ID="lblCuestionarios" runat="server" Text="Cuestionario: "></asp:Label></td>
-		<td style="height: 22px">
+		<td><h3>
+            <asp:Label ID="lblCuestionarios" runat="server" Text="Cuestionario: "></asp:Label></h3></td>
+		<td><h3>
             <asp:DropDownList ID="ddlCuestionarios" runat="server">
             </asp:DropDownList>
-                <asp:Button ID="btnIniciarCuestionario" runat="server" Text="Aceptar" OnClick="btnIniciarCuestionario_Click" /></td>
+                <asp:Button ID="btnIniciarCuestionario" runat="server" Text="Aceptar" OnClick="btnIniciarCuestionario_Click" /></h3></td>
 	</tr>
         <tr>
             <td>
@@ -65,5 +69,6 @@
 </asp:Content>
  <asp:Content ID="Content2" 
 ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
-Autodiagnóstico ESR 2015
+Distintivo ESR®<br />
+<asp:Label ID="lblEmpresa" runat="server" Text=""></asp:Label>
 </asp:Content>

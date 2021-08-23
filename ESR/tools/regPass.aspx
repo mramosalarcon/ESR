@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" Inherits="regPass" Codebehind="regPass.aspx.cs" %>
+<%@ Page Language="C#" AutoEventWireup="true" Inherits="ESR.tools.regPass" Codebehind="regPass.aspx.cs" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
@@ -18,11 +18,11 @@
       </tr>
 	  <tr>
 		  <td colspan="2">
-              <div align="center"><strong> Recuperación de contraseña</strong></div></td>
+              <div align="center"><h2>Recuperación de contraseña</h2></div></td>
 	  </tr>
 	  <tr>
 		  <td colspan="2">
-              <div align="center">Por favor introduzca la cuenta de correo de registro</div></td>
+              <div align="center"><h3>Por favor introduzca la cuenta de correo de registro</h3></div></td>
 	  </tr>
       <tr>
           <td width="27%">        <div align="left"></div></td>
@@ -30,10 +30,10 @@
       </tr>
       <tr>
           <td>
-              <div align="left">Cuenta de correo del contacto:</div></td>
+              <div align="left"><h4>Cuenta de correo del contacto:</h4></div></td>
           <td>
             <div align="left">
-                  <asp:TextBox ID="txtEmail" runat="server" MaxLength="50" Width="300px"></asp:TextBox>
+                <asp:TextBox  ID="txtEmail" runat="server" MaxLength="50" Width="300px"></asp:TextBox>
               <asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
                       ControlToValidate="txtEmail" 
                       ErrorMessage="Introduzca una cuenta de correo válida" ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -48,7 +48,7 @@
           <td>        <div align="left"></div></td>
           <td>
             <div align="left">
-                  <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
                 </div></td>
       </tr>
       <tr>
@@ -64,3 +64,4 @@
     </form>
 </body>
 </html>
+

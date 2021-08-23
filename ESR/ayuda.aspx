@@ -10,7 +10,19 @@
     Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" Runat="Server">
-    <link rel="stylesheet" href="css/esr_anterior.css" type="text/css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120281557-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120281557-1');
+</script>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderPageTitle" Runat="Server">
+Ayuda ESR®
 </asp:Content>
 
 
@@ -22,17 +34,33 @@
           <table width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td>&nbsp;</td>
-              <td>Ayuda relacionada con el <span style="text-decoration: underline">Proceso del Distintivo</span>:</td>
+              <td><h1>Ayuda relacionada con el <span style="text-decoration: underline">Proceso del Distintivo</span>:</h1></td>
+            </tr>
+	    <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+	    <tr>
+              <td>&nbsp;</td>
+              <td><h1>México</h1></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
-              <td><a href="mailto:distintivo@cemefi.org">rse@cemefi.org</a></td>
+              <td><h1><a href="mailto:distintivo@cemefi.org">distintivo@cemefi.org</a></h1></td>
             </tr>
-             <tr>
+	    <tr>
+	    <tr>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
+            </tr>
+              <td>&nbsp;</td>
+              <td><h1>Ecuador</h1></td>
             </tr>
             <tr>
+              <td>&nbsp;</td>
+              <td><h1><a href="mailto:esr-ecuador@redceres.org">esr-ecuador@redceres.org</h1></td>
+            </tr>
+            <!--<tr>
               <td bgcolor="#F1701C"></td>
               <td bgcolor="#F1701C"><img src="/images/espacio_transparente.gif" width="40" height="5" /></td>
             </tr>
@@ -42,15 +70,15 @@
             </tr>
             <tr>
               <td width="2%">&nbsp;</td>
-              <td width="98%">Ayuda relacionada con el <span style="text-decoration: underline">Contenido de los Cuestionarios</span>:</td>
+              <td width="98%"><h1>Ayuda relacionada con el <span style="text-decoration: underline">Contenido de los Cuestionarios</span>:</h1></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
               <td><a href="mailto:consultarse@cemefi.org">consultarse@cemefi.org</a></td>
-            </tr>
+            </tr>-->
             <tr>
               <td>&nbsp;</td>
-              <td><a href="skype:miriam.rsecemefi?call"><img src="http://mystatus.skype.com/bigclassic/miriam.rsecemefi" style="border: none;" width="182" height="44" alt="ConsultaRSE" /></a></td>
+              <td></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
@@ -66,15 +94,15 @@
             </tr>
             <tr>
               <td>&nbsp;</td>
-              <td>Ayuda relacionada con <span style="text-decoration: underline">Aspectos Técnicos</span> de la aplicación:</td>
+              <td><h1>Ayuda relacionada con <span style="text-decoration: underline">Aspectos Técnicos</span> de la aplicación:</h1></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
-              <td><a href="mailto:ayudarse@cemefi.org">ayudarse@cemefi.org</a></td>
+              <td><h1><a href="mailto:ayudarse@cemefi.org">ayudarse@cemefi.org</a></h1></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
-              <td><a href="skype:miguel.ramos.alarcon?call"><img src="http://mystatus.skype.com/bigclassic/miguel.ramos.alarcon" style="border: none;" width="182" height="44" alt="AyudaRSE" /></a></td>
+              <td></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
@@ -90,9 +118,23 @@
             </tr>
             <tr>
               <td>&nbsp;</td>
-              <td>Teléfonos de atención: CEMEFI (55) 5276-8530 Ext. 146 y 149<br/>
-Horarios de atención telefónica de <b>Lunes a Viernes de 09:00 a 13:30</b><br />
-<a href="http://www.cemefi.org/esr">www.cemefi.org/esr</a></td>
+              <td><h1>Teléfonos de atención</h1></td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+	 <td><h1>Cemefi: (55)1054 1479<br/>
+Horarios de atención telefónica de <b>Lunes a Viernes de 09:00 a 18:00</b><br />
+<a href="http://www.cemefi.org/esr">www.cemefi.org/esr</a></h1></td>
+            </tr>
+<tr bgcolor="#F1701C">
+              <td></td>
+              <td>&nbsp;</td>
+            </tr>
+ 		<tr>
+              <td>&nbsp;</td>
+              <td><h1>Ceres: 593-9 99440530<br/>
+Horarios de atención telefónica de <b>Lunes a Viernes de 08:30 a 17:30</b><br />
+<a href="http://www.esr-ecuador.org">www.esr-ecuador.org</a></h1></td>
             </tr>
             <tr>
               <td>&nbsp;</td>

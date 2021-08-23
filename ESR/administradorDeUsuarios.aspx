@@ -12,14 +12,21 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" Runat="Server">
     <link rel="stylesheet" href="css/esr_anterior.css" type="text/css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120281557-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120281557-1');
+</script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PlaceHolderPageTitle" Runat="Server">
 Administrador de usuarios
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" Runat="Server">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-    </asp:ToolkitScriptManager>
     <asp:Panel ID="panMenu" runat="server">        
     </asp:Panel>
         <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
@@ -121,8 +128,10 @@ Administrador de usuarios
         <td style="width: 216px">
             <asp:Label ID="lblPerfil" runat="server" Text="Perfiles"></asp:Label></td>
         <td style="width: 308px">
-            <asp:CheckBoxList ID="cblPerfiles" runat="server" AutoPostBack="True" OnSelectedIndexChanged="cblPerfiles_SelectedIndexChanged">
+		<div style="text-align: left; width: 50%; margin: auto;">
+            <asp:CheckBoxList ID="cblPerfiles" runat="server" AutoPostBack="True" TextAlign="Right" Style="text-align='left'" OnSelectedIndexChanged="cblPerfiles_SelectedIndexChanged">
             </asp:CheckBoxList></td>
+		</div>
         <td>
         </td>
         <td style="width: 137px">

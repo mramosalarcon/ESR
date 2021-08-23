@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" Inherits="getPass" Codebehind="getPass.aspx.cs" %>
+<%@ Page Language="C#" AutoEventWireup="true" Inherits="ESR.tools.getPass" Codebehind="getPass.aspx.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -35,9 +35,9 @@
               <div align="left">Cuenta de correo del contacto:</div></td>
           <td>
             <div align="left">
-                  <asp:TextBox ID="txtCorreo" runat="server" MaxLength="50" Width="300px"></asp:TextBox>
+                <asp:TextBox ID="txtCorreo" runat="server" MaxLength="50" Width="300px" OnTextChanged="txtCorreo_TextChanged"></asp:TextBox>
               <asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
-                      ControlToValidate="txtEmail" 
+                      ControlToValidate="txtCorreo"
                       ErrorMessage="Introduzca una cuenta de correo válida" ForeColor="Red">*</asp:RequiredFieldValidator>
               <br />
               <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
