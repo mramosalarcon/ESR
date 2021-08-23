@@ -109,6 +109,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
 
                 // Inserta Indicadores
             
+
                 foreach (DataRow drIndicador in dsIndicadores.Tables["Indicador"].Rows)
                 {
                     //Muestra el tema -> subtema
