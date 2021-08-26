@@ -35,7 +35,9 @@ namespace ESR.Data
         public DataSet Carga(int idIndicador, int idTema, int idEmpresa, int idCuestionario)
         {
             Database db;
-            if (idCuestionario > 110)
+            if (idCuestionario > 121)
+                db = DatabaseFactory.CreateDatabase("ESR");
+            else if (idCuestionario > 110)
                 db = DatabaseFactory.CreateDatabase("ESR");
             else if (idCuestionario > 102)
                 db = DatabaseFactory.CreateDatabase("ESR_2020");

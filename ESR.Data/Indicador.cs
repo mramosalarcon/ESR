@@ -14,7 +14,9 @@ namespace ESR.Data
             try
             {
                 Database db;
-                if (idCuestionario > 110)
+                if (idCuestionario > 121)
+                    db = DatabaseFactory.CreateDatabase("ESR");
+                else if (idCuestionario > 110)
                     db = DatabaseFactory.CreateDatabase("ESR");
                 else if (idCuestionario > 102)
                     db = DatabaseFactory.CreateDatabase("ESR_2020");
@@ -87,7 +89,9 @@ namespace ESR.Data
             try
             {
                 Database db;
-                if (idCuestionario > 110)
+                if (idCuestionario > 121)
+                    db = DatabaseFactory.CreateDatabase("ESR");
+                else if (idCuestionario > 110)
                     db = DatabaseFactory.CreateDatabase("ESR");
                 else if (idCuestionario > 102)
                     db = DatabaseFactory.CreateDatabase("ESR_2020");
@@ -344,7 +348,9 @@ namespace ESR.Data
         public DataSet Carga(int idTema, int idIndicador, int idCuestionario, bool bloqueado)
         {
             Database db;
-            if (idCuestionario > 110)
+            if (idCuestionario > 121)
+                db = DatabaseFactory.CreateDatabase("ESR");
+            else if (idCuestionario > 110)
                 db = DatabaseFactory.CreateDatabase("ESR");
             else if (idCuestionario > 102)
                 db = DatabaseFactory.CreateDatabase("ESR_2020");
