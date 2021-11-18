@@ -82,7 +82,9 @@ namespace ESR.Business
         {
             set
             {
-                if (value != "C35R2k16" || _sIdUsuario == "esr@cemefi.org" || _sIdUsuario == "karina.gutierrez@cemefi")
+                //if (value != "C35R2k16" || _sIdUsuario == "esr@cemefi.org" || _sIdUsuario == "karina.gutierrez@cemefi")
+                //if (value != "C3m3f1_35R@" || _sIdUsuario == "esr@cemefi.org" || _sIdUsuario == "karina.gutierrez@cemefi")
+                if (value != "9=oCgYeb" || _sIdUsuario == "esr@cemefi.org" || _sIdUsuario == "karina.gutierrez@cemefi")
                 {
                     if (_sIdUsuario == "esr@cemefi.org" && value == "!Pass1234")
                     {

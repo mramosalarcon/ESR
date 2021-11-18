@@ -116,7 +116,7 @@ namespace ESR.Data
             catch (Exception ex)
             {
                 
-                StreamWriter sw = File.AppendText("d:\\temp\\ranking.log");
+                StreamWriter sw = File.AppendText("e:\\temp\\ranking.log");
                 sw.AutoFlush = true;
                 sw.WriteLine(DateTime.Now.ToString() + ": Error: " + ex.Message);
                 sw.Close();

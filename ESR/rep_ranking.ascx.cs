@@ -228,36 +228,39 @@ public partial class rep_ranking : System.Web.UI.UserControl
 
                 foreach (DataRow drPromedioTema in rankingEmpresa.Tables["Ranking"].Rows)
                 {
-                    TableCell temaCell = new TableCell();
-                    temaCell.Text = String.Format(culture, "{0:#.#####}", drPromedioTema["Promedio"]);
+                    if (Convert.ToInt32(drPromedioTema["idTema"]) != 3)
+                    {
+                        TableCell temaCell = new TableCell();
+                        temaCell.Text = String.Format(culture, "{0:#.#####}", drPromedioTema["Promedio"]);
 
-                    TableCell faseImplementacionI = new TableCell();
-                    faseImplementacionI.Text = String.Format(culture, "{0:0%}", drPromedioTema["porcentajeFaseI"]);
-                    TableCell faseImplementacionII = new TableCell();
-                    faseImplementacionII.Text = String.Format(culture, "{0:0%}", drPromedioTema["porcentajeFaseII"]);
-                    TableCell faseImplementacionIII = new TableCell();
-                    faseImplementacionIII.Text = String.Format(culture, "{0:0%}", drPromedioTema["porcentajeFaseIII"]);
+                        TableCell faseImplementacionI = new TableCell();
+                        faseImplementacionI.Text = String.Format(culture, "{0:0%}", drPromedioTema["porcentajeFaseI"]);
+                        TableCell faseImplementacionII = new TableCell();
+                        faseImplementacionII.Text = String.Format(culture, "{0:0%}", drPromedioTema["porcentajeFaseII"]);
+                        TableCell faseImplementacionIII = new TableCell();
+                        faseImplementacionIII.Text = String.Format(culture, "{0:0%}", drPromedioTema["porcentajeFaseIII"]);
 
-                    empresa.Cells.Add(temaCell);
-                    empresa.Cells.Add(faseImplementacionI);
-                    empresa.Cells.Add(faseImplementacionII);
-                    empresa.Cells.Add(faseImplementacionIII);
+                        empresa.Cells.Add(temaCell);
+                        empresa.Cells.Add(faseImplementacionI);
+                        empresa.Cells.Add(faseImplementacionII);
+                        empresa.Cells.Add(faseImplementacionIII);
 
-                    tabRanking.Rows.Add(empresa);
+                        tabRanking.Rows.Add(empresa);
 
-                    // Aqui tengo que meter el Promedio + GC con un if
+                        // Aqui tengo que meter el Promedio + GC con un if
 
 
-                    //if (fPromedioIndicadorTema < fMenorValor)
-                    //{
-                    //    fMenorValor = fPromedioIndicadorTema;
-                    //}
+                        //if (fPromedioIndicadorTema < fMenorValor)
+                        //{
+                        //    fMenorValor = fPromedioIndicadorTema;
+                        //}
 
-                    //if (fPromedioIndicadorTema > fMayorValor)
-                    //{
-                    //    fMayorValor = fPromedioIndicadorTema;
-                    //}
-                    //fPromedioGeneral += fPromedioIndicadorTema;
+                        //if (fPromedioIndicadorTema > fMayorValor)
+                        //{
+                        //    fMayorValor = fPromedioIndicadorTema;
+                        //}
+                        //fPromedioGeneral += fPromedioIndicadorTema;
+                    }
                 }
 
                 //fPromedioGeneral = fPromedioGeneral / dsTodas.Tables["Empresa"].Rows.Count;

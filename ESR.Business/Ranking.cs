@@ -352,7 +352,7 @@ namespace ESR.Business
                                 {
                                     /// Mandar el mensaje o el error de que no se guardo el promedio
                                     /// 
-                                    StreamWriter swp = File.AppendText("d:\\temp\\monitor_ranking.log");
+                                    StreamWriter swp = File.AppendText("e:\\temp\\monitor_ranking.log");
                                     swp.AutoFlush = true;
                                     swp.WriteLine("No fue posible guardar el promedio del tema");
                                     swp.Close();
@@ -484,10 +484,10 @@ namespace ESR.Business
                             {
                                 /// Tambien checar si el promedio se guardo bien o no.
                                 /// 
-                                //StreamWriter sw = File.AppendText("d:\\temp\\monitor.log");
-                                //sw.AutoFlush = true;
-                                //sw.WriteLine ("No fue posible guardar el promedio por fase de implementaci�n");
-                                //sw.Close();
+                                StreamWriter sw = File.AppendText("e:\\temp\\monitor.log");
+                                sw.AutoFlush = true;
+                                sw.WriteLine("No fue posible guardar el promedio por fase de implementaci�n");
+                                sw.Close();
                             }
                         }
 
@@ -532,10 +532,10 @@ namespace ESR.Business
                         {
                             /// Checar si se guardo bien y si no registrar el error.
                             /// 
-                            //StreamWriter sw = File.AppendText("d:\\temp\\monitor.log");
-                            //sw.AutoFlush = true;
-                            //sw.WriteLine ("No fue posible guardar el promedio general");
-                            //sw.Close();
+                            StreamWriter sw = File.AppendText("e:\\temp\\monitor.log");
+                            sw.AutoFlush = true;
+                            sw.WriteLine("No fue posible guardar el promedio general");
+                            sw.Close();
                         }
                         this.promedioGral = 0;
                     }
@@ -544,7 +544,7 @@ namespace ESR.Business
                 }
                 catch (Exception ex)
                 {
-                    StreamWriter swe = File.AppendText("d:\\temp\\monitor_err.log");
+                    StreamWriter swe = File.AppendText("e:\\temp\\monitor_err.log");
                     swe.AutoFlush = true;
                     swe.WriteLine(DateTime.Now + ": Error: " + ex.Message.ToString());
                     swe.Close();
