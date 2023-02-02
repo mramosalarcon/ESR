@@ -27,8 +27,8 @@ d:\Users\migue\Documents\Projects\ESR\ESR.Data\obj\Release\ESR.Data.dll
 d:\Users\migue\Documents\Projects\ESR\ESR.Data\obj\Release\ESR.Data.pdb
 D:\Users\migue\Documents\GitHub\ESR\ESR.Data\bin\Release\ESR.Data.dll
 D:\Users\migue\Documents\GitHub\ESR\ESR.Data\bin\Release\ESR.Data.pdb
-D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Release\ESR.Data.csprojAssemblyReference.cache
 D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Release\ESR.Data.csproj.CoreCompileInputs.cache
 D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Release\ESR.Data.csproj.CopyComplete
 D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Release\ESR.Data.dll
 D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Release\ESR.Data.pdb
+D:\Users\migue\Documents\GitHub\ESR\ESR.Data\obj\Release\ESR.Data.csprojAssemblyReference.cache

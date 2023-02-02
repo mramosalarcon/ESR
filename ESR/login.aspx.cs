@@ -132,7 +132,7 @@ public partial class login : System.Web.UI.Page // Microsoft.SharePoint.Identity
                 case 0:
 
                     // 
-                    // SPContext.Current.Web.Url == "http://esr.cemefi.org"
+                    // SPContext.Current.Web.Url == "https://esrv1.cemefi.org"
                     //
                     bool valid = false;
 #if !Debug

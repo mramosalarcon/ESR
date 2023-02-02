@@ -53,7 +53,7 @@ style="background-repeat: no-repeat; background-position: center top; background
 <table width="50%" align="center">
 <tr>
         <td align="center" colspan="2">
-                                 <a href="http://esr.cemefi.org">
+                                 <a href="https://esrv1.cemefi.org">
                                 <img alt="Distintivo Empresa Socialmente Responsable" 
                                     src="images/ESRhorizontal_color.png" style="border-width: 0px" /></a></td>
         <td align="center">

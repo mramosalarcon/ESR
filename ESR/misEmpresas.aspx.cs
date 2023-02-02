@@ -80,7 +80,7 @@ public partial class misEmpresas : System.Web.UI.Page
                     if (LoadSession())
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "documentos",
-                        "$(\"a#docs\").attr('href', 'http://esr.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');",
+                        "$(\"a#docs\").attr('href', 'https://esrv1.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');",
                         true);
                     }
                     else

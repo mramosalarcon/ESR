@@ -122,7 +122,19 @@ namespace ESR.Business
                 throw ex;
             }
         }
-
+        
+        public DataSet CargaTemasCuestionario(int idCuestionario)
+        {
+            try
+            {
+                ESR.Data.Tema temas = new ESR.Data.Tema();
+                return temas.CargaTemasCuestionario(idCuestionario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public DataSet CargaSubtemas(int selectedValue)
         {
             ESR.Data.Tema subtemas = new ESR.Data.Tema();

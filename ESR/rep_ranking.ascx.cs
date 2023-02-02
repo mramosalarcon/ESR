@@ -79,12 +79,44 @@ public partial class rep_ranking : System.Web.UI.UserControl
             //indiceRSE.BackColor = System.Drawing.Color.Teal;
             //indiceRSE.ForeColor = System.Drawing.Color.White;
             //indiceRSE.Text = "INDICE RSE";
-
             titulo.Cells.Add(tituloPosicion);
             titulo.Cells.Add(tituloEmpresa);
             titulo.Cells.Add(tituloEstado);
             titulo.Cells.Add(tituloPromedio);
             titulo.Cells.Add(tituloPGC);
+
+            Tema temas = new Tema();
+            DataSet dsTemas = temas.CargaTemasCuestionario(this.GetIdCuestionario());
+
+            // Ahora insertamos el titulo del tema
+            foreach (DataRow drTema in dsTemas.Tables["Temas"].Rows)
+            {
+                TableCell tituloTema = new TableCell();
+                tituloTema.BackColor = System.Drawing.Color.Teal;
+                tituloTema.ForeColor = System.Drawing.Color.White;
+                tituloTema.Text = drTema["Tema"].ToString();
+
+                TableCell faseImplementacionI = new TableCell();
+                faseImplementacionI.BackColor = System.Drawing.Color.Brown;
+                faseImplementacionI.ForeColor = System.Drawing.Color.White;
+                faseImplementacionI.Text = "Fase I"; //drTema["Tema"].ToString();
+
+                TableCell faseImplementacionII = new TableCell();
+                faseImplementacionII.BackColor = System.Drawing.Color.Brown;
+                faseImplementacionII.ForeColor = System.Drawing.Color.White;
+                faseImplementacionII.Text = "Fase II"; //drTema["Tema"].ToString();
+
+                TableCell faseImplementacionIII = new TableCell();
+                faseImplementacionIII.BackColor = System.Drawing.Color.Brown;
+                faseImplementacionIII.ForeColor = System.Drawing.Color.White;
+                faseImplementacionIII.Text = "Fase III"; //drTema["Tema"].ToString();
+
+                titulo.Cells.Add(tituloTema);
+
+                titulo.Cells.Add(faseImplementacionI);
+                titulo.Cells.Add(faseImplementacionII);
+                titulo.Cells.Add(faseImplementacionIII);
+            }
 
             tabRanking.Rows.Add(titulo);
 
@@ -93,7 +125,6 @@ public partial class rep_ranking : System.Web.UI.UserControl
             empresas.idCuestionario = this.GetIdCuestionario();
             DataSet dsTodas = empresas.CargaRanking();
 
-            bool insertaTitulo = false;
             int contadorEmpresa = 0;
             float fltPGC = 0;
             float fltPM = 0;
@@ -105,40 +136,6 @@ public partial class rep_ranking : System.Web.UI.UserControl
                 rkEmpresa.idEmpresa = Convert.ToInt32(drEmpresa["idEmpresa"].ToString());
                 rkEmpresa.idCuestionario = this.GetIdCuestionario();
                 DataSet rankingEmpresa = rkEmpresa.CargaDetalleRanking();
-
-                if (!insertaTitulo)
-                {
-                    // Ahora insertamos el titulo del tema
-                    foreach (DataRow drTema in rankingEmpresa.Tables["Ranking"].Rows)
-                    {
-                        TableCell tituloTema = new TableCell();
-                        tituloTema.BackColor = System.Drawing.Color.Teal;
-                        tituloTema.ForeColor = System.Drawing.Color.White;
-                        tituloTema.Text = drTema["Tema"].ToString();
-
-                        TableCell faseImplementacionI = new TableCell();
-                        faseImplementacionI.BackColor = System.Drawing.Color.Brown;
-                        faseImplementacionI.ForeColor = System.Drawing.Color.White;
-                        faseImplementacionI.Text = "Fase I"; //drTema["Tema"].ToString();
-
-                        TableCell faseImplementacionII = new TableCell();
-                        faseImplementacionII.BackColor = System.Drawing.Color.Brown;
-                        faseImplementacionII.ForeColor = System.Drawing.Color.White;
-                        faseImplementacionII.Text = "Fase II"; //drTema["Tema"].ToString();
-
-                        TableCell faseImplementacionIII = new TableCell();
-                        faseImplementacionIII.BackColor = System.Drawing.Color.Brown;
-                        faseImplementacionIII.ForeColor = System.Drawing.Color.White;
-                        faseImplementacionIII.Text = "Fase III"; //drTema["Tema"].ToString();
-
-                        titulo.Cells.Add(tituloTema);
-
-                        titulo.Cells.Add(faseImplementacionI);
-                        titulo.Cells.Add(faseImplementacionII);
-                        titulo.Cells.Add(faseImplementacionIII);
-                    }
-                    insertaTitulo = true;
-                }
 
                 TableRow empresa = new TableRow();
 
@@ -224,12 +221,13 @@ public partial class rep_ranking : System.Web.UI.UserControl
                 }
                 empresa.Cells.Add(PGCCell);
                 //***************************************************************************
-               
 
+                
                 foreach (DataRow drPromedioTema in rankingEmpresa.Tables["Ranking"].Rows)
                 {
                     if (Convert.ToInt32(drPromedioTema["idTema"]) != 3)
                     {
+                        
                         TableCell temaCell = new TableCell();
                         temaCell.Text = String.Format(culture, "{0:#.#####}", drPromedioTema["Promedio"]);
 
@@ -261,6 +259,11 @@ public partial class rep_ranking : System.Web.UI.UserControl
                         //}
                         //fPromedioGeneral += fPromedioIndicadorTema;
                     }
+                    else
+                    {
+                        
+                    }
+
                 }
 
                 //fPromedioGeneral = fPromedioGeneral / dsTodas.Tables["Empresa"].Rows.Count;

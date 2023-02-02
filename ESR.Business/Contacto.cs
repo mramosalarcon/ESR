@@ -287,12 +287,17 @@ namespace ESR.Business
             }
 
             MailMessage correo = new MailMessage(ConfigurationManager.AppSettings["correoFrom"].ToString(), this.Email);
-            correo.Body = "Se concluy� con �xito el registro para la aplicaci�n de evaluaci�n del Distintivo ESR�, \nel usuario registrado es: " + this.Email;
-            correo.Body += "\n\nLa contrase�a para acceder a la aplicaci�n es: " + _sPassword;
-            correo.Body += "\n\nPor favor guarde esta informaci�n en un lugar seguro y no la comparta con nadie. La contrase�a es personal e intransferible.";
-            correo.Body += "\n\nPara mayor informaci�n favor de comunicarse con Roberto Adame, CEMEFI, 52 76 85 30, ext. 149 o al correo ayudarse@cemefi.org";
-            correo.Body += "\n\n\nAtentamente, \nequipo de administraci�n del Distintivo ESR�.";
-            correo.Subject = "Generaci�n de contrase�a (Distintivo ESR�)";
+            correo.Body = "Se concluyó con éxito el registro para la aplicación de evaluación del Distintivo ESR®, \nel usuario registrado es: " + this.Email;
+            correo.Body += "\n\nLa contraseña para acceder a la aplicación es: " + _sPassword;
+            correo.Body += "\n\nPor favor guarde esta información en un lugar seguro y no la comparta con nadie. La contraseña es personal e intransferible.";
+            correo.Body += "\n\nPara mayor información favor de comunicarse con el área de Acreditación RSE al teléfono 5552768530 a las siguientes extensiones:: ";
+            correo.Body += "\n\n - Ingrid Monter, ext. 182 o al correo serviciosrse@cemefi.org";
+            correo.Body += "\n\n - Victor González, ext. 156 o al correo victor.gonzalez@cemefi.org";
+            correo.Body += "\n\n - Miguel Cordero, al correo miguel.cordero@cemefi.org";
+            correo.Body += "\n\n - <b>Responsable de acreditación RSE</b>, Miriam Ortega ext. 128 o al correo miriam.ortega@cemefi.org";
+
+            correo.Body += "\n\n\nAtentamente, \nequipo de administración del Distintivo ESR®.";
+            correo.Subject = "Generación de contraseña (Distintivo ESR®)";
             correo.Priority = MailPriority.Normal;
 
             SmtpClient mSmtpClient = new SmtpClient(ConfigurationManager.AppSettings["servidorSMTP"].ToString());

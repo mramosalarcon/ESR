@@ -320,7 +320,7 @@ public partial class empresa : System.Web.UI.UserControl
 
                         //Crear el sitio e Sharepoint
                         SharePoint sp = new SharePoint();
-                        if (sp.CreateSite("http://esr.cemefi.org", emp.idEmpresa.ToString(), emp.nombre, emp.nombreCorto) != 0)
+                        if (sp.CreateSite("https://esrv1.cemefi.org", emp.idEmpresa.ToString(), emp.nombre, emp.nombreCorto) != 0)
                         {
                             //Response.Redirect("default.aspx");
                         }

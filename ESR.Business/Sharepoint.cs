@@ -9,7 +9,7 @@ namespace ESR.Business
     {
         public object GetDocuments(string idEmpresa)
         {
-            using (SPSite site = new SPSite("http://esr.cemefi.org/" + idEmpresa))
+            using (SPSite site = new SPSite("https://esrv1.cemefi.org/" + idEmpresa))
             {
                 using (SPWeb web = site.OpenWeb())
                 {
@@ -18,7 +18,7 @@ namespace ESR.Business
                 }
             }
         }
-        //sp.CreateSite("http://esr.cemefi.org", emp.idEmpresa.ToString(), emp.nombre, emp.nombreCorto
+        //sp.CreateSite("https://esrv1.cemefi.org", emp.idEmpresa.ToString(), emp.nombre, emp.nombreCorto
         public int CreateSite(string parentSiteURL, string siteURLRequested, string siteTitle, string siteDescription)
         {
             //const Int32 LOCALE_ID_ENGLISH = 1033;

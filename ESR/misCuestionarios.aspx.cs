@@ -94,7 +94,7 @@ public partial class misCuestionarios : System.Web.UI.Page
                         {
 
                             ClientScript.RegisterStartupScript(this.GetType(), "documentos",
-                                "$(\"a#docs\").attr('href', 'http://esr.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');", true);
+                                "$(\"a#docs\").attr('href', 'https://esrv1.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');", true);
                         }
                         else
                         {
@@ -145,20 +145,39 @@ public partial class misCuestionarios : System.Web.UI.Page
                                         break;
                                 }
                             }
-
+                            string text = Session["perfil"].ToString();
                             Cuestionario cuestionario = new Cuestionario();
                             cuestionario.idEmpresa = empresa.idEmpresa;
-                            if (base.Request.Params["ranking"] != null || base.Request.Params["individual"] != null || (base.Request.Params["nombreReporte"] != null && base.Request.Params["nombreReporte"] != "indicadores" && base.Request.Params["nombreReporte"] != "avance"))
+                            if (base.Request.Params["ranking"] != null || base.Request.Params["individual"] != null || 
+                                (base.Request.Params["nombreReporte"] != null && 
+                                base.Request.Params["nombreReporte"] != "indicadores" && 
+                                base.Request.Params["nombreReporte"] != "avance"))
                             {
                                 cuestionario.liberado = true;
                             }
                             else
                             {
-                                cuestionario.liberado = false;
+                                if (base.Request.Params["nombreReporte"] == null || base.Request.Params["nombreReporte"] == "indicadores" ||
+                                    (text.IndexOf("3") <= -1 && base.Request.Params["nombreReporte"] == "avance"))  // El evaluador tiene permitido revisar el avance 
+                                {
+                                    cuestionario.liberado = false;
+                                }
+                                else
+                                {
+                                    cuestionario.liberado = true;
+                                }
                             }
                             DataSet dataSet = null;
-                            string text = Session["perfil"].ToString();
-                            dataSet = ((text.IndexOf("0") <= -1 && text.IndexOf("1") <= -1 && text.IndexOf("2") <= -1 && text.IndexOf("3") <= -1 && text.IndexOf("9") <= -1 && text.IndexOf("4") <= -1) ? cuestionario.CargaCuestionarios(text) : cuestionario.CargaTodos());
+                            
+                            // Carga todos los cuestionarios autorizados.
+                            dataSet = ((text.IndexOf("0") <= -1 && text.IndexOf("1") <= -1 && text.IndexOf("2") <= -1 && text.IndexOf("9") <= -1 && text.IndexOf("4") <= -1) ? cuestionario.CargaCuestionarios(text) : cuestionario.CargaTodos());
+                            
+                            
+                            // Objetivo: Cargar todos los cuestionarios
+                            // Ya se porque la comente, porque al evaluador le aparecen todos los cuestionarios disponibles.
+                            // 06/07/2022 03:44
+                            //dataSet = ((text.IndexOf("0") <= -1 && text.IndexOf("1") <= -1 && text.IndexOf("2") <= -1 && text.IndexOf("3") <= -1 && text.IndexOf("9") <= -1 && text.IndexOf("4") <= -1) ? cuestionario.CargaCuestionarios(text) : cuestionario.CargaTodos());
+                            
                             if (dataSet.Tables["Cuestionario"].Rows.Count > 0)
                             {
                                 ddlCuestionarios.DataSource = dataSet;
@@ -172,7 +191,7 @@ public partial class misCuestionarios : System.Web.UI.Page
                             }
                             else
                             {
-                                lblEmpresa.Text = "Su empresa no tiene cuestionario disponible. Solicite acceso al cuestionario al �rea de RSE del Cemefi - tel. (55) 10541479.";
+                                lblEmpresa.Text = "Su empresa no tiene cuestionario disponible. Solicite acceso al cuestionario al área de RSE del Cemefi - tel. (55) 52768530 ext. 128, 156, 182, 111";
                                 ddlCuestionarios.Visible = false;
                                 btnIniciarCuestionario.Visible = false;
                                 lblCuestionarios.Visible = false;
@@ -285,7 +304,7 @@ public partial class misCuestionarios : System.Web.UI.Page
                 Response.Redirect("/_layouts/15/ReportServer/RSViewerPage.aspx?rv:RelativeReportUrl=/reportesESR/rpt_Evaluacion_Tema.rdl&rp:idCuestionario=" + ddlCuestionarios.SelectedValue);
                 break;
             case "indicadores":
-                Response.Redirect("/_layouts/15/ReportServer/RSViewerPage.aspx?rv:RelativeReportUrl=/reportesESR/rpt_Consulta_Indicadores.rdl&rp:idCuestionario=" + ddlCuestionarios.SelectedValue);
+                Response.Redirect("/_layouts/15/ReportServer/RSViewerPage.aspx?rv:RelativeReportUrl=/reportesESR/rpt_Consulta_Indicadores.rdl&rp:idCuestionario=" + ddlCuestionarios.SelectedValue + "&rp:idEmpresa=" + this.GetIdEmpresa());
                 //Response.Redirect("ReportV.aspx?report=rpt_Consulta_Indicadores&idCuestionario=" + ddlCuestionarios.SelectedValue);
                 break;
             case "liberado":

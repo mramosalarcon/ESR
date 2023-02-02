@@ -64,7 +64,7 @@ public partial class buscadorDeEmpresas : System.Web.UI.Page
 
             //// Set report server and report path
             //ReportViewer1.ServerReport.ReportServerUrl = new
-            //   Uri("http://esr.cemefi.org/reportserver");
+            //   Uri("https://esrv1.cemefi.org/reportserver");
 
             //ReportViewer1.ServerReport.ReportPath =
             //   "/Reports/rpt_vincular_empresas.rdl";

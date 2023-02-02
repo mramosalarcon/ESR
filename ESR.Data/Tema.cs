@@ -168,6 +168,20 @@ namespace ESR.Data
             return temas;
         }
 
+        public DataSet CargaTemasCuestionario(int idCuestionario)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlCommand = "CESR_CargaTemasCuestionario";
+            DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+
+            db.AddInParameter(dbCommand, "idCuestionario", DbType.Int32, idCuestionario);
+
+            DataSet temas = null;
+            temas = db.ExecuteDataSet(dbCommand);
+            temas.Tables[0].TableName = "Temas";
+
+            return temas;
+        }
         public DataSet CargaSubtemas(int selectedValue)
         {
             Database db = DatabaseFactory.CreateDatabase();

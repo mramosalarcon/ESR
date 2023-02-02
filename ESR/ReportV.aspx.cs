@@ -16,14 +16,14 @@ namespace ESR
             try
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "documentos",
-                    "$(\"a#docs\").attr('href', 'http://esr.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');", true);
+                    "$(\"a#docs\").attr('href', 'https://esrv1.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');", true);
 
                 // Set Processing Mode
                 ReportViewer1.ProcessingMode = ProcessingMode.Remote;
                 ReportViewer1.AsyncRendering = true;
 
                 // Set report server and report path
-                ReportViewer1.ServerReport.ReportServerUrl = new Uri("http://esr.cemefi.org/_layouts/15/ReportServer");
+                ReportViewer1.ServerReport.ReportServerUrl = new Uri("https://esrv1.cemefi.org/_layouts/15/ReportServer");
 
                 ReportViewer1.ServerReport.ReportPath =
                    "/reportesESR/" + Request.QueryString["report"].ToString() + ".rdl";

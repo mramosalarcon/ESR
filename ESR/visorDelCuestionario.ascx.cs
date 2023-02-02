@@ -151,7 +151,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //Aqui meter la etiqueta y el texto para el revisor
                     Label lblMensajeCalificacion = new Label();
                     lblMensajeCalificacion.ForeColor = System.Drawing.Color.Red;
-                    lblMensajeCalificacion.Text = "Precalificaci�n: ";
+                    lblMensajeCalificacion.Text = "Precalificación: ";
                     lblMensajeCalificacion.Visible = false;
 
                     lblCalificacion.ForeColor = System.Drawing.Color.Red;
@@ -188,7 +188,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     txtCalificacionRevisor.Width = 30;
 
                     Button btnActualizarEvaluacion = new Button();
-                    btnActualizarEvaluacion.Text = "Guardar Evaluaci�n";
+                    btnActualizarEvaluacion.Text = "Guardar evaluación";
                     btnActualizarEvaluacion.Click += new System.EventHandler(this.btnActualizarEvaluacion_Click);
 
                     TableRow tblRowCal2 = new TableRow();
@@ -205,7 +205,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
 
                     string strPerfiles = Session["perfil"].ToString();
                     if (strPerfiles.IndexOf("0") > -1 || strPerfiles.IndexOf("1") > -1 ||
-                    strPerfiles.IndexOf("2") > -1)
+                    strPerfiles.IndexOf("2") > -1)// || strPerfiles.IndexOf("3") > -1)
                     {
                         Panel1.Controls.Add(tblCalificacion);
                     }
@@ -375,7 +375,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //                        "&idTema=" + drIndicador["idTema"].ToString() + "&idTipoEvidencia=" + evi["idTipoEvidencia"].ToString() +
                     //                        "&idCuestionario=" + lblIdCuestionario.Text + "&idTipoRespuesta=" + drTipoRespuestaInciso["idTipoRespuesta"].ToString() +
                     //                        "\",null,\"top=50, left=50, dependent=yes, height=600, width=1200, menubar=no, location=no, status=no, toolbar=no, titlebar=no, scrollbar=no, resizable=no\");";
-                    //                    //btnSharepoint.OnClientClick = "window.open(\"http://esr.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx\",null,\"top=50, left=50, dependent=yes, height=600, width=1200, menubar=no, location=no, status=no, toolbar=no, titlebar=no, scrollbar=no, resizable=no\");";
+                    //                    //btnSharepoint.OnClientClick = "window.open(\"https://esrv1.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx\",null,\"top=50, left=50, dependent=yes, height=600, width=1200, menubar=no, location=no, status=no, toolbar=no, titlebar=no, scrollbar=no, resizable=no\");";
                     //                    if (strPerfiles.IndexOf("0") > -1 || strPerfiles.IndexOf("1") > -1 ||
                     //                    strPerfiles.IndexOf("2") > -1 || strPerfiles.IndexOf("3") > -1)
                     //                    {
@@ -559,7 +559,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                     //                            "&idTema=" + drIndicador["idTema"].ToString() + "&idInciso=" + drInciso["idInciso"].ToString() + "&idTipoEvidencia=" + evi["idTipoEvidencia"].ToString() +
                     //                            "&idCuestionario=" + lblIdCuestionario.Text + "&idTipoRespuesta=" + drTiposDeRepuestaInciso["idTipoRespuesta"].ToString() +
                     //                            "\",null,\"top=50, left=50, dependent=yes, height=600, width=1200, menubar=no, location=no, status=no, toolbar=no, titlebar=no, scrollbar=no, resizable=no\");";
-                    //                        //btnSharepoint.OnClientClick = "window.open(\"http://esr.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx\",null,\"top=50, left=50, dependent=yes, height=600, width=1200, menubar=no, location=no, status=no, toolbar=no, titlebar=no, scrollbar=no, resizable=no\");";
+                    //                        //btnSharepoint.OnClientClick = "window.open(\"https://esrv1.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx\",null,\"top=50, left=50, dependent=yes, height=600, width=1200, menubar=no, location=no, status=no, toolbar=no, titlebar=no, scrollbar=no, resizable=no\");";
                     //                        if (strPerfiles.IndexOf("0") > -1 || strPerfiles.IndexOf("1") > -1 ||
                     //                        strPerfiles.IndexOf("2") > -1 || strPerfiles.IndexOf("3") > -1)
                     //                        {
@@ -646,6 +646,8 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                             // Los agrupa por indicador, ejemplo: respuesta_1, y asigna el m�todo del evento
                             rbTiposDeRespuesta.GroupName = "tipoRespuesta" + "_" + drIndicador["idIndicador"].ToString();
                             rbTiposDeRespuesta.AutoPostBack = true;
+                            if (strPerfiles.IndexOf("3") > -1)
+                                rbTiposDeRespuesta.Enabled = false;
 
                             if (dsRespuestas.Tables["Respuesta_Indicador"].Rows.Count > 0)
                             {
@@ -700,6 +702,8 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                                     // A�ade la descripci�n de la evidencia y agrega el control al UpdatePanel
                                     chkB.Text = evi["descripcion"].ToString();
                                     chkB.AutoPostBack = true;
+                                    if (strPerfiles.IndexOf("3") > -1)
+                                        chkB.Enabled = false;
                                     chkB.CheckedChanged += new System.EventHandler(this.chkB_CheckedChange);
                                     tblCellchk.Controls.Add(chkB);
                                     tblRow.Cells.Add(tblCellchk);
@@ -774,6 +778,8 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                                                 }
                                                 tblCellchkEvi.Controls.Add(newFile);
 
+                                                
+                                                
                                                 ImageButton imgEliminar = new ImageButton();
                                                 imgEliminar.ID = "imgEliminar_" + drEvidencia["idIndicador"].ToString() + "_" + drEvidencia["idTema"].ToString() + "_"
                                                     + drEvidencia["idTipoRespuesta"].ToString() + "_" + drEvidencia["idTipoEvidencia"].ToString() + "_" + drEvidencia["idEmpresa"].ToString() + "_"
@@ -781,9 +787,14 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                                                 imgEliminar.ImageUrl = "~/images/close.gif";
                                                 imgEliminar.ToolTip = drEvidencia["descripcion"].ToString();
                                                 imgEliminar.Click += new ImageClickEventHandler(this.imgEliminar_Click);
+                                                if (strPerfiles.IndexOf("3") > -1)
+                                                    imgEliminar.Enabled = false;
                                                 id++;
-                                                //imgEliminar.PostBackUrl = "diagnostico.aspx?Content=visorDelCuestionario&idTema=" + lblidTema.Text + "&idSubtema=" + lblidSubtema.Text + "&idIndicador=" + lblidIndicador.Text + "&idCuestionario=" + lblIdCuestionario.Text;
                                                 tblCellfupEvi.Controls.Add(imgEliminar);
+                                                
+                                                
+                                                //imgEliminar.PostBackUrl = "diagnostico.aspx?Content=visorDelCuestionario&idTema=" + lblidTema.Text + "&idSubtema=" + lblidSubtema.Text + "&idIndicador=" + lblidIndicador.Text + "&idCuestionario=" + lblIdCuestionario.Text;
+                                                
 
                                                 tblRowEvi.Cells.Add(tblCellchkEvi);
                                                 tblRowEvi.Cells.Add(tblCellfupEvi);
@@ -804,6 +815,8 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                                     //btnOtro.OnClientClick = "showWindow(\"adjuntar\");";
                                     //btnOtro.Click += new System.EventHandler(this.btnOtroIndicador_Click);
                                     //btnOtro.Visible = false;
+                                    if (strPerfiles.IndexOf("3") > -1)
+                                        btnOtro.Enabled = false;
                                     tblCellbtn.Controls.Add(btnOtro);
 
                                     Button btnSharepoint = new Button();
@@ -814,7 +827,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                                     //    "&idTema=" + drIndicador["idTema"].ToString() + "&idTipoEvidencia=" + evi["idTipoEvidencia"].ToString() +
                                     //    "&idCuestionario=" + lblIdCuestionario.Text + "&idTipoRespuesta=" + drTipoRespuesta["idTipoRespuesta"].ToString() +
                                     //    "\",null,\"top=50, left=50, dependent=yes, height=600, width=1200, menubar=no, location=no, status=no, toolbar=no, titlebar=no, scrollbar=no, resizable=no\");";
-                                    //btnSharepoint.OnClientClick = "window.open(\"http://esr.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx\",null,\"top=50, left=50, dependent=yes, height=600, width=1200, menubar=no, location=no, status=no, toolbar=no, titlebar=no, scrollbar=no, resizable=no\");";
+                                    //btnSharepoint.OnClientClick = "window.open(\"https://esrv1.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx\",null,\"top=50, left=50, dependent=yes, height=600, width=1200, menubar=no, location=no, status=no, toolbar=no, titlebar=no, scrollbar=no, resizable=no\");";
                                     btnSharepoint.OnClientClick = "window.open(\"documentLibrary.aspx?idIndicador=" + drIndicador["idIndicador"].ToString() +
                                         "&idTema=" + drIndicador["idTema"].ToString() + "&idTipoEvidencia=" + evi["idTipoEvidencia"].ToString() +
                                         "&idCuestionario=" + lblIdCuestionario.Text + "&idTipoRespuesta=" + drTipoRespuesta["idTipoRespuesta"].ToString() +
@@ -823,6 +836,8 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                                     //if (strPerfiles.IndexOf("0") > -1 || strPerfiles.IndexOf("1") > -1 ||
                                     //strPerfiles.IndexOf("2") > -1 || strPerfiles.IndexOf("3") > -1 || strPerfiles.IndexOf("7") > -1 || strPerfiles.IndexOf("8") > -1)
                                     //{
+                                    if (strPerfiles.IndexOf("3") > -1)
+                                        btnSharepoint.Enabled = false;
                                     tblCellbtn.Controls.Add(btnSharepoint);
                                     //}
                                     tblRow.Cells.Add(tblCellbtn);
@@ -856,6 +871,7 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                         updAfinidades.Visible = flgPAsGR;
                         UpdatePanel updGR = CargaGruposDeRelacion(dsIndicadores.Tables["Grupos_Relacion"], dsRespuestas.Tables["Respuesta_Grupo"]);
                         updGR.Visible = flgPAsGR;
+                        
                         panTiposDeRespuesta.ContentTemplateContainer.Controls.Add(updAfinidades);
                         panTiposDeRespuesta.ContentTemplateContainer.Controls.Add(updGR);
                         // Agrega la estructura de respuestas al panel principal. 
@@ -1091,6 +1107,11 @@ public partial class visorDelCuestionario : System.Web.UI.UserControl
                         chkGP.Checked = true;
 
                     chkGP.AutoPostBack = true;
+
+                    string strPerfiles = Session["perfil"].ToString();
+                    if (strPerfiles.IndexOf("3") > -1)
+                        chkGP.Enabled = false;
+
                     chkGP.CheckedChanged += new System.EventHandler(this.chkGP_CheckedChange);
 
                     tblCellchk.Controls.Add(chkGP);

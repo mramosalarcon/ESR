@@ -19,7 +19,7 @@
     InteractiveDeviceInfos="(Collection)" ProcessingMode="Remote" 
     WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" 
         AsyncRendering="False">
-        <serverreport reportpath="http://esr.cemefi.org/Reports/rpt_retro_esr" 
-            reportserverurl="http://esr.cemefi.org/reportserver" />
+        <serverreport reportpath="https://esrv1.cemefi.org/Reports/rpt_retro_esr" 
+            reportserverurl="https://esrv1.cemefi.org/reportserver" />
     </rsweb:ReportViewer>
 </asp:Content>

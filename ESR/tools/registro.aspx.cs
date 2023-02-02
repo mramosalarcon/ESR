@@ -66,14 +66,14 @@ namespace ESR.tools
                     ddlPais.ClearSelection();
                     if (usr.pais != 168)
                     {
-                        lblNotaPie.Text = "Su registro fue un éxito. Hemos enviado a su correo la contraseña para acceder. En caso de no recibirla verifique su folder de correo no deseado o utilice la herramienta de recuperación de contraseña.\n Para regresar a la pantalla principal, de clic <a href=\"http://esr.cemefi.org\">aquí</a>.";
+                        lblNotaPie.Text = "Su registro fue un éxito. Hemos enviado a su correo la contraseña para acceder. En caso de no recibirla verifique su folder de correo no deseado o utilice la herramienta de recuperación de contraseña.\n Para regresar a la pantalla principal, de clic <a href=\"https://esrv1.cemefi.org\">aquí</a>.";
                     }
                     else
                     {
                         lblNotaPie.Text = "Su registro fue un éxito. Hemos enviado a su correo la contraseña para acceder. En caso de no recibirla verifique su folder de correo no deseado o utilice la herramienta de recuperación de contraseña.\n Para regresar a la pantalla principal, de clic <a href=\"http://esr.peru2021.org\">aquí</a>.";
                     }
 
-                    Response.Redirect("http://esr.cemefi.org", false);
+                    Response.Redirect("https://esrv1.cemefi.org", false);
                 }
             }
             else

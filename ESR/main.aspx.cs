@@ -92,7 +92,7 @@ namespace ESR
                         {
                             //SPSecurity.RunWithElevatedPrivileges(delegate()
                             //{
-                            //    using (SPSite site = new SPSite("http://esr.cemefi.org"))
+                            //    using (SPSite site = new SPSite("https://esrv1.cemefi.org"))
                             //    {
                             //        using (SPWeb web = site.OpenWeb())
                             //        {
@@ -135,7 +135,7 @@ namespace ESR
 
 
                             //ClientScript.RegisterStartupScript(this.GetType(), "documentos",
-                            //    "$(\"a#docs\").attr('href', 'http://esr.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');",
+                            //    "$(\"a#docs\").attr('href', 'https://esrv1.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');",
                             //    true);
                             ////DateTime dtFechaDeLiberacion = Convert.ToDateTime("24/Oct/2011 17:59");
                             ////lblTiempoRestante.Text = String.Format("Faltan {0:D} horas, {1:D} minutos para la liberación del cuestionario ESR 2012 (1 a 5 años).", dtFechaDeLiberacion.Hour - DateTime.Now.Hour, dtFechaDeLiberacion.Minute - DateTime.Now.Minute);

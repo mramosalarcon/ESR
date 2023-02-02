@@ -563,14 +563,14 @@ namespace ESR.Business
 							if (text != string.Empty && text != null)
 							{
 								MailMessage mailMessage = new MailMessage(ConfigurationManager.AppSettings["correoFrom"].ToString(), text);
-								mailMessage.Body = "Se le env�a este correo debido a que el usuario " + _sIdUsuario;
+								mailMessage.Body = "Se le envía este correo debido a que el usuario " + _sIdUsuario;
 								string body = mailMessage.Body;
-								mailMessage.Body = body + " ha solicitado la vinculaci�n a la empresa: " + _iidEmpresa.ToString() + " - " + _sNombre + ", para acceder al Distintivo Empresa Socialmente Responsable�.";
-								mailMessage.Body += "\n\nPor favor acceda a la aplicaci�n en http://esr.cemefi.org para autorizar al usuario y asignarle permisos para el cuestionario";
+								mailMessage.Body = body + " ha solicitado la vinculación a la empresa: " + _iidEmpresa.ToString() + " - " + _sNombre + ", para acceder al Distintivo Empresa Socialmente Responsable®";
+								mailMessage.Body += "\n\nPor favor acceda a la aplicación en https://esrv1.cemefi.org para autorizar al usuario y asignarle permisos para el cuestionario";
 								mailMessage.Body += "\n\n\nAtentamente";
 								mailMessage.Body += "\nResponsabilidad Social Empresarial";
 								mailMessage.Body += "\nEquipo de administraci�n RSE";
-								mailMessage.Subject = "ESR� alerta de v�nculo, " + _sNombre;
+								mailMessage.Subject = "ESR® alerta de vínculo, " + _sNombre;
 								mailMessage.Priority = MailPriority.Normal;
 								SmtpClient smtpClient = new SmtpClient(ConfigurationManager.AppSettings["servidorSMTP"].ToString());
 								smtpClient.Port = 587;
@@ -585,11 +585,11 @@ namespace ESR.Business
 						else
 						{
 							MailMessage mailMessage2 = new MailMessage(ConfigurationManager.AppSettings["correoFrom"].ToString(), "mramos@kicloud.com.mx");
-							mailMessage2.Body = "Se le env�a este correo debido a que el usuario " + _sIdUsuario;
-							mailMessage2.Body = mailMessage2.Body + " ha solicitado la vinculaci�n a la empresa: " + _iidEmpresa.ToString();
+							mailMessage2.Body = "Se le envía este correo debido a que el usuario " + _sIdUsuario;
+							mailMessage2.Body = mailMessage2.Body + " ha solicitado la vinculación a la empresa: " + _iidEmpresa.ToString();
 							mailMessage2.Body += "\n\nPor favor verifique, porque no aparece el nombre.";
 							mailMessage2.Body += "\n\n\nAtentamente";
-							mailMessage2.Body += "\nesr.cemefi.org";
+							mailMessage2.Body += "\nesrv1.cemefi.org";
 							mailMessage2.Subject = "Problema con empresa, " + _iidEmpresa.ToString();
 							mailMessage2.Priority = MailPriority.Normal;
 							SmtpClient smtpClient2 = new SmtpClient(ConfigurationManager.AppSettings["servidorSMTP"].ToString());
@@ -670,8 +670,8 @@ namespace ESR.Business
 							string body = mailMessage.Body;
 							mailMessage.Body = body + "\nSe ha inscrito como cadena de valor de: " + empresa2.nombre + "-" + empresa2.nombreCorto;
 						}
-						mailMessage.Body += "\n\n\nAplicacion http://esr.cemefi.org";
-						mailMessage.Subject = "Alerta - Registro de empresa en http://esr.cemefi.org";
+						mailMessage.Body += "\n\n\nAplicacion https://esrv1.cemefi.org";
+						mailMessage.Subject = "Alerta - Registro de empresa en https://esrv1.cemefi.org";
 						mailMessage.Priority = MailPriority.Normal;
 						SmtpClient smtpClient = new SmtpClient(ConfigurationManager.AppSettings["servidorSMTP"].ToString());
 						smtpClient.Port = 587;
@@ -695,9 +695,13 @@ namespace ESR.Business
 							mailMessage2.Body = mailMessage2.Body + "\nTelefono: " + Telefono;
 							string body2 = mailMessage2.Body;
 							mailMessage2.Body = body2 + "\nY ha solicitado incribirse como cadena de valor de su empresa: " + empresa2.nombre + "-" + empresa2.nombreCorto;
-							mailMessage2.Body += "\n\nEn caso de aprobar esta solicitud, por favor pongase en contacto con Roberto Adame al telefono 52 76 85 30, ext. 149 o al correo distintivo@cemefi.org ";
-							mailMessage2.Body += "\n\n\nAplicacion http://esr.cemefi.org";
-							mailMessage2.Subject = "Solicitud de autorizaci�n para registro en Cadena de Valor ESR";
+							mailMessage2.Body += "\n\nEn caso de aprobar esta solicitud, por favor pongase en contacto el área de Acreditación RSE al teléfono 5552768530 a las siguientes extensiones::";
+							mailMessage2.Body += "\n\n - Ingrid Monter, ext. 182 o al correo serviciosrse@cemefi.org";
+							mailMessage2.Body += "\n\n - Victor González, ext. 156 o al correo victor.gonzalez@cemefi.org";
+							mailMessage2.Body += "\n\n - Miguel Cordero, al correo miguel.cordero@cemefi.org";
+							mailMessage2.Body += "\n\n - <b>Responsable de acreditación RSE</b>, Miriam Ortega ext. 128 o al correo miriam.ortega@cemefi.org";
+							mailMessage2.Body += "\n\n\nAplicacion https://esrv1.cemefi.org";
+							mailMessage2.Subject = "Solicitud de autorización para registro en Cadena de Valor ESR";
 							mailMessage2.Priority = MailPriority.Normal;
 							smtpClient.Send(mailMessage2);
 						}

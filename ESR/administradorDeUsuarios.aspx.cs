@@ -65,7 +65,7 @@ public partial class administradorDeUsuarios : System.Web.UI.Page
         if (!IsPostBack)
         {
             //ClientScript.RegisterStartupScript(this.GetType(), "documentos",
-            //    "$(\"a#docs\").attr('href', 'http://esr.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');", true);
+            //    "$(\"a#docs\").attr('href', 'https://esrv1.cemefi.org/" + Session["idEmpresa"].ToString() + "/Documentos%20compartidos/Forms/AllItems.aspx');", true);
 
             PopulateMenu();
 

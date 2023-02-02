@@ -312,7 +312,7 @@ namespace ESR.Business
             {
                 MailMessage correo = new MailMessage(ConfigurationManager.AppSettings["correoFrom"].ToString(), this.Email);
                 correo.Body = "Se ha solicitado el reestablecimiento de la contraseña para la aplicación de autodiagnóstico ESR®";
-                correo.Body += "\n\nDe clic en el siguiente enlace para reestablecer la contraseña: http://esr.cemefi.org/tools/changePass.aspx?token=" + this.Email;
+                correo.Body += "\n\nDe clic en el siguiente enlace para reestablecer la contraseña: https://esrv1.cemefi.org/tools/changePass.aspx?token=" + this.Email;
                 correo.Body += "\n\n";
                 correo.Body += "\n\nPara obtener soporte escriba al correo distintivo@cemefi.org";
                 correo.Body += "\n\n\nAtentamente, equipo de Administración RSE";
@@ -562,8 +562,8 @@ namespace ESR.Business
             correoRSE.Body += "\nNombre: " + this.apellidoP + " " + this.apellidoM + ", " + this.nombre;
             correoRSE.Body += "\nTelefono: " + this.Telefono;
             //correo.Body += "\n\nLa contraseña generada es: " + _sPassword;
-            correoRSE.Body += "\n\n\nAplicación http://esr.cemefi.org";
-            correoRSE.Subject = "Alerta - Registro de usuario en http://esr.cemefi.org";
+            correoRSE.Body += "\n\n\nAplicación https://esrv1.cemefi.org";
+            correoRSE.Subject = "Alerta - Registro de usuario en https://esrv1.cemefi.org";
             correoRSE.Priority = MailPriority.Normal;
 
             try

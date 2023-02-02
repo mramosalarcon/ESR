@@ -65,7 +65,6 @@ D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.Data.dll
 D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Web.Administration.dll
 D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
 D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
-D:\Users\migue\Documents\GitHub\ESR\ESR\bin\Microsoft.Practices.ObjectBuilder.dll
 D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.Business.pdb
 D:\Users\migue\Documents\GitHub\ESR\ESR\bin\ESR.Data.pdb
 D:\Users\migue\Documents\GitHub\ESR\ESR\obj\Release\ESR.csproj.CopyComplete

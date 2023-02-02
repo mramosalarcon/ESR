@@ -236,18 +236,20 @@ namespace ESR.Data
             try
             {
                 Database db;
-                if (idCuestionario > 121)
+                if (idCuestionario > 132)
                     db = DatabaseFactory.CreateDatabase("ESR");
+                else if (idCuestionario > 121)
+                    db = DatabaseFactory.CreateDatabase("ESR_2022");
                 else if (idCuestionario > 110)
                     db = DatabaseFactory.CreateDatabase("ESR_2021");
                 else if (idCuestionario > 102)
                     db = DatabaseFactory.CreateDatabase("ESR_2020");
-                else if (idCuestionario > 94)
+                else // if (idCuestionario > 94)
                     db = DatabaseFactory.CreateDatabase("ESR_2019");
-                else if (idCuestionario > 86)
-                    db = DatabaseFactory.CreateDatabase("ESR_2018");
-                else //if (idCuestionario > 53)
-                    db = DatabaseFactory.CreateDatabase("ESR_2017");
+                //else if (idCuestionario > 86)
+                //    db = DatabaseFactory.CreateDatabase("ESR_2018");
+                //else //if (idCuestionario > 53)
+                //    db = DatabaseFactory.CreateDatabase("ESR_2017");
 
                 string sqlCommand = "CESR_CargaAvanceCuestionario";
                 DbCommand dbCuestionarioAvance = db.GetStoredProcCommand(sqlCommand);

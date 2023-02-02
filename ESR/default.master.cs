@@ -52,7 +52,7 @@ namespace ESR
         {
             imbSitio.ImageUrl = "images/ESRbotonMenuInteriorOver_Sitio.jpg";
             imbSitio.Attributes["onmouseout"] = "'images/ESRbotonMenuInteriorOver_Sitio.jpg'";
-            Response.Write("<script>window.open('http://esr.cemefi.org/" + Session["idEmpresa"].ToString() + "','newwin');</script>");
+            Response.Write("<script>window.open('https://esrv1.cemefi.org/" + Session["idEmpresa"].ToString() + "','newwin');</script>");
         }
 
         //private void PopulateMenuCEMEFI()
